@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" manifest="demo_html.appcache">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- 优先使用 IE 最新版本和 Chrome -->
+	<meta name="renderer" content="webkit" /> <!-- 浏览器内核控制 极速核 -->
+
+	<meta name="description" content="Gluttonous Snake" /> <!-- 页面描述 -->
+	<meta name="keywords" content="Gluttonous Snake" /> <!-- 页面关键词 -->
+	<meta name="author" content="Yaoli" /> <!-- 页面作者 -->
+
+	<meta name="robots" content="index,follow" /> <!-- 搜索引擎索引方式 -->
+	<meta name="google" content="index,follow" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+	<meta name="apple-mobile-web-app-title" content="Gluttonous Snake" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 是否启用 WebApp 全屏模式 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="x5-fullscreen" content="true" /> <!-- QQ 浏览器强制全屏 -->
+	<meta name="x5-orientation" content="portrait" /> <!-- QQ 浏览器强制竖屏 -->
+	<meta name="x5-page-mode" content="app" /> <!-- QQ 浏览器应用模式 -->
+
+	<!-- Set favicons -->
+	<link rel="icon" href="img/game_32px_1197448_easyicon.net.ico" />
+
+	<link rel="apple-touch-icon" sizes="180x180" href="img/game_124.68797564688px_1197448_easyicon.net.png" />
+	<link rel="icon" type="image/png" href="img/game_31.17199391172px_1197448_easyicon.net.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="img/game_15.58599695586px_1197448_easyicon.net.png" sizes="16x16" />
+	<link rel="mask-icon" href="img/safari-pinned-tab.svg" />
+
+	<link rel="apple-touch-startup-image" media="screen and (orientation: portrait)" href="img/startup.png" /> <!-- 竖屏 -->
+	
+	<meta name="theme-color" content="#eb3a3a" /> <!-- 控制选项卡颜色 -->
+
+	<meta name="google" value="notranslate" /> <!-- 禁止 Chrome 浏览器中自动提示翻译 -->
+
+	<title>Gluttonous Snake</title>
+
+	<link rel="stylesheet" href="css/style.css" />
+
+	<script type="text/javascript" src="js/layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="js/control.js"></script>
+</head>
+<body>
+	<div id="_div">
+		<canvas id="_canvas">
+			Your browser does not support the Canvas API
+			Please upgrade your browser
+		</canvas>
+
+		<!-- <div id="_button">
+			<span id="_up" style="position: absolute; left: 45px; top: 430px;">&#xe903</span>
+			<span id="_down" style="position: absolute; left: 45px; top: 512px;">&#xe900</span>
+			<span id="_left" style="position: absolute; left: 0; top: 470px;">&#xe901</span>
+			<span id="_right" style="position: absolute; left: 89px; top: 470px;">&#xe902</span>
+		</div>
+
+		<div id="_music">&#xe904</div>
+
+		<script type="text/javascript" src="js/music.js"></script>
+
+		<div id="_share">&#xe938</div> -->
+	</div>
+
+	<audio id="_audio" src="audio/bgm.mp3" autoplay loop></audio>
+</body>
+</html>

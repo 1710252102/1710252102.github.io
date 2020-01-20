@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+
+	outline: 0;
+	border: 0;
+}
+
+#_div {
+	width: 240px;
+	height: 420px;
+
+	margin: 0 auto;
+	margin-top: 17px;
+
+	position: relative;
+}
+
+#_div #_canvas {
+	// border: 1px solid gray;
+	border-radius: 3px;
+}
+
+@font-face {
+	font-family: '_NeuesBauenDemo';
+
+	src: url('../font/icomoon.eot');
+	src: url('../font/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../font/icomoon.woff') format('woff'),
+		url('../font/icomoon.ttf') format('truetype'),
+		url('../font/icomoon.svg#NeuesBauenDemo') format('svg');
+
+	font-weight: normal;
+	font-style: normal;
+}
+
+#_div #_button span {
+	display: inline-block;
+
+	width: 35px;
+	height: 35px;
+
+	border: 2px solid rgba(128, 128, 128, 0.5);
+	border-radius: 5px;
+
+	font-family: '_NeuesBauenDemo';
+	font-size: 25px;
+	color: rgba(172, 177, 152, 0.85);
+	font-weight: bolder;
+
+	text-align: center;
+	line-height: 35px;
+
+	transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+}
+
+#_div #_button span:hover {
+	border: 2px solid rgba(128, 128, 128, 0.85);
+	background-color: rgba(128, 128, 128, 0.25);
+
+	color: rgba(172, 177, 152, 1.0);
+
+	transform: scale(1.25,1.25);
+		-webkit-transform: scale(1.25,1.25);
+		-ms-transform: scale(1.25,1.25);
+		-moz-transform: scale(1.25,1.25);
+		-o-transform: scale(1.25,1.25);
+}
+
+#_div #_music, #_div #_share {
+	width: 35px;
+	height: 35px;
+
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	border-radius: 5px;
+
+	font-family: '_NeuesBauenDemo';
+	font-size: 20px;
+	color: rgba(172, 177, 152, 0.85);
+	font-weight: bolder;
+
+	text-align: center;
+	line-height: 35px;
+}
+#_div #_music {
+	position: absolute;
+	left: 205px;
+	top: 430px;
+}
+
+#_div #_share {
+	font-weight: normal;
+
+	position: absolute;
+	left: 205px;
+	top: 512px;
+}
+
+#_div #_music:hover, #_div #_share:hover {
+	border: 1px solid rgba(128, 128, 128, 0.85);
+
+	color: rgba(172, 177, 152, 1.0);
+
+	transform: scale(1.25,1.25);
+		-webkit-transform: scale(1.25,1.25);
+		-ms-transform: scale(1.25,1.25);
+		-moz-transform: scale(1.25,1.25);
+		-o-transform: scale(1.25,1.25);
+}
