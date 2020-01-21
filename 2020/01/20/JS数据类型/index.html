@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>小程序学习 - henucm</title>
+  <title>JS数据类型 - henucm</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,20 +11,24 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="小程序学习">
+  <meta name="description" content="关于JS的6中数据类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序学习">
-<meta property="og:url" content="http://yoursite.com/2020/01/16/2020-01-16-1/index.html">
+<meta property="og:title" content="JS数据类型">
+<meta property="og:url" content="http://yoursite.com/2020/01/20/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="henucm">
-<meta property="og:description" content="小程序学习">
+<meta property="og:description" content="关于JS的6中数据类型">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2020/01/18/tvjCBleVqTi3brK.jpg">
-<meta property="article:published_time" content="2020-01-16T10:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-19T12:35:15.710Z">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/21/1FBhgx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/21/1FBj2t.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/21/1FsU4H.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/21/1Fsh2n.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/21/1Fy4Fe.jpg">
+<meta property="article:published_time" content="2020-01-20T11:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-21T12:40:39.291Z">
 <meta property="article:author" content="henucm">
-<meta property="article:tag" content="map">
+<meta property="article:tag" content="数据类型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/01/18/tvjCBleVqTi3brK.jpg">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/01/21/1FBhgx.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
    
@@ -32,7 +36,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1579610805982">
+  <link rel="stylesheet" href="/css/style.css?v=1579610806049">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -164,57 +168,94 @@
         
             <img src="https://i.loli.net/2019/01/13/5c3aec85a4343.jpg">
         
-        <h1>小程序学习</h1>
+        <h1>JS数据类型</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月16日</a>
-    <a><i class="nexmoefont icon-areachart"></i>71 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>462 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
-      <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a>
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/Javascript/">Javascript</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/map/" rel="tag">map</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a>
     
   </div>
   <article>
-    <p>小程序学习<br><a id="more"></a></p>
-<h1 id="获取目前所处位置"><a href="#获取目前所处位置" class="headerlink" title="获取目前所处位置"></a>获取目前所处位置</h1><p><img src="https://i.loli.net/2020/01/18/tvjCBleVqTi3brK.jpg" alt="162538-15586863381bcc.jpg"></p>
-<pre><code class="lang-javascript">onShow(){
-    var that=this;
-    wx.getLocation({
-      type: &#39;wgs84&#39;,
-      success(res) {
-        const latitude1 = res.latitude;
-        const longitude1 = res.longitude;
-        const speed1 = res.speed;
-        const accuracy1 = res.accuracy;
-        that.setData({
-          longitude: res.longitude,
-          latitude: res.latitude
-        })
-      }
-    })
-  },
+    <p>关于JS的6中数据类型<br><a id="more"></a></p>
+<h1 id="JS数据类型"><a href="#JS数据类型" class="headerlink" title="JS数据类型"></a>JS数据类型</h1><h3 id="1-六种数据类型"><a href="#1-六种数据类型" class="headerlink" title="1.六种数据类型"></a>1.六种数据类型</h3><p><img src="https://s2.ax1x.com/2020/01/21/1FBhgx.png" alt="1FBhgx.png"></p>
+<h3 id="2-隐式转换"><a href="#2-隐式转换" class="headerlink" title="2.隐式转换"></a>2.隐式转换</h3><h4 id="隐式转换逻辑：字符串-数字，默认字符串相加；字符串-数字，会先把字符串隐式转换成数字再计算。巧用隐式转换可以将字符串和数字类型相互转换；如图-0或-‘’"><a href="#隐式转换逻辑：字符串-数字，默认字符串相加；字符串-数字，会先把字符串隐式转换成数字再计算。巧用隐式转换可以将字符串和数字类型相互转换；如图-0或-‘’" class="headerlink" title="隐式转换逻辑：字符串+数字，默认字符串相加；字符串-数字，会先把字符串隐式转换成数字再计算。巧用隐式转换可以将字符串和数字类型相互转换；如图-0或+‘’"></a>隐式转换逻辑：字符串+数字，默认字符串相加；字符串-数字，会先把字符串隐式转换成数字再计算。巧用隐式转换可以将字符串和数字类型相互转换；如图-0或+‘’</h4><p><img src="https://s2.ax1x.com/2020/01/21/1FBj2t.jpg" alt="1FBj2t.jpg"></p>
+<h4 id="与-得区别"><a href="#与-得区别" class="headerlink" title="==与===得区别"></a>==与===得区别</h4><p>a===b </p>
+<p>类型不同，返回false</p>
+<p>类型相同：</p>
+<p>​        null === null</p>
+<p>​        nudefined === undefined</p>
+<p>​        NaN &ne; NaN</p>
+<p>a==b</p>
+<p>类型相同，同===</p>
+<p>类型不同，尝试类型转换和比较</p>
+<p>null==undefined 相等</p>
+<p>number==string转number   1==”1.0”//true 备注：尝试把字符串转换为数字</p>
+<p>boolean==?转number 1==true //true</p>
+<p>object== number | string 尝试对象转换为基本类型 new String(“hi”) ==”hi” // true </p>
+<p>其他：false</p>
+<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a><code>typeof</code></h4><p><img src="https://s2.ax1x.com/2020/01/21/1FsU4H.jpg" alt="1FsU4H.jpg"></p>
+<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a><code>instanceof</code></h4><pre><code class="lang-javascript">[1,2] instanceof Array === true
+new Object() instanceof Array === false
 </code></pre>
-<pre><code class="lang-javascript">onShow(){
-    this.getLocation(this);
-  },
-  getLocation()
-  {
-    wx.getLocation({
-        type: &#39;wgs84&#39;,
-        success: this.handleGetLocationSucc.bind(this)
-    })
-  },
-  handleGetLocationSucc(res)
-  {
-    this.setData({
-    longitude: res.longitude,
-    latitude: res.latitude
-    })
-  },
+<h4 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a><code>Object.prototype.toString</code></h4><p><img src="https://s2.ax1x.com/2020/01/21/1Fsh2n.png" alt="1Fsh2n.png"></p>
+<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a><code>constructor</code></h4><pre><code class="lang-javascript">var test=new Array();
+if (test.constructor==Array)
+{
+    document.write(&quot;This is an Array&quot;);
+}
 </code></pre>
+<h4 id="Duck-Typing"><a href="#Duck-Typing" class="headerlink" title="Duck Typing"></a><code>Duck Typing</code></h4><p>鸭子类型（duck typing）如果它走起路来像鸭子，叫起来也是鸭子，那么它就是鸭子。<br>只关注对象的行为，不关注对象本身面向接口编型 ，而不是面向实现编程，是设计模式中最重要的思想。</p>
+<p><a href="https://blog.csdn.net/Donspeng/article/details/76079403" target="_blank" rel="noopener">原博主</a></p>
+<p>应用场景：流程控制<br> 好处：去掉冗余的条件判断<br> 通过实例来说明：<br> 不使用Duck Typing：</p>
+<pre><code class="lang-javascript">function bird(){
+    this.name=&quot;bird&quot;;
+}
+function duck(){
+    this.name=&quot;duck&quot;;
+}
+const type=(animal)=&gt;{
+    if(animal instanceof bird){
+        console.log(&quot;I am a bird&quot;);
+    }else if(animal instanceof duck){
+        console.log(&quot;I am a duck&quot;);
+    }
+}
+var b=new bird();
+var d=new duck();
+type(b);
+type(d);
+</code></pre>
+<p>使用Duck Typing：</p>
+<pre><code class="lang-javascript"> var bird={
+    name:&#39;bird&#39;,
+    speak:function(){
+        console.log(&quot;I am a &quot;+this.name);
+    }
+}
+var duck={
+    name:&quot;duck&quot;,
+    speak:function(){
+        console.log(&quot;I am a &quot;+this.name);
+    }
+}
+const type=(animal)=&gt;{
+    if(typeof animal.speak == &quot;function&quot;){
+        animal.speak();
+        return true;
+    }
+    return false;
+}
+type(bird);
+type(duck);
+</code></pre>
+<p>大概的意思应该就是用Duck Typing 减少了一些条件判断   你只需要有speak方法，那就speak，不需要判断你的类型</p>
+<p><img src="https://s2.ax1x.com/2020/01/21/1Fy4Fe.jpg" alt="1Fy4Fe.jpg"></p>
 
   </article>
   
@@ -222,7 +263,7 @@
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>henucm<br>
-<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/16/2020-01-16-1/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;16&#x2F;2020-01-16-1&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;16&#x2F;2020-01-16-1&#x2F;</a><br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/20/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -260,7 +301,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1579610805986"></script>
+<script src="/js/app.js?v=1579610806055"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>JS对象 - henucm</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="关于JS对象的一些属性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS对象">
+<meta property="og:url" content="http://yoursite.com/2020/01/21/JS%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="henucm">
+<meta property="og:description" content="关于JS对象的一些属性">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/21/1kJCRS.jpg">
+<meta property="article:published_time" content="2020-01-21T10:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-21T12:44:45.208Z">
+<meta property="article:author" content="henucm">
+<meta property="article:tag" content="对象">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/01/21/1kJCRS.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1579610806045">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="henucm" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="henucm">
+            <img src="/images/avatar.png" alt="henucm">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>6</div>
+        <div><span>标签</span>5</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+                <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+                <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+                <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/1710252102/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/">Javascript</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/微信小程序/">微信小程序</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 20px;">数据类型</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">面向对象</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 henucm
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://s2.ax1x.com/2020/01/21/1kJxOJ.jpg">
+        
+        <h1>JS对象</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月21日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1,398 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/Javascript/">Javascript</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AF%B9%E8%B1%A1/" rel="tag">对象</a>
+    
+  </div>
+  <article>
+    <p>关于JS对象的一些属性<br><a id="more"></a></p>
+<h2 id="JS对象"><a href="#JS对象" class="headerlink" title="JS对象"></a>JS对象</h2><h3 id="get-set方法"><a href="#get-set方法" class="headerlink" title="get/set方法"></a>get/set方法</h3><pre><code class="lang-javascript">var man={
+    name:&#39;Bosn&#39;,
+    weibo:&#39;@Bosn&#39;,
+    get age(){
+        return new Date().getFullYear()-1995;
+    },
+    set age(val){
+    console.log(&#39;等式右边是&#39;+val);
+    }
+}
+console.log(man.age);//24，读get的属性
+man.age=100;//等式右边是100，等式右边的值会传给set属性的形参val
+console.log(man.age);//still 24,因为读的是get的age属性,并没有被改变
+</code></pre>
+<p>注意：get的属性不能被赋值！</p>
+<h3 id="get-set与原型链"><a href="#get-set与原型链" class="headerlink" title="get/set与原型链"></a>get/set与原型链</h3><p><code>ps</code>:读取属性是自下而上寻找原型链</p>
+<p>如果对象的原型上有一个属性，且这个属性是get法定义，则不能用<code>obj.property</code>的方式给当前对象添加同样名字的新属性。比如：</p>
+<pre><code class="lang-javascript">function foo(){
+    Object.defineProperty(foo.prototype,&#39;z&#39;,{get:function(){rerurn1;}});
+｝
+var obj =new foo();
+obj.z;//1
+obj.z=10;//没有以给当前对象obj添加新属性的方式形成属性
+obj.z;//still 1
+</code></pre>
+<p>可以用<code>obj.defineProperty(obj,&#39;z&#39;,{value:10,configurable:true});</code>法实现添加属性</p>
+<p>看到这里是不是有人会想 如何在<code>Javascript</code>中通过实例对象修改对象的属性值呢</p>
+<p>让我们来看看<a href="https://www.cnblogs.com/fogwind/p/5750764.html" target="_blank" rel="noopener">大佬</a>怎么写的</p>
+<h4 id="JS中通过实例对象修改对象的属性值问题"><a href="#JS中通过实例对象修改对象的属性值问题" class="headerlink" title="JS中通过实例对象修改对象的属性值问题"></a>JS中通过实例对象修改对象的属性值问题</h4><p><code>Javascript</code>中的数据值有两大类：基本类型的数据值和引用类型的数据值。</p>
+<p>基本类型的数据值有5种：null、undefined、number、boolean和string。</p>
+<p>引用类型的数据值往大的说就1种，即<code>Object</code>类型。往细的说有：<code>Object</code>类型、<code>Array</code>类型、<code>Date</code>类型、<code>Regexp</code>类型、<code>Function</code>类型等。</p>
+<p><strong>当原型对象的属性值为基本类型的数据值时，通过实例对象修改属性值从而引起原型对象的属性值发生变化的情况不会发生。当原型对象的属性值为引用类型的数据值时，通过实例对象修改属性值就可能引起原型对象的属性值发生变化。下面举例说明。</strong></p>
+<p>例1：</p>
+<pre><code class="lang-javascript">function Animal() {}
+Animal.prototype = {
+ constructor: Animal,// constructor 保存了指向 function 的一个引用
+ number: &quot;very much&quot;,
+ fish: [&quot;shark&quot;,&quot;sardine&quot;],
+ bird:{
+     ability: &quot;fly&quot;,
+     feature: &quot;feather&quot;
+ }
+};
+var animal1 = new Animal();
+var animal2 = new Animal();
+//没有改变原型的number属性,而是自己获得了number属性
+animal1.number = 1000;
+console.log(animal2.number);//very much
+</code></pre>
+<p>上例中通过构造函数Animal创建了两个实例对象，两个实例对象继承了同一个原型对象的属性。通过实例对象animal1重新设置了number属性，结果是实例对象animal1拥有了自己的number属性，没有改变原型对象的number属性值，实例对象animal2调用的number属性还是原型对象原来的number属性。</p>
+<p>例2：</p>
+<pre><code class="lang-javascript">function Animal() {}
+Animal.prototype = {
+ constructor: Animal,
+ number: &quot;very much&quot;,
+ fish: [&quot;shark&quot;,&quot;sardine&quot;],
+ bird:{
+     ability: &quot;fly&quot;,
+     feature: &quot;feather&quot;
+ }
+};
+var animal1 = new Animal();
+var animal2 = new Animal();
+var animal3 = new Animal();
+//没有改写原型中的fish属性,此时animal1实例对象中有了自己的fish属性，向其自己的fish属性中推入和弹出项不会改变原型的fish属性。
+animal1.fish = [&quot;cold fish&quot;];
+for (var i=0;i&lt;animal2.fish.length;i++) {
+  console.log(animal2.fish[i]);//shark,sardine,没有cold fish
+ }
+//通过实例对象animal3向fish属性中推入项，改变了原型对象的fish属性，因为实例对象中没有自己的fish属性
+animal3.fish.push(&quot;voladao&quot;);
+animal3.fish[0] = &quot;fly fish&quot;;
+for (var i=0;i&lt;animal2.fish.length;i++) {
+  console.log(animal2.fish[i]);//fly fish,sardine,voladao
+ }
+</code></pre>
+<p>例2中实例对象animal1创建了自己的fish属性，没有改变原型对象的fish属性，所以实例对象animal2输出的还是原型对象的fish属性。</p>
+<p>实例对象animal3没有自己的fish属性，但通过实例对象animal3向fish属性中推入了一项，并且改变了其中的第一项的值，这些改变都发生在了原型对象的fish属性上，所以实例对象animal2调用fish属性时，其属性值发生了变化。</p>
+<p>例3：</p>
+<pre><code class="lang-javascript">function Animal() {}
+Animal.prototype = {
+ constructor: Animal,
+ number: &quot;very much&quot;,
+ fish: [&quot;shark&quot;,&quot;sardine&quot;],
+ bird:{
+     ability: &quot;fly&quot;,
+     feature: &quot;feather&quot;
+ }
+}
+var animal1 = new Animal();
+var animal2 = new Animal();
+var animal3 = new Animal();
+var animal4 = new Animal();
+var animal5 = new Animal();
+//改写了原型中的bird属性
+animal1.bird.ability = &quot;run&quot;;
+console.log(animal2.bird.ability);//run
+//创建animal3的bird属性，没有改变原型对象的bird属性
+ animal3.bird = {
+   eat: &quot;fish&quot;
+ };
+ console.log(animal4.bird.eat);//undifined
+ console.log(animal3.bird.eat);//fish
+ animal5.bird.home = &quot;tree&quot;;
+ console.log(animal4.bird.home);//tree
+</code></pre>
+<p>例3中通过实例对象animal1修改了bird属性的ability属性的值，实例对象animal1没有自己的bird属性，这个修改反映在了原型对象的bird属性上，实例对象animal2输出的bird.ability的值是改变后的值。</p>
+<p>实例对象animal3创建了自己的bird属性，这没有改变原型对象的bird属性，所以实例对象4的bird.eat的值为undifined。</p>
+<p>通过实例对象animal5添加了bird属性的home属性，实例对象animal5没有自己的bird属性，这个home属性添加到了原型对象的bird属性上，所以animal4的bird.home的值为tree。</p>
+<h4 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h4><p>Configurable,Enumerable,Writable,Value</p>
+<pre><code class="lang-javascript">var person = {}
+Object.defineProperty(person,&#39;name&#39;,{
+    configurable:false,//能否使用delete、能否需改属性特性、或能否修改访问器属性、，false为不可重新定义，默认值为true
+    enumerable:false,//对象属性是否可通过for-in循环，flase为不可循环，默认值为true
+    writable:false,//对象属性是否可修改,flase为不可修改，默认值为true
+    value:&#39;xiaoming&#39; //对象属性的默认值，默认值为undefined
+});
+
+//value
+console.log(person);//xiaoming，默认value
+
+//writable
+person.name=&quot;qiang&quot;;
+console.log(person);//xiaoming，不可修改value
+
+//enumerable
+for(var i in person){
+    console.log(person[i]) //无结果，不可循环
+}
+
+//configurable
+delete person.name
+console.log(person.name)//xiaoming，不可删除
+
+Object.defineProperty(person,&#39;name&#39;,{
+    configurable:true //不可修改，将抛出错误
+});
+</code></pre>
+<p><img src="https://s2.ax1x.com/2020/01/21/1kJCRS.jpg" alt="1kJCRS.jpg"></p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>henucm<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/21/JS%E5%AF%B9%E8%B1%A1/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;JS%E5%AF%B9%E8%B1%A1&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;JS%E5%AF%B9%E8%B1%A1&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3Ni8yMjQ4Nw==">
+    <script id="livere-comment-js">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1579610806047"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>
