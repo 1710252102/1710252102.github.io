@@ -396,6 +396,18 @@ arr[2]=&#39;Volvo&#39;;
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left">push</td>
+<td>向后部插入一个元素</td>
+</tr>
+<tr>
+<td style="text-align:left">unshift</td>
+<td>向头部插入一个元素</td>
+</tr>
+<tr>
+<td style="text-align:left">delete</td>
+<td>将某个数组内的元素赋值为undefined</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="https://www.w3school.com.cn/jsref/jsref_constructor_array.asp" target="_blank" rel="noopener">constructor</a></td>
 <td>返回创建对象的数组函数的引用。</td>
 </tr>
