@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>javascript入门篇 - henucm</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="关于JS基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript入门篇">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/JS%E5%85%A5%E9%97%A8%E7%AF%87/index.html">
+<meta property="og:site_name" content="henucm">
+<meta property="og:description" content="关于JS基础知识">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1KugbQ.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1KMEmF.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1KQgbD.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1Ktw1H.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1KtrnI.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1Kajgg.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1KwCsH.jpg">
+<meta property="article:published_time" content="2020-01-28T11:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-28T11:35:39.770Z">
+<meta property="article:author" content="henucm">
+<meta property="article:tag" content="基础知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/01/28/1KugbQ.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1580211460010">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="henucm" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="henucm">
+            <img src="/images/avatar.png" alt="henucm">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>7</div>
+        <div><span>标签</span>6</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+                <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+                <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+                <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/1710252102/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/">Javascript</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/微信小程序/">微信小程序</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基础知识</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 20px;">数据类型</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">面向对象</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 henucm
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://s2.ax1x.com/2020/01/21/1kJxOJ.jpg">
+        
+        <h1>javascript入门篇</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月28日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1,577 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/Javascript/">Javascript</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a>
+    
+  </div>
+  <article>
+    <p>关于JS基础知识<br><a id="more"></a></p>
+<h2 id="JS入门篇"><a href="#JS入门篇" class="headerlink" title="JS入门篇"></a>JS入门篇</h2><h3 id="JS-确认（confirm-消息对话框）"><a href="#JS-确认（confirm-消息对话框）" class="headerlink" title="JS-确认（confirm 消息对话框）"></a>JS-确认（confirm 消息对话框）</h3><p>confirm 消息对话框通常用于允许用户做选择的动作，如: “你对吗？”等。弹出对话框（包括确认按钮和一个取消按钮）。</p>
+<p>语法：</p>
+<pre><code class="lang-javascript">confirm(str);
+</code></pre>
+<p>参数说明：</p>
+<pre><code class="lang-javascript">str: 再消息对话框中要显示的文本
+返回值：Boolean值
+</code></pre>
+<p>返回值：</p>
+<pre><code class="lang-javascript">当用户点击&quot;确认&quot;按钮时，返回true
+当用户点击&quot;取消&quot;按钮时，返回false
+</code></pre>
+<p><strong>注：通过返回值可以判断用户点击了什么按钮</strong></p>
+<p>看下面的代码：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+    var mymessage=confirm(&quot;你喜欢JavaScript吗?&quot;);
+    if(mymessage==true)
+    {   document.write(&quot;很好,加油!&quot;);   }
+    else
+    {  document.write(&quot;JS功能强大，要学习噢!&quot;);   }
+&lt;/script&gt;
+</code></pre>
+<p>结果：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1KugbQ.jpg" alt="1KugbQ.jpg"></p>
+<h3 id="JS-提问（prompt-消息对话框）"><a href="#JS-提问（prompt-消息对话框）" class="headerlink" title="JS-提问（prompt 消息对话框）"></a>JS-提问（prompt 消息对话框）</h3><p>prompt 弹出消息对话框，通常用于询问一些需要与用户交互的消息，弹出消息对话框（包含一个确认按钮，取消按钮与一个文本输入框）。</p>
+<p>语法：</p>
+<pre><code class="lang-javascript">prompt(str1,str2);
+</code></pre>
+<p>参数说明：</p>
+<pre><code>str1：要显示在消息对话框中的文本，不可修改
+str2：文本框中的内容，可以修改
+</code></pre><p>返回值：</p>
+<pre><code>1.点击确认按钮，文本框中的内容将作为函数返回值
+2.点击取消按钮，将返回null
+</code></pre><p>看看下面代码：</p>
+<pre><code class="lang-javascript">var myname=prompt(&quot;请输入你的姓名：&quot;)；
+if(myname!=null)
+{alert(&quot;你好&quot;+myname);}
+else
+{alert(&quot;你好 my friend.&quot;);}
+</code></pre>
+<p>结果：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1KMEmF.jpg" alt="1KMEmF.jpg"></p>
+<p><strong>注:在用户点击对话框的按钮前，不能进行任何其它操作。</strong></p>
+<h3 id="JS-打开新窗口（window-open）"><a href="#JS-打开新窗口（window-open）" class="headerlink" title="JS-打开新窗口（window.open）"></a>JS-打开新窗口（window.open）</h3><p>open()方法可以查找一个已经存在或者新建的浏览器窗口。</p>
+<p>语法：</p>
+<pre><code class="lang-javascript">window.open([URL], [窗口名称], [参数字符串])
+</code></pre>
+<p>参数说明:</p>
+<pre><code class="lang-javascript">URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。
+窗口名称：可选参数，被打开窗口的名称。
+    1.该名称由字母、数字和下划线字符组成。
+    2.&quot;_top&quot;、&quot;_blank&quot;、&quot;_self&quot;具有特殊意义的名称。
+       _blank：在新窗口显示目标网页
+       _self：在当前窗口显示目标网页
+       _top：框架网页中在上部窗口中显示目标网页
+    3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。
+   4.name 不能包含有空格。
+参数字符串：可选参数，设置窗口参数，各参数用逗号隔开。
+</code></pre>
+<p>参数表：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1KQgbD.jpg" alt="1KQgbD.jpg"></p>
+<p>例如:打开<a href="http://www.imooc.com网站，大小为300px" target="_blank" rel="noopener">http://www.imooc.com网站，大小为300px</a> * 200px，无菜单，无工具栏，无状态栏，有滚动条窗口：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt; window.open(&#39;http://www.imooc.com&#39;,&#39;_blank&#39;,&#39;width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes&#39;)
+&lt;/script&gt;
+</code></pre>
+<p><strong>注意：</strong>运行结果考虑浏览器兼容问题。</p>
+<h3 id="JS-DOM操作"><a href="#JS-DOM操作" class="headerlink" title="JS DOM操作"></a>JS DOM操作</h3><h4 id="改变-HTML-的样式"><a href="#改变-HTML-的样式" class="headerlink" title="改变 HTML 的样式"></a>改变 HTML 的样式</h4><p>HTML DOM 允许 JavaScript 改变 HTML 元素的样式。如何改变 HTML 元素的样式呢？</p>
+<p>语法：</p>
+<pre><code class="lang-javascript">Object.style.property=new style;
+</code></pre>
+<p><strong>注意:</strong>Object是获取的元素对象，如通过<code>document.getElementById(&quot;id&quot;)</code>获取的元素。</p>
+<p><strong>基本属性表（property）:</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1Ktw1H.jpg" alt="1Ktw1H.jpg"></p>
+<p><strong>注意:</strong>该表只是一小部分CSS样式属性，其它样式也可以通过该方法设置和修改。</p>
+<p>改变 <p> 元素的样式，将颜色改为红色，字号改为20,背景颜色改为蓝：</p>
+<pre><code class="lang-javascript">&lt;p id=&quot;pcon&quot;&gt;Hello World!&lt;/p&gt;
+&lt;script&gt;
+   var mychar = document.getElementById(&quot;pcon&quot;);
+   mychar.style.color=&quot;red&quot;;
+   mychar.style.fontSize=&quot;20&quot;;
+   mychar.style.backgroundColor =&quot;blue&quot;;
+&lt;/script&gt;
+</code></pre>
+<p>结果:</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1KtrnI.jpg" alt="1KtrnI.jpg"></p>
+<h3 id="显示和隐藏（display属性）"><a href="#显示和隐藏（display属性）" class="headerlink" title="显示和隐藏（display属性）"></a>显示和隐藏（display属性）</h3><p>网页中经常会看到显示和隐藏的效果，可通过display属性来设置。</p>
+<p><strong>语法：</strong></p>
+<pre><code>Object.style.display = value
+</code></pre><p><strong>注意:</strong>Object是获取的元素对象，如通过<code>document.getElementById(&quot;id&quot;)</code>获取的元素。</p>
+<p>value取值:</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1Kajgg.jpg" alt="1Kajgg.jpg"></p>
+<h3 id="控制类名（className-属性）"><a href="#控制类名（className-属性）" class="headerlink" title="控制类名（className 属性）"></a>控制类名（className 属性）</h3><p>className 属性设置或返回元素的class 属性。</p>
+<p><strong>语法：</strong></p>
+<pre><code>object.className = classname
+</code></pre><p><strong>作用:</strong></p>
+<p>1.获取元素的class 属性</p>
+<p>2.为网页内的某个元素指定一个css样式来更改该元素的外观</p>
+<p>看看下面代码，获得  元素的 class 属性和改变className：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1KwCsH.jpg" alt="1KwCsH.jpg"></p>
+<h3 id="总结-编程挑战"><a href="#总结-编程挑战" class="headerlink" title="总结 编程挑战"></a>总结 编程挑战</h3><p>小伙伴们，请编写”改变颜色”、”改变宽高”、”隐藏内容”、”显示内容”、”取消设置”的函数，点击相应按钮执行相应操作，点击”取消设置”按钮后，提示是否取消设置，如是执行操作，否则不做操作。</p>
+<p>任务</p>
+<p>一、定义”改变颜色”的函数</p>
+<pre><code>提示:
+obj.style.color
+obj.style.backgroundColor
+</code></pre><p>二、定义”改变宽高”的函数</p>
+<pre><code>提示:
+obj.style.width
+obj.style.height
+</code></pre><p>三、定义”隐藏内容”的函数</p>
+<pre><code>提示:
+obj.style.display=&quot;none&quot;;
+</code></pre><p>四、定义”显示内容”的函数</p>
+<pre><code>提示:
+obj.style.display=&quot;block&quot;;
+</code></pre><p>五、定义”取消设置”的函数</p>
+<pre><code>提示: 
+使用confirm()确定框，来确认是否取消设置。
+如是将以上所有的设置恢复原始值,否则不做操作。
+</code></pre><p>六、当点击相应按钮，执行相应操作，为按钮添加相应事件</p>
+<pre><code class="lang-javascript">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; Content=&quot;text/html; charset=utf-8&quot; /&gt;
+&lt;title&gt;javascript&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{font-size:12px;}
+#txt{
+    height:400px;
+    width:600px;
+    border:#333 solid 1px;
+    padding:5px;}
+p{
+    line-height:18px;
+    text-indent:2em;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 id=&quot;con&quot;&gt;JavaScript课程&lt;/H2&gt;
+  &lt;div id=&quot;txt&quot;&gt; 
+     &lt;h5&gt;JavaScript为网页添加动态效果并实现与用户交互的功能。&lt;/h5&gt;
+        &lt;p&gt;1. JavaScript入门篇，让不懂JS的你，快速了解JS。&lt;/p&gt;
+        &lt;p&gt;2. JavaScript进阶篇，让你掌握JS的基础语法、函数、数组、事件、内置对象、BOM浏览器、DOM操作。&lt;/p&gt;
+        &lt;p&gt;3. 学完以上两门基础课后，在深入学习JavaScript的变量作用域、事件、对象、运动、cookie、正则表达式、ajax等课程。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;form&gt;
+  &lt;!--当点击相应按钮，执行相应操作，为按钮添加相应事件--&gt;
+    &lt;input type=&quot;button&quot; value=&quot;改变颜色&quot; onclick=&quot;opt1()&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;改变宽高&quot; onclick=&quot;opt2()&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;隐藏内容&quot; onclick=&quot;opt3()&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;显示内容&quot; onclick=&quot;opt4()&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;取消设置&quot; onclick=&quot;opt5()&quot;&gt;
+  &lt;/form&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+//定义&quot;改变颜色&quot;的函数
+function opt1(){
+  var myopt=document.getElementById(&quot;txt&quot;);
+  myopt.style.color=&quot;red&quot;;
+}
+
+//定义&quot;改变宽高&quot;的函数
+function opt2(){
+  var myopt=document.getElementById(&quot;txt&quot;);
+  myopt.style.width=&quot;500px&quot;;
+  myopt.style.height=&quot;500px&quot;;
+}
+
+//定义&quot;隐藏内容&quot;的函数
+function opt3(){
+  var myopt=document.getElementById(&quot;txt&quot;);
+  myopt.style.display=&quot;none&quot;;
+}
+
+//定义&quot;显示内容&quot;的函数
+function opt4(){
+  var myopt=document.getElementById(&quot;txt&quot;);
+  myopt.style.display=&quot;block&quot;;
+}
+
+//定义&quot;取消设置&quot;的函数
+function opt5(){
+  var message=confirm(&quot;你确定要重置所有设置么？&quot;);
+  if(message==true)
+  {
+    txt.removeAttribute(&#39;style&#39;);
+  }
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>henucm<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/28/JS%E5%85%A5%E9%97%A8%E7%AF%87/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;28&#x2F;JS%E5%85%A5%E9%97%A8%E7%AF%87&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;28&#x2F;JS%E5%85%A5%E9%97%A8%E7%AF%87&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3Ni8yMjQ4Nw==">
+    <script id="livere-comment-js">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1580211460013"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>
