@@ -260,7 +260,6 @@ love
 <pre><code class="lang-javascript">&lt;!DOCTYPE  HTML&gt;
 &lt;html &gt;
 &lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
 &lt;title&gt;系好安全带,准备启航&lt;/title&gt;
 
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -387,7 +386,6 @@ love
 &lt;html&gt;
  &lt;head&gt;
   &lt;title&gt;浏览器对象&lt;/title&gt;  
-  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gkb&quot;/&gt;   
  &lt;/head&gt;
  &lt;body&gt;
   &lt;!--先编写好网页布局--&gt;
@@ -628,7 +626,6 @@ HTML
 <p>代码：</p>
 <pre><code class="lang-html">&lt;!DOCTYPE HTML&gt;
 &lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
     function req(){
           var div = document.getElementById(&quot;div1&quot;);
@@ -789,7 +786,6 @@ HTML
 <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head lang=&quot;en&quot;&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;title&gt;实践题 - 选项卡&lt;/title&gt;
     &lt;style type=&quot;text/css&quot;&gt;
      /* 
@@ -1012,7 +1008,6 @@ obj.style.display=&quot;block&quot;;
 <pre><code class="lang-html">&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; Content=&quot;text/html; charset=utf-8&quot; /&gt;
 &lt;title&gt;javascript&lt;/title&gt;
 &lt;style type=&quot;text/css&quot;&gt;
 body{font-size:12px;}
