@@ -19,7 +19,7 @@
 </code></pre><p>第四步： 通过 = 按钮来调用创建的函数，得到结果。</p>
 <p><strong>注意:</strong> 使用<code>parseInt()</code>函数可解析一个字符串,并返回一个整数。</p>
 <p>代码：</p>
-<pre><code class="lang-javascript">&lt;!DOCTYPE html&gt;
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
  &lt;head&gt;
   &lt;title&gt; 事件&lt;/title&gt;  
@@ -383,7 +383,7 @@ love
 <p>第二步： 获取显示秒数的元素，通过定时器来更改秒数。</p>
 <p>第三步： 通过window的location和history对象来控制网页的跳转。</p>
 <p>代码：</p>
-<pre><code class="lang-javascript">&lt;!DOCTYPE html&gt;
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
  &lt;head&gt;
   &lt;title&gt;浏览器对象&lt;/title&gt;  
@@ -469,7 +469,7 @@ love
 </code></pre><p>2.在第33行处补充完整，实现当点击”全不选”按钮时，将取消所有选中的复选项。</p>
 <p>3.在第40行处补充完整，在文本框中输入输入1-6数值，当点击”确定”按钮时，根据输入的数值，通过id选中相应的复选项。</p>
 <p>代码：</p>
-<pre><code class="lang-javascript">&lt;!DOCTYPE HTML&gt;
+<pre><code class="lang-php+HTML">&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;无标题文档&lt;/title&gt;
@@ -626,7 +626,7 @@ HTML
 <p><strong>1. 区分大小写</strong></p>
 <p><strong>2. offsetParent：布局中设置postion属性(Relative、Absolute、fixed)的父容器，从最近的父节点开始，一层层向上找，直到HTML的body。</strong></p>
 <p>代码：</p>
-<pre><code class="lang-javascript">&lt;!DOCTYPE HTML&gt;
+<pre><code class="lang-html">&lt;!DOCTYPE HTML&gt;
 &lt;head&gt;
 &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -686,7 +686,7 @@ HTML
 2. 使用for进行循环，为每行添加事件及背景颜色设置。
 </code></pre>
 <p>代码：</p>
-<pre><code class="lang-javascript">&lt;!DOCTYPE html&gt;
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
  &lt;head&gt;
   &lt;title&gt; new document &lt;/title&gt; 
@@ -786,7 +786,7 @@ HTML
 选项卡内容多个，需要循环遍历来操作，得知哪个选项卡和哪个选项内容匹配
 通过改变DOM的css类名称,当前点击的选项卡显示，其它隐藏。
 </code></pre><p>代码：</p>
-<pre><code class="lang-javascript">&lt;!DOCTYPE html&gt;
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head lang=&quot;en&quot;&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -1009,7 +1009,7 @@ obj.style.display=&quot;block&quot;;
 使用confirm()确定框，来确认是否取消设置。
 如是将以上所有的设置恢复原始值,否则不做操作。
 </code></pre><p>六、当点击相应按钮，执行相应操作，为按钮添加相应事件</p>
-<pre><code class="lang-javascript">&lt;!DOCTYPE HTML&gt;
+<pre><code class="lang-html">&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta http-equiv=&quot;Content-Type&quot; Content=&quot;text/html; charset=utf-8&quot; /&gt;
