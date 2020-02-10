@@ -254,7 +254,8 @@ suibian.each();
   <entry>
     <title>移动web学习</title>
     <url>/2020/02/02/%E7%A7%BB%E5%8A%A8web%E5%9B%9B%E7%A7%8D%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<p>四种移动web布局方式<br><a id="more"></a><br>[TOC]</p>
+    <content><![CDATA[<p>四种移动web布局方式<br><a id="more"></a></p>
+<p>[TOC]</p>
 <p>资料：<a href="https://pan.baidu.com/s/1dqaeDQNzP5FOqOTTQeKsbQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1dqaeDQNzP5FOqOTTQeKsbQ</a></p>
 <h2 id="移动web开发之流式布局"><a href="#移动web开发之流式布局" class="headerlink" title="移动web开发之流式布局"></a>移动web开发之流式布局</h2><p>流式布局比较简单放两个案例自行了解</p>
 <pre><code class="lang-html">
