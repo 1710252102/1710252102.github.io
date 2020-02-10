@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>数据类型判断 - henucm</title>
+  <title>Promis学习 - henucm</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,18 +11,26 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="关于数据类型判断的一道编程题">
+  <meta name="description" content="这是一个比较古老的技术 过短时间过学一个比较新的技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据类型判断">
-<meta property="og:url" content="http://yoursite.com/2020/01/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/index.html">
+<meta property="og:title" content="Promis学习">
+<meta property="og:url" content="http://yoursite.com/2020/01/31/Promis%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="henucm">
-<meta property="og:description" content="关于数据类型判断的一道编程题">
+<meta property="og:description" content="这是一个比较古老的技术 过短时间过学一个比较新的技术">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-20T11:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-10T15:28:43.069Z">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/01/1G8UUI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/01/1GJ30H.png">
+<meta property="og:image" content="https://img1.mukewang.com/5e16d35a00016c5a12800720.jpg">
+<meta property="og:image" content="https://img4.mukewang.com/5bea8679000117e712800720.jpg">
+<meta property="og:image" content="https://img1.mukewang.com/5bea87220001a4e812800720.jpg">
+<meta property="og:image" content="https://img1.mukewang.com/5bea88af0001d2ef12800720.jpg">
+<meta property="og:image" content="https://img.mukewang.com/5bea8ca70001faa012800720.jpg">
+<meta property="article:published_time" content="2020-01-31T11:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-10T15:34:26.565Z">
 <meta property="article:author" content="henucm">
-<meta property="article:tag" content="数据类型">
+<meta property="article:tag" content="异步处理">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/01/1G8UUI.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
    
@@ -30,7 +38,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1581349776700">
+  <link rel="stylesheet" href="/css/style.css?v=1581349776625">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -188,147 +196,144 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-            <img src="https://i.loli.net/2019/01/13/5c3aec85a4343.jpg">
+        <img src="https://s2.ax1x.com/2020/01/21/1kJxOJ.jpg">
         
-        <h1>数据类型判断</h1>
+        <h1>Promis学习</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月20日</a>
-    <a><i class="nexmoefont icon-areachart"></i>595 字</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月31日</a>
+    <a><i class="nexmoefont icon-areachart"></i>691 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/Javascript/">Javascript</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" rel="tag">异步处理</a>
     
   </div>
   <article>
-    <p>关于数据类型判断的一道编程题<br><a id="more"></a><br><strong>本习题将验证你是否已经熟练掌握了数据类型知识。记得看完视频讲解，也要结合看书更全面的学习知识哦！</strong></p>
-<pre><code>温馨提示:完成任务后，请验证结果窗口显示是否是&quot;判定结果:通过&quot;,如是恭喜您，你已经掌握此技能，否则，建议重复学习此内容。
-</code></pre><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>请在index.html文件中，编写arraysSimilar函数，实现判断传入的两个数组是否相似。具体需求：</p>
-<ol>
-<li><p>数组中的成员类型相同，顺序可以不同。例如[1, true] 与 [false, 2]是相似的。</p>
-</li>
-<li><p>数组的长度一致。</p>
-</li>
-<li><p>类型的判断范围，需要区分:String, Boolean, Number, undefined, null, 函数，日期, window.</p>
-</li>
-</ol>
-<p>当以上全部满足，则返回”判定结果:通过”，否则返回”判定结果:不通过”。// 网站判断功能失效了</p>
-<p><a href="https://www.imooc.com/code/5760" target="_blank" rel="noopener">题目链接</a></p>
-<pre><code class="lang-javascript">function arraysSimilar(arr1, arr2){
-            if(!(arr1 instanceof Array)||!(arr2 instanceof Array))
-            {
-                return false;
-            }
-            if(arr1.length!=arr2.length)
-            return false;
-            var n = arr1.length,
-                countMap1 = {},
-                countMap2 = {},
-                t1,t2,
-                TYPES=[&#39;string&#39;,&#39;boolean&#39;,&#39;number&#39;,&#39;undefined&#39;,&#39;null&#39;,&#39;function&#39;,&#39;data&#39;,&#39;window&#39;];
-            for(var i=0;i&lt;n;i++)
-            {
-                t1=typeof(arr1[i]);
-                t2=typeof(arr2[i]);
-                if(countMap1[t1])
-                {
-                    countMap1[t1]++;
-                }
-                else
-                countMap1[t1]=1;
+    <p>这是一个比较古老的技术 过短时间过学一个比较新的技术<br><a id="more"></a></p>
+<h2 id="Promis简介"><a href="#Promis简介" class="headerlink" title="Promis简介"></a>Promis简介</h2><pre><code class="lang-javascript">    new Promise(
+    /* 执行器 executor */
+    function(resolve,reject){
+    //一段时耗很长的异步操作
+    resolve(); // 数据处理完成
 
-                if(countMap2[t2])
-                {
-                    countMap2[t2]++;
-                }
-                else
-                countMap2[t2]=1;
-            }
-            function typeof(value)
-            {
-                var r;
-                if (value==null)
-                r=&#39;null&#39;;
-                else if (value instanceof Array)
-                r=&#39;array&#39;;
-                else if(value === window)
-                r=&#39;window&#39;;
-                else if(value instanceof Date)
-                r=&#39;data&#39;;
-                else r= typeof value;
-                return r;
-            }
-            for(var i=0,n=TYPES.length;i&lt;n;i++)
-            {
-                if(countMap1[TYPES[i]]!=countMap2[TYPES[i]])
-                retunr false;
-            }
-            return true;
-        }
+    reject(); // 数据处理出错
+    }
+    )
+    .then(function A(){
+    //成功，下一步
+    },function B(){
+    //失败，做相应处理
+    });
 </code></pre>
-<p>数据：</p>
-<pre><code class="lang-javascript">var result=function(){
-    //以下为多组测试数据
-            var cases=[{
-                    arr1:[1,true,null],
-                    arr2:[null,false,100],
-                    expect:true
-                },{
-                    arr1:[function(){},100],
-                    arr2:[100,{}],
-                    expect:false
-                },{
-                    arr1:[null,999],
-                    arr2:[{},444],
-                    expect:false
-                },{
-                    arr1:[window,1,true,new Date(),&quot;hahaha&quot;,(function(){}),undefined],
-                    arr2:[undefined,(function(){}),&quot;okokok&quot;,new Date(),false,2,window],
-                    expect:true
-                },{
-                    arr1:[new Date()],
-                    arr2:[{}],
-                    expect:false
-                },{
-                    arr1:[window],
-                    arr2:[{}],
-                    expect:false
-                },{
-                    arr1:[undefined,1],
-                    arr2:[null,2],
-                    expect:false
-                },{
-                    arr1:[new Object,new Object,new Object],
-                    arr2:[{},{},null],
-                    expect:false
-                },{
-                    arr1:null,
-                    arr2:null,
-                    expect:false
-                },{
-                    arr1:[],
-                    arr2:undefined,
-                    expect:false
-                },{
-                    arr1:&quot;abc&quot;,
-                    arr2:&quot;cba&quot;,
-                    expect:false
-                }];
+<h3 id="Promise-两步执行的范例"><a href="#Promise-两步执行的范例" class="headerlink" title="Promise 两步执行的范例"></a>Promise 两步执行的范例</h3><pre><code class="lang-javascript">console.log(&#39;here we go&#39;);
+    new Promise(resolve=&gt;{
+        setTimeout(() =&gt; {
+            resolve(&#39;hello&#39;)
+        }, 2000);
+    })
+    .then(value=&gt;{
+        console.log(value);
+        return new Promise(resolve=&gt;{
+            setTimeout(() =&gt; {
+                resolve(&#39;world&#39;);
+            }, 2000);
+        });
+    })
+    .then(value=&gt;{
+        console.log(value+&#39; world&#39;);
+    })
+</code></pre>
+<h3 id="对已完成的Promise执行then"><a href="#对已完成的Promise执行then" class="headerlink" title="对已完成的Promise执行then"></a>对已完成的Promise执行then</h3><pre><code class="lang-javascript">console.log(&#39;start&#39;);
+    let promise = new Promise(resolve=&gt;{
+        setTimeout(() =&gt; {
+            console.log(&#39;the promise fulfilled&#39;);
+            resolve(&#39;hello,world&#39;);
+        }, 1000);
+    });
+    setTimeout(() =&gt; {
+        promise.then(value=&gt;{
+            console.log(value);
+        });
+    }, 3000);
+</code></pre>
+<p>运行结果：</p>
+<p><img src="https://s2.ax1x.com/2020/02/01/1G8UUI.png" alt="1G8UUI.png"></p>
+<h3 id="then-里不返回-Promise-执行-then"><a href="#then-里不返回-Promise-执行-then" class="headerlink" title="then 里不返回 Promise  执行 then"></a>then 里不返回 Promise  执行 then</h3><pre><code class="lang-javascript">    new Promise(resolve =&gt; { // 执行1
+    setTimeout(() =&gt; {
+        resolve(&#39;hello&#39;);
+    }, 1000);
+    })
+    .then(value =&gt; {
+        console.log(value);  // 执行2
+        console.log(&#39;everyone&#39;);
+        (function() { // 执行5。
+        //1、这段代码中没有返回新的值，下面一行返回的promise，实际是在这个函数中返回的，
+        //不是在then的响应函数中返回的，then返回的promise实例就没有等待里面的这个promise完成。
+        //2、一直在等待执行，等最后的then返回之后，再执行这个函数。
+        //3、没有进入promise队列中，但是进程仍然是登它执行完成后才算是完成。
+        return new Promise(resolve =&gt; { // 自己用自己的回调
+            setTimeout(() =&gt; {
+            console.log(&#39;mr&#39;);
+            resolve(&#39;marry&#39;);
+            }, 2000)
+        });
+        }());
+        return false; // 执行3。1、false会直接传递到下一步，成为下一个then的value
+    })
+    .then(value =&gt; { // 执行4
+        console.log(value + &#39;world&#39;); // value = false;
+    })
+</code></pre>
+<p>运行结果：</p>
+<p><img src="https://s2.ax1x.com/2020/02/01/1GJ30H.png" alt="1GJ30H.png"></p>
+<h3 id="then-的嵌套"><a href="#then-的嵌套" class="headerlink" title=".then()的嵌套"></a>.then()的嵌套</h3><p><img src="https://img1.mukewang.com/5e16d35a00016c5a12800720.jpg" alt=""></p>
+<p><img src="https://img4.mukewang.com/5bea8679000117e712800720.jpg" alt=""></p>
+<p><img src="https://img1.mukewang.com/5bea87220001a4e812800720.jpg" alt=""></p>
+<p><img src="https://img1.mukewang.com/5bea88af0001d2ef12800720.jpg" alt=""></p>
+<p><img src="https://img.mukewang.com/5bea8ca70001faa012800720.jpg" alt=""></p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>1、promise会自动捕获内部异常，并交给rejected响应函数处理。</p>
+<p>2、promise试图在现有的言语框架中解决异步回调带来的问题。在栈的语言基层运行池相关的问题就无法处理了，我们能捕获到的是异步完成回调之后的这部分栈信息，仍然无法确定是哪里导致的错误。</p>
+<p>3、promise执行器如果发送错误，执行器状态就会被置为rejected，fulfilled状态就不会被执行，</p>
+<p><strong>错误处理的两种做法</strong></p>
+<p>1、reject(‘错误信息’).then(null，message =&gt; {})；</p>
+<p>2、throw new Error（’错误信息’).catch(message =&gt; {})；</p>
+<p>推荐使用第二种，更加清晰好读，并且可以捕获前面的错误。</p>
+<pre><code class="lang-javascript">new Promise(resolve =&gt; {
+  setTimeout(() =&gt; {
+    throw new Error(&#39;bye&#39;);
+  }, 1000);
+})
+  .then(value =&gt; {
+    console.log(value + &#39;world&#39;);
+  })
+  .catch(error =&gt; { // 整体捕获错误的方法，可以捕获promise的错误，也可以捕获then中的错误
+    console.log(&#39;Error:&#39;, error.message);
+  })
+</code></pre>
+<h3 id="把任何异步操作包装成-promise"><a href="#把任何异步操作包装成-promise" class="headerlink" title="把任何异步操作包装成 promise"></a>把任何异步操作包装成 promise</h3><p>1、假设需求：</p>
+<p>（1）用户点击按钮，弹出确认窗体。</p>
+<p>（2）用户确认和取消有不同的处理。</p>
+<pre><code class="lang-javascript">let confirm = popupManager.confirm(&#39;您确定么&#39;);
+confirm.promise
+  .then(() =&gt; {
+    // do confirm staff
+  })
+  .catch(() =&gt; {
+    // do cancel staff
+  })
 
-    //使用for循环, 通过arraysSimilar函数验证以上数据是否相似，如相似显示“通过”,否则&quot;不通过&quot;,所以大家要完成arraysSimilar函数,具体要求，详见任务要求。    
-            for(var i=0;i&lt;cases.length;i++){
-                if(arraysSimilar(cases[i].arr1,cases[i].arr2)!==cases[i].expect) {
-                    document.write(&quot;不通过！case&quot;+(i+1)+&quot;不正确！arr1=&quot;+JSON.stringify(cases[i].arr1)+&quot;, arr2=&quot;+JSON.stringify(cases[i].arr2)+&quot; 的判断结果不是&quot;+cases[i].expect);
-                    return false;
-                }                
-            }
-            return true;
-
-        }();
-    document.write(&quot;判定结果:&quot;+(result?&quot;通过&quot;:&quot;不通过&quot;));
+// 窗体的构造函数
+class Confirm{
+  constructor() {
+    this.promise = new Promise((resolve, reject) =&gt; {
+      this.confirmButton.onClick = resolve;
+      this.cancelButton.onclick = reject;
+    })
+  }
+}
 </code></pre>
 
   </article>
@@ -337,7 +342,7 @@
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>henucm<br>
-<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD&#x2F;</a><br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/31/Promis%E7%AE%80%E4%BB%8B/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;Promis%E7%AE%80%E4%BB%8B&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;Promis%E7%AE%80%E4%BB%8B&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -375,7 +380,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1581349776703"></script>
+<script src="/js/app.js?v=1581349776628"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

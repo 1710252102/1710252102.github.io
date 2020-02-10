@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>javascript高级篇 - henucm</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="关于JS的详细内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript高级篇">
+<meta property="og:url" content="http://yoursite.com/2020/01/29/JS%E9%AB%98%E7%BA%A7%E7%AF%87/index.html">
+<meta property="og:site_name" content="henucm">
+<meta property="og:description" content="关于JS的详细内容">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1KzOvq.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1MA4rd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1MViTI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1MZqG6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1MZOxO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/28/1MeGyF.png">
+<meta property="og:image" content="http://img.mukewang.com/533299680001637b05160145.jpg">
+<meta property="og:image" content="http://img.mukewang.com/535483720001a54506670563.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/56976e1700014fc504090143.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/53548c030001759e05840068.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/53548c200001228206210123.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/53605c5a0001b26909900216.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5354b1d00001c4ec06220271.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5354b1eb00016a2405170126.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5354cff70001428b06880190.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/535a3a4a0001e03f06870189.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/535dea1e00017b0b06880265.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5354d2810001a47706210213.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/537d6fed0001572608080402.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/537d6eba0001779f03840115.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5375ca640001c67307860420.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5375ca7e0001dd8d04830279.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5375c953000117ee05240129.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/53f17a6400017d2905230219.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/538d29da000152db05360278.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5405263300018bcf05760129.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5398fd020001ad4905890193.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/5395318100010c6806960431.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/539557d70001c3ee07190429.jpg">
+<meta property="og:image" content="http://img.mukewang.com/5347b2b10001e1a307520686.jpg">
+<meta property="og:image" content="http://img1.sycdn.imooc.com/53bd0e9e000163d203390200.jpg">
+<meta property="article:published_time" content="2020-01-29T11:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-10T15:41:46.407Z">
+<meta property="article:author" content="henucm">
+<meta property="article:tag" content="基础知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/01/28/1KzOvq.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1581349776634">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="henucm" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="henucm">
+            <img src="/images/avatar.png" alt="henucm">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>12</div>
+        <div><span>标签</span>9</div>
+        <div><span>分类</span>6</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+                <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+                <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+                <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/1710252102/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/">Javascript</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/">css3</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/html5/">html5</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/jQuery/">jQuery</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/">javascript</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/微信小程序/">微信小程序</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">基础知识</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" style="font-size: 10px;">异步处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 15px;">数据类型</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E7%A7%BB%E5%8A%A8web/" style="font-size: 10px;">移动web</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">面向对象</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 henucm
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://s2.ax1x.com/2020/01/21/1kJxOJ.jpg">
+        
+        <h1>javascript高级篇</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月29日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3,480 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 15 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/Javascript/">Javascript</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a>
+    
+  </div>
+  <article>
+    <p>关于JS的详细内容<br><a id="more"></a><br>[TOC]</p>
+<h2 id="JS高级篇"><a href="#JS高级篇" class="headerlink" title="JS高级篇"></a>JS高级篇</h2><h3 id="事件响应"><a href="#事件响应" class="headerlink" title="事件响应"></a>事件响应</h3><p>JavaScript 创建动态页面。事件是可以被 JavaScript 侦测到的行为。 网页中的每个元素都可以产生某些可以触发 JavaScript 函数或程序的事件。</p>
+<p>比如说，当用户单击按钮或者提交表单数据时，就发生一个鼠标单击（onclick）事件，需要浏览器做出处理，返回给用户一个结果。</p>
+<p>主要事件表：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1KzOvq.png" alt="1KzOvq.png"></p>
+<h3 id="编程练习"><a href="#编程练习" class="headerlink" title="编程练习"></a>编程练习</h3><p>使用JS完成一个简单的计算器功能。实现2个输入框中输入整数后，点击第三个输入框能给出2个整数的加减乘除。</p>
+<p>提示：获取元素的值设置和获取方法为：例：赋值：document.getElementById(“id”）.value = 1； 取值：var = document.getElementById(“id”）.value；</p>
+<p><strong>任务</strong></p>
+<p>第一步： 创建构建运算函数count()。</p>
+<p>第二步： 获取两个输入框中的值和获取选择框的值。</p>
+<pre><code>提示：document.getElementById( id名 ).value 获取或设置 id名的值。
+</code></pre><p>第三步： 获取通过下拉框来选择的值来改变加减乘除的运算法则。</p>
+<pre><code>提示：使用switch判断运算法则。
+</code></pre><p>第四步： 通过 = 按钮来调用创建的函数，得到结果。</p>
+<p><strong>注意:</strong> 使用<code>parseInt()</code>函数可解析一个字符串,并返回一个整数。</p>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt; 事件&lt;/title&gt;  
+  &lt;script type=&quot;text/javascript&quot;&gt;
+   function count(){
+    var num1=document.getElementById(&quot;txt1&quot;).value;
+    var num2=document.getElementById(&quot;txt2&quot;).value;
+    var opt=document.getElementById(&quot;select&quot;).value;
+    var sum=0;
+    if(opt==&quot;+&quot;)
+    {
+      sum=parseInt(num1)+parseInt(num2);
+    }
+    else if(opt==&quot;-&quot;)
+    sum=parseInt(num1)-parseInt(num2);
+    else if(opt==&quot;*&quot;)
+    sum=parseInt(num1)*parseInt(num2);
+    else
+    sum=parseInt(num1)/parseInt(num2); 
+    document.getElementById(&quot;fruit&quot;).value=sum;
+    //获取第一个输入框的值
+    //获取第二个输入框的值
+    //获取选择框的值
+    //获取通过下拉框来选择的值来改变加减乘除的运算法则
+    //设置结果输入框的值
+   }
+  &lt;/script&gt; 
+ &lt;/head&gt; 
+ &lt;body&gt;
+   &lt;input type=&#39;text&#39; id=&#39;txt1&#39; /&gt; 
+   &lt;select id=&#39;select&#39;&gt;
+        &lt;option value=&#39;+&#39;&gt;+&lt;/option&gt;
+        &lt;option value=&quot;-&quot;&gt;-&lt;/option&gt;
+        &lt;option value=&quot;*&quot;&gt;*&lt;/option&gt;
+        &lt;option value=&quot;/&quot;&gt;/&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;input type=&#39;text&#39; id=&#39;txt2&#39; /&gt; 
+   &lt;input type=&#39;button&#39; value=&#39; = &#39; onclick=&quot;count()&quot;/&gt; &lt;!--通过 = 按钮来调用创建的函数，得到结果--&gt; 
+   &lt;input type=&#39;text&#39; id=&#39;fruit&#39; /&gt;   
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="JS内置对象"><a href="#JS内置对象" class="headerlink" title="JS内置对象"></a>JS内置对象</h3><p>日期对象可以储存任意一个日期，并且可以精确到毫秒数（1/1000 秒）。</p>
+<p>定义一个时间对象 :</p>
+<pre><code class="lang-javascript">var Udate=new Date();
+</code></pre>
+<p><strong>注意**</strong>:**使用关键字new，Date()的首字母必须大写。 </p>
+<p>使 Udate 成为日期对象，并且已有初始值：<strong>当前时间(当前电脑系统时间)</strong>。</p>
+<p>如果要自定义初始值，可以用以下方法：</p>
+<pre><code class="lang-javascript">var d = new Date(2012, 10, 1);  //2012年10月1日
+var d = new Date(&#39;Oct 1, 2012&#39;); //2012年10月1日
+</code></pre>
+<p>我们最好使用下面介绍的“方法”来严格定义时间。</p>
+<p><strong>访问方法语法：</strong>“&lt;日期对象&gt;.&lt;方法&gt;”</p>
+<p>Date对象中处理时间和日期的常用方法：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MA4rd.png" alt="1MA4rd.png"></p>
+<h2 id="String-字符串对象"><a href="#String-字符串对象" class="headerlink" title="String 字符串对象"></a>String 字符串对象</h2><p>在之前的学习中已经使用字符串对象了，定义字符串的方法就是直接赋值。比如：</p>
+<pre><code class="lang-javascript">var mystr = &quot;I love JavaScript!&quot;
+</code></pre>
+<p>定义mystr字符串后，我们就可以访问它的属性和方法。</p>
+<p><strong>访问字符串对象的属性length:</strong></p>
+<p>stringObject.length; 返回该字符串的长度。</p>
+<pre><code class="lang-javascript">var mystr=&quot;Hello World!&quot;;
+var myl=mystr.length;
+</code></pre>
+<p>以上代码执行后，myl 的值将是：12</p>
+<p><strong>访问字符串对象的方法：</strong></p>
+<p>使用 String 对象的 toUpperCase() 方法来将字符串小写字母转换为大写：</p>
+<pre><code class="lang-javascript">var mystr=&quot;Hello world!&quot;;
+var mynum=mystr.toUpperCase();
+以上代码执行后，mynum 的值是：HELLO WORLD!
+</code></pre>
+<h3 id="返回指定位置的字符"><a href="#返回指定位置的字符" class="headerlink" title="返回指定位置的字符"></a>返回指定位置的字符</h3><p>charAt() 方法可返回指定位置的字符。返回的字符是长度为 1 的字符串。</p>
+<p><strong>语法:</strong></p>
+<pre><code>stringObject.charAt(index)
+</code></pre><p><strong>参数说明：</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MViTI.png" alt="1MViTI.png"></p>
+<p><strong>注意**</strong>：**1.字符串中第一个字符的下标是 0。最后一个字符的下标为字符串长度减一（string.length-1）。</p>
+<p>2.如果参数 index 不在 0 与 string.length-1 之间，该方法将返回一个空字符串。</p>
+<p><strong>如:</strong>在字符串 “I love JavaScript!” 中，返回位置2的字符：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mystr=&quot;I love JavaScript!&quot;
+  document.write(mystr.charAt(2));
+&lt;/script&gt;
+</code></pre>
+<p><strong>注意：</strong>一个空格也算一个字符。</p>
+<p>以上代码的运行结果：</p>
+<pre><code class="lang-javascript">l
+</code></pre>
+<h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p><strong>我们将按照不同的方式来分割字符串：</strong></p>
+<p>使用指定符号分割字符串，代码如下:</p>
+<pre><code>var mystr = &quot;www.imooc.com&quot;;
+document.write(mystr.split(&quot;.&quot;)+&quot;&lt;br&gt;&quot;);
+document.write(mystr.split(&quot;.&quot;, 2)+&quot;&lt;br&gt;&quot;);
+</code></pre><p><strong>运行结果:</strong></p>
+<pre><code>www,imooc,com
+www,imooc
+</code></pre><p>将字符串分割为字符，代码如下：</p>
+<pre><code>document.write(mystr.split(&quot;&quot;)+&quot;&lt;br&gt;&quot;);
+document.write(mystr.split(&quot;&quot;, 5));
+</code></pre><p>运行结果:</p>
+<pre><code>w,w,w,.,i,m,o,o,c,.,c,o,m
+w,w,w,.,i
+</code></pre><h3 id="返回指定字符首次出现的位置"><a href="#返回指定字符首次出现的位置" class="headerlink" title="返回指定字符首次出现的位置"></a>返回指定字符首次出现的位置</h3><p><strong>注意：</strong>1.indexOf() 方法区分大小写。</p>
+<p>2.如果要检索的字符串值没有出现，则该方法返回 -1。</p>
+<p>例如: 对 “I love JavaScript!” 字符串内进行不同的检索：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var str=&quot;I love JavaScript!&quot;
+  document.write(str.indexOf(&quot;I&quot;) + &quot;&lt;br /&gt;&quot;);
+  document.write(str.indexOf(&quot;v&quot;) + &quot;&lt;br /&gt;&quot;);
+  document.write(str.indexOf(&quot;v&quot;,8));
+&lt;/script&gt;
+</code></pre>
+<p>以上代码的输出：</p>
+<pre><code class="lang-javascript">0
+4
+9
+</code></pre>
+<h3 id="提取字符串substring"><a href="#提取字符串substring" class="headerlink" title="提取字符串substring()"></a>提取字符串substring()</h3><p><strong>注意：</strong></p>
+<p>\1. 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符，其长度为 stop 减start。</p>
+<p>\2. 如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。</p>
+<p>\3. 如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数。</p>
+<p>使用 substring() 从字符串中提取字符串，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mystr=&quot;I love JavaScript&quot;;
+  document.write(mystr.substring(7));
+  document.write(mystr.substring(2,6));
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果**</strong>:**</p>
+<pre><code class="lang-javascript">JavaScript
+love
+</code></pre>
+<h3 id="提取指定数目的字符substr"><a href="#提取指定数目的字符substr" class="headerlink" title="提取指定数目的字符substr()"></a>提取指定数目的字符substr()</h3><p><strong>注意：</strong>如果参数startPos是负数，从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。</p>
+<p>如果startPos为负数且绝对值大于字符串长度，startPos为0。</p>
+<p>使用 substr() 从字符串中提取一些字符，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mystr=&quot;I love JavaScript!&quot;;
+  document.write(mystr.substr(7));
+  document.write(mystr.substr(2,4));
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果：</strong></p>
+<pre><code class="lang-javascript">JavaScript!
+love
+</code></pre>
+<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><p>Math对象，提供对数据的数学计算。</p>
+<p>使用 Math 的属性和方法，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mypi=Math.PI; 
+  var myabs=Math.abs(-15);
+  document.write(mypi);
+  document.write(myabs);
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果**</strong>:**</p>
+<pre><code class="lang-javascript">3.141592653589793
+15
+</code></pre>
+<p><strong>注意：</strong>Math 对象是一个固有的对象，无需创建它，直接把 Math 作为对象使用就可以调用其所有属性和方法。这是它与Date,String对象的区别。</p>
+<p>Math 对象属性</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MZqG6.png" alt="1MZqG6.png"></p>
+<p>Math 对象方法</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MZOxO.png" alt="1MZOxO.png"></p>
+<h2 id="Array-数组对象"><a href="#Array-数组对象" class="headerlink" title="Array 数组对象"></a>Array 数组对象</h2><p><strong>数组定义的方法：</strong></p>
+<p>1.定义了一个空数组:</p>
+<pre><code class="lang-javascript">var  数组名= new Array();
+</code></pre>
+<p>2.定义时指定有n个空元素的数组：</p>
+<pre><code class="lang-javascript">var 数组名 =new Array(n);
+</code></pre>
+<p>3.定义数组的时候，直接初始化数据：</p>
+<pre><code class="lang-javascript">var  数组名 = [&lt;元素1&gt;, &lt;元素2&gt;, &lt;元素3&gt;...];
+</code></pre>
+<p>我们定义myArray数组，并赋值，<strong>代码如下：</strong></p>
+<pre><code class="lang-javascript">var myArray = [2, 8, 6];
+</code></pre>
+<p><strong>说明：</strong>定义了一个数组 myArray，里边的元素是：myArray[0] = 2; myArray[1] = 8; myArray[2] = 6。</p>
+<p><strong>数组元素使用：</strong></p>
+<pre><code class="lang-javascript">数组名[下标] = 值;
+</code></pre>
+<p><strong>注意</strong>: 数组的下标用方括号括起来，从0开始。</p>
+<p><strong>数组属性：</strong></p>
+<p>length 用法：&lt;数组对象&gt;.length；返回：数组的长度，即数组里有多少个元素。它等于数组里最后一个元素的下标加一。</p>
+<p><strong>数组方法：</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MeGyF.png" alt="1MeGyF.png"></p>
+<h3 id="选定元素slice"><a href="#选定元素slice" class="headerlink" title="选定元素slice()"></a>选定元素slice()</h3><p>slice() 方法可从已有的数组中返回选定的元素。</p>
+<p><strong>语法</strong></p>
+<pre><code>arrayObject.slice(start,end)
+</code></pre><p><strong>参数说明：</strong></p>
+<p><a href="http://img.mukewang.com/533299680001637b05160145.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/533299680001637b05160145.jpg" alt="img"></a></p>
+<p><strong>注意：</strong></p>
+<p>1.可使用负值从数组的尾部选取元素。</p>
+<p>2.如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。</p>
+<p>3.<code>String.slice()</code> 与 <code>Array.slice()</code> 相似。</p>
+<p>我们将创建一个新数组，然后从其中选取的元素，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var myarr = new Array(1,2,3,4,5,6);
+  document.write(myarr + &quot;&lt;br&gt;&quot;);
+  document.write(myarr.slice(2,4) + &quot;&lt;br&gt;&quot;);
+  document.write(myarr);
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果：</strong></p>
+<pre><code class="lang-javascript">1,2,3,4,5,6
+3,4
+1,2,3,4,5,6
+</code></pre>
+<h3 id="数组排序sort"><a href="#数组排序sort" class="headerlink" title="数组排序sort()"></a>数组排序sort()</h3><pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  function sortNum(a,b) {
+  return a - b;
+ //升序，如降序，把“a - b”该成“b - a”
+}
+ var myarr = new Array(&quot;80&quot;,&quot;16&quot;,&quot;50&quot;,&quot;6&quot;,&quot;100&quot;,&quot;1&quot;);
+  document.write(myarr + &quot;&lt;br&gt;&quot;);
+  document.write(myarr.sort(sortNum));
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果：</strong></p>
+<pre><code class="lang-javascript">80,16,50,6,100,1
+1,6,16,50,80,100
+</code></pre>
+<h3 id="编程练习-1"><a href="#编程练习-1" class="headerlink" title="编程练习"></a>编程练习</h3><p>某班的成绩出来了，现在老师要把班级的成绩打印出来。</p>
+<p><strong>效果图:</strong></p>
+<pre><code>XXXX年XX月X日 星期X--班级总分为:81
+</code></pre><p><strong>格式要求：</strong></p>
+<p>1、显示打印的日期。 格式为类似“XXXX年XX月XX日 星期X” 的当前的时间。</p>
+<p>2、计算出该班级的平均分（保留整数）。</p>
+<p><strong>同学成绩数据如下：</strong></p>
+<p>“小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76”</p>
+<p><strong>任务</strong></p>
+<p>第一步：可通过javascript的日期对象来得到当前的日期。</p>
+<pre><code>提示:使用Date()日期对象，注意星期返回值为0-6，所以要转成文字&quot;星期X&quot;
+</code></pre><p>第二步：一长窜的字符串不好弄，找规律后分割放到数组里更好操作哦。</p>
+<p>第三步：分割字符串得到分数，然后求和取整。</p>
+<pre><code>提示：parseInt() 字符串类型转成整型。
+</code></pre><p>代码：</p>
+<pre><code class="lang-javascript">&lt;!DOCTYPE  HTML&gt;
+&lt;html &gt;
+&lt;head&gt;
+&lt;title&gt;系好安全带,准备启航&lt;/title&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+  //通过javascript的日期对象来得到当前的日期，并输出。
+  var currentdate=new Date();
+  var weekday = [&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;];
+  document.write(
+    currentdate.getFullYear()+&quot;年&quot;+(currentdate.getMonth()+1)+&quot;月&quot;+currentdate.getDate()+&quot;日&quot;+&quot; &quot;+weekday[currentdate.getDay()]
+  );
+  //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作哦
+  var scoreStr = &quot;小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76&quot;;
+  var scorceArr = scoreStr.split(&quot;;&quot;);
+  var sum=0;
+  //从数组中将成绩撮出来，然后求和取整，并输出。
+  for(var i=0;i&lt;scorceArr.length;i++)
+  {
+    sum+=parseInt(scorceArr[i].substr(scorceArr[i].indexOf(&quot;:&quot;)+1));
+  }
+  document.write(&quot;&lt;br/&gt;&quot;+&quot;班级总分为：&quot;+sum+&quot;&lt;br/&gt;&quot;);
+  document.write(&quot;班级平均分&quot;+Math.floor(sum/scorceArr.length));
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><p>window对象是BOM的核心，window对象指当前的浏览器窗口。</p>
+<p><strong>window对象方法:</strong></p>
+<p><strong><a href="http://img.mukewang.com/535483720001a54506670563.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/535483720001a54506670563.jpg" alt="img"></a></strong></p>
+<p><strong>注意:</strong>在JavaScript基础篇中，已讲解了部分属性，window对象重点讲解计时器。</p>
+<h3 id="JavaScript-计时器"><a href="#JavaScript-计时器" class="headerlink" title="JavaScript 计时器"></a>JavaScript 计时器</h3><p>在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。<br> <strong>计时器类型：</strong><br> 一次性计时器：仅在指定的延迟时间之后触发一次。<br> 间隔性触发计时器：每隔一定的时间间隔就触发一次。<br> <strong>计时器方法：</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/56976e1700014fc504090143.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/56976e1700014fc504090143.jpg" alt="img"></a></p>
+<h3 id="History-对象"><a href="#History-对象" class="headerlink" title="History 对象"></a>History 对象</h3><p>history对象记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。</p>
+<p><strong>注意:从\</strong>窗口*<em>被打开的那一刻开始记录，每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联。*</em></p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">window.history.[属性|方法]
+</code></pre>
+<p><strong>注意：</strong>window可以省略。</p>
+<p><strong>History 对象属性</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/53548c030001759e05840068.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53548c030001759e05840068.jpg" alt="img"></a></p>
+<p><strong>History 对象方法</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/53548c200001228206210123.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53548c200001228206210123.jpg" alt="img"></a></strong></p>
+<p>使用length属性，当前窗口的浏览历史总长度，<strong>代码如下：</strong></p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var HL = window.history.length;
+  document.write(HL);
+&lt;/script&gt;
+</code></pre>
+<h3 id="返回前一个浏览的页面"><a href="#返回前一个浏览的页面" class="headerlink" title="返回前一个浏览的页面"></a>返回前一个浏览的页面</h3><p>back()方法，加载 history 列表中的前一个 URL。</p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">window.history.back();
+</code></pre>
+<p>比如，返回前一个浏览的页面，<strong>代码如下：</strong></p>
+<pre><code class="lang-javascript">window.history.back();
+</code></pre>
+<p><strong>注意：等同于点击浏览器的倒退按钮。</strong></p>
+<p>back()相当于go(-1),<strong>代码如下:</strong></p>
+<pre><code class="lang-javascript">window.history.go(-1);
+</code></pre>
+<h3 id="Location对象"><a href="#Location对象" class="headerlink" title="Location对象"></a>Location对象</h3><p>location用于获取或设置窗体的URL，并且可以用于解析URL。</p>
+<p><strong>语法:</strong></p>
+<pre><code>location.[属性|方法]
+</code></pre><p><strong>location对象属性图示:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/53605c5a0001b26909900216.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53605c5a0001b26909900216.jpg" alt="img"></a></p>
+<p><strong>location 对象属性：</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/5354b1d00001c4ec06220271.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354b1d00001c4ec06220271.jpg" alt="img"></a></strong></p>
+<p><strong>location 对象方法:</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/5354b1eb00016a2405170126.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354b1eb00016a2405170126.jpg" alt="img"></a></strong></p>
+<h3 id="Navigator对象"><a href="#Navigator对象" class="headerlink" title="Navigator对象"></a>Navigator对象</h3><p>Navigator 对象包含有关浏览器的信息，通常用于检测浏览器与操作系统的版本。</p>
+<p><strong>对象属性:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5354cff70001428b06880190.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354cff70001428b06880190.jpg" alt="img"></a></p>
+<p>查看浏览器的名称和版本，<strong>代码如下:</strong></p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+   var browser=navigator.appName;
+   var b_version=navigator.appVersion;
+   document.write(&quot;Browser name&quot;+browser);
+   document.write(&quot;&lt;br&gt;&quot;);
+   document.write(&quot;Browser version&quot;+b_version);
+&lt;/script&gt;
+</code></pre>
+<p>返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)</p>
+<p><strong>语法</strong></p>
+<pre><code>navigator.userAgent
+</code></pre><p>几种浏览的user_agent.，像360的兼容模式用的是IE、极速模式用的是chrom的内核。</p>
+<p><a href="http://img1.sycdn.imooc.com/535a3a4a0001e03f06870189.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/535a3a4a0001e03f06870189.jpg" alt="img"></a></p>
+<p>使用userAgent判断使用的是什么浏览器(假设使用的是IE8浏览器),<strong>代码如下:</strong></p>
+<pre><code class="lang-javascript">function validB(){ 
+  var u_agent = navigator.userAgent; 
+  var B_name=&quot;Failed to identify the browser&quot;; 
+  if(u_agent.indexOf(&quot;Firefox&quot;)&gt;-1){ 
+      B_name=&quot;Firefox&quot;; 
+  }else if(u_agent.indexOf(&quot;Chrome&quot;)&gt;-1){ 
+      B_name=&quot;Chrome&quot;; 
+  }else if(u_agent.indexOf(&quot;MSIE&quot;)&gt;-1&amp;&amp;u_agent.indexOf(&quot;Trident&quot;)&gt;-1){ 
+      B_name=&quot;IE(8-10)&quot;;  
+  }
+    document.write(&quot;B_name:&quot;+B_name+&quot;&lt;br&gt;&quot;);
+    document.write(&quot;u_agent:&quot;+u_agent+&quot;&lt;br&gt;&quot;); 
+}
+</code></pre>
+<p><strong>运行结果:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/535dea1e00017b0b06880265.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/535dea1e00017b0b06880265.jpg" alt="img"></a></p>
+<h3 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h3><p>screen对象用于获取用户的屏幕信息。</p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">window.screen.属性
+</code></pre>
+<p><strong>对象属性:</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/5354d2810001a47706210213.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354d2810001a47706210213.jpg" alt="img"></a></strong></p>
+<h3 id="编程练习-2"><a href="#编程练习-2" class="headerlink" title="编程练习"></a>编程练习</h3><p>制作一个跳转提示页面：</p>
+<p><strong>要求：</strong></p>
+<p>\1. 如果打开该页面后，如果不做任何操作则5秒后自动跳转到一个新的地址，如慕课网主页。</p>
+<p>\2. 如果点击“返回”按钮则返回前一个页面。</p>
+<p><strong>效果:</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/537d6fed0001572608080402.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/537d6fed0001572608080402.jpg" alt="img"></a></strong></p>
+<p><strong>注意: 在窗口中运行该程序时，该窗口一定要有历史浏览记录，否则”返回”无效果。</strong></p>
+<p><strong>任务</strong></p>
+<p>第一步： 先编写好网页布局，如下:</p>
+<p>  <a href="http://img1.sycdn.imooc.com/537d6eba0001779f03840115.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/537d6eba0001779f03840115.jpg" alt="img"></a></p>
+<p>第二步： 获取显示秒数的元素，通过定时器来更改秒数。</p>
+<p>第三步： 通过window的location和history对象来控制网页的跳转。</p>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt;浏览器对象&lt;/title&gt;  
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;!--先编写好网页布局--&gt;
+  &lt;h1&gt;操作成功&lt;/h1&gt;
+  &lt;input type=&quot;text&quot; id=&quot;mytime&quot;value=&quot;5&quot;&gt;&lt;/input&gt;
+  &lt;span&gt;秒后回到主页&lt;/span&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt; 
+   //获取显示秒数的元素，通过定时器来更改秒数。
+   var num=5;
+    function changeNum(){
+        document.getElementById(&quot;mytime&quot;).value=num;
+        num=num-1;
+        if(num==0){
+            window.location=&quot;http://www.imooc.com/&quot;;
+        }
+    }
+    setInterval(&quot;changeNum()&quot;,1000);
+    //changeNum();
+   //通过window的location和history对象来控制网页的跳转。
+ &lt;/script&gt; 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="认识DOM"><a href="#认识DOM" class="headerlink" title="认识DOM"></a>认识DOM</h2><p>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。</p>
+<p><strong>先来看看下面代码:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5375ca640001c67307860420.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5375ca640001c67307860420.jpg" alt="img"></a></p>
+<p><strong>将HTML代码分解为DOM节点层次图:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5375ca7e0001dd8d04830279.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5375ca7e0001dd8d04830279.jpg" alt="img"></a></p>
+<p><strong>HTML**</strong>文档可以说由节点构成的集合，DOM节点有:**</p>
+<p><strong>1.</strong> <strong>元素节点：</strong>上图中<html>、<body>、<p>等都是元素节点，即标签。</p>
+<p><strong>2.</strong> <strong>文本节点:</strong>向用户展示的内容，如<li>...</li>中的JavaScript、DOM、CSS等文本。</p>
+<p><strong>3.</strong> <strong>属性节点:</strong>元素属性，如<a>标签的链接属性href=”<a href="http://www.imooc.com&quot;。" target="_blank" rel="noopener">http://www.imooc.com&quot;。</a></p>
+<p><strong>节点属性:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5375c953000117ee05240129.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5375c953000117ee05240129.jpg" alt="img"></a></p>
+<p><strong>遍历节点树:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/53f17a6400017d2905230219.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53f17a6400017d2905230219.jpg" alt="img"></a></p>
+<p><strong>以上图ul为例，它的父级节点body,它的子节点3个li,它的兄弟结点h2、P。</strong></p>
+<p><strong>DOM操作:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/538d29da000152db05360278.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/538d29da000152db05360278.jpg" alt="img"></a></p>
+<p><strong>注意:</strong>前两个是document方法。</p>
+<h3 id="区别getElementByID-getElementsByName-getElementsByTagName"><a href="#区别getElementByID-getElementsByName-getElementsByTagName" class="headerlink" title="区别getElementByID,getElementsByName,getElementsByTagName"></a>区别<code>getElementByID,getElementsByName,getElementsByTagName</code></h3><p><strong>以人来举例说明，人有能标识身份的身份证，有姓名，有类别(大人、小孩、老人)等。</strong></p>
+<ol>
+<li><p>ID 是一个人的身份证号码，是唯一的。所以通过<code>getElementById</code>获取的是指定的一个人。</p>
+</li>
+<li><p>Name 是他的名字，可以重复。所以通过<code>getElementsByName</code>获取名字相同的人集合。</p>
+</li>
+<li><p><code>TagName</code>可看似某类，<code>getElementsByTagName</code>获取相同类的人集合。如获取小孩这类人，<code>getElementsByTagName(&quot;小孩&quot;)</code>。</p>
+</li>
+</ol>
+<p><strong>把上面的例子转换到HTML中，如下:</strong></p>
+<pre><code class="lang-javascript">&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby1&quot;&gt;  音乐
+</code></pre>
+<p>input标签就像人的类别。</p>
+<p>name属性就像人的姓名。</p>
+<p>id属性就像人的身份证。</p>
+<p><strong>方法总结如下:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5405263300018bcf05760129.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5405263300018bcf05760129.jpg" alt="img"></a></p>
+<p><strong>注意：</strong>方法区分大小写</p>
+<p>通过下面的例子(6个name=”hobby”的复选项，两个按钮)来区分三种方法的不同:</p>
+<pre><code class="lang-javascript">  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby1&quot;&gt;  音乐
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby2&quot;&gt;  登山
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby3&quot;&gt;  游泳
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby4&quot;&gt;  阅读
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby5&quot;&gt;  打球
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby6&quot;&gt;  跑步 
+  &lt;input type=&quot;button&quot; value = &quot;全选&quot; id=&quot;button1&quot;&gt;
+  &lt;input type=&quot;button&quot; value = &quot;全不选&quot; id=&quot;button1&quot;&gt;
+</code></pre>
+<ol>
+<li><p><code>document.getElementsByTagName(&quot;input&quot;)</code>，结果为获取所有标签为input的元素，共8个。</p>
+</li>
+<li><p><code>document.getElementsByName(&quot;hobby&quot;)</code>，结果为获取属性name=”hobby”的元素，共6个。</p>
+</li>
+<li><p><code>document.getElementById(&quot;hobby6&quot;)</code>，结果为获取属性id=”hobby6”的元素，只有一个，”跑步”这个复选项。</p>
+</li>
+</ol>
+<h3 id="编程练习-3"><a href="#编程练习-3" class="headerlink" title="编程练习"></a>编程练习</h3><p>1.在第27行处补充完整，实现当点击”全选”按钮时，将选中所有的复选项。</p>
+<pre><code>提示:document.getElementsByTagName(&quot;input&quot;)获取的是所有input标签，包括复选项和按钮，所以要判断是否是复选项，如是选中。
+</code></pre><p>2.在第33行处补充完整，实现当点击”全不选”按钮时，将取消所有选中的复选项。</p>
+<p>3.在第40行处补充完整，在文本框中输入输入1-6数值，当点击”确定”按钮时，根据输入的数值，通过id选中相应的复选项。</p>
+<p>代码：</p>
+<pre><code class="lang-php+HTML">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;无标题文档&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;form&gt;
+          请选择你爱好:&lt;br&gt;
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby1&quot;&gt;  音乐
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby2&quot;&gt;  登山
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby3&quot;&gt;  游泳
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby4&quot;&gt;  阅读
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby5&quot;&gt;  打球
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby6&quot;&gt;  跑步 &lt;br&gt;
+          &lt;input type=&quot;button&quot; value = &quot;全选&quot; onclick = &quot;checkall();&quot;&gt;
+          &lt;input type=&quot;button&quot; value = &quot;全不选&quot; onclick = &quot;clearall();&quot;&gt;
+          &lt;p&gt;请输入您要选择爱好的序号，序号为1-6:&lt;/p&gt;
+          &lt;input id=&quot;wb&quot; name=&quot;wb&quot; type=&quot;text&quot; &gt;
+          &lt;input name=&quot;ok&quot; type=&quot;button&quot; value=&quot;确定&quot; onclick = &quot;checkone();&quot;&gt;
+        &lt;/form&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        function checkall(){
+            var hobby = document.getElementsByTagName(&quot;input&quot;);
+        // 任务1 
+           for(var i=0;i&lt;hobby.length;i++)
+           {
+               hobby[i].checked=true;
+           }
+        }
+        function clearall(){
+            var hobby = document.getElementsByName(&quot;hobby&quot;);
+            for(var i=0;i&lt;hobby.length;i++)
+            {
+                hobby[i].checked=false;
+            }
+        // 任务2    
+
+        }
+
+        function checkone(){
+            var j=document.getElementById(&quot;wb&quot;).value;
+            if(parseInt(j)&gt;6||parseInt(j)&lt;0)
+            {
+                alert(&quot;请输入1-6之间的数字&quot;);
+            }
+        // 任务3
+            var hobby=document.getElementsByTagName(&quot;input&quot;);
+            hobby[parseInt(j)-1].checked=true;
+        }
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h3><p>在文档对象模型 (DOM) 中，每个节点都是一个对象。DOM 节点有三个重要的属性 ：</p>
+<ol>
+<li><code>nodeName</code> : 节点的名称</li>
+<li><code>nodeValue</code> ：节点的值</li>
+<li><code>nodeType</code> ：节点的类型</li>
+</ol>
+<p><strong>一、<code>nodeName</code> 属性:</strong> 节点的名称，是只读的。</p>
+<ol>
+<li>元素节点的 <code>nodeName</code> 与标签名相同</li>
+<li>属性节点的 <code>nodeName</code> 是属性的名称</li>
+<li>文本节点的 <code>nodeName</code> 永远是 <code>#text</code></li>
+<li>文档节点的 <code>nodeName</code> 永远是 <code>#document</code></li>
+</ol>
+<p><strong>二、<code>nodeValue</code> 属性：</strong>节点的值</p>
+<ol>
+<li>元素节点的 <code>nodeValue</code> 是 undefined 或 null</li>
+<li>文本节点的 <code>nodeValue</code> 是文本自身</li>
+<li>属性节点的 <code>nodeValue</code> 是属性的值</li>
+</ol>
+<p><strong>三、<code>nodeType</code> 属性:</strong> 节点的类型，是只读的。以下常用的几种结点类型:</p>
+<p><strong>元素类型   节点类型</strong><br>  元素      1<br>  属性      2<br>  文本      3<br>  注释      8<br>  文档      9</p>
+<h3 id="插入节点appendChild"><a href="#插入节点appendChild" class="headerlink" title="插入节点appendChild()"></a>插入节点<code>appendChild()</code></h3><p>在指定节点的最后一个子节点列表之后添加一个新的子节点。</p>
+<p><strong>语法:</strong></p>
+<pre><code>appendChild(newnode)
+</code></pre><p><strong>参数:</strong></p>
+<p><code>newnode</code>：指定追加的节点。</p>
+<p>我们来看看，div标签内创建一个新的 P 标签，代码如下:</p>
+<p><a href="http://img1.sycdn.imooc.com/5398fd020001ad4905890193.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5398fd020001ad4905890193.jpg" alt="img"></a></p>
+<p><strong>运行结果:</strong></p>
+<pre><code class="lang-javascript">HTML
+JavaScript
+This is a new p
+</code></pre>
+<h3 id="插入节点insertBefore"><a href="#插入节点insertBefore" class="headerlink" title="插入节点insertBefore()"></a>插入节点<code>insertBefore()</code></h3><p><code>insertBefore()</code> 方法可在已有的子节点前插入一个新的子节点。</p>
+<p><strong>语法:</strong></p>
+<p><code>insertBefore(newnode,node);</code></p>
+<p><strong>参数:</strong></p>
+<p><code>newnode:</code> 要插入的新节点。</p>
+<p>node: 指定此节点前插入节点。</p>
+<p>我们在来看看下面代码，在指定节点前插入节点。</p>
+<p><a href="http://img1.sycdn.imooc.com/5395318100010c6806960431.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5395318100010c6806960431.jpg" alt="img"></a></p>
+<p><strong>运行结果:</strong></p>
+<pre><code class="lang-javascript">This is a new p
+JavaScript
+HTML
+</code></pre>
+<p><strong>注意:</strong> <code>otest.insertBefore(newnode,node);</code> 也可以改为: <code>otest.insertBefore(newnode,otest.childNodes[0]);</code> </p>
+<h3 id="替换元素节点replaceChild"><a href="#替换元素节点replaceChild" class="headerlink" title="替换元素节点replaceChild()"></a>替换元素节点<code>replaceChild()</code></h3><p><code>replaceChild</code> 实现子节点(对象)的替换。返回被替换对象的引用。 </p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">node.replaceChild (newnode,oldnew )
+</code></pre>
+<p><strong>参数：</strong></p>
+<p>newnode : 必需，用于替换 oldnew 的对象。<br> oldnew : 必需，被 newnode 替换的对象。</p>
+<p>我们来看看下面的代码:</p>
+<p><a href="http://img1.sycdn.imooc.com/539557d70001c3ee07190429.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/539557d70001c3ee07190429.jpg" alt="img"></a> </p>
+<p>效果: 将文档中的 Java 改为 JavaScript。</p>
+<p><strong>注意:</strong> </p>
+<ol>
+<li><p>当 oldnode 被替换时，所有与之相关的属性内容都将被移除。 </p>
+</li>
+<li><p>newnode 必须先被建立。 </p>
+</li>
+</ol>
+<h3 id="创建元素节点createElement"><a href="#创建元素节点createElement" class="headerlink" title="创建元素节点createElement"></a>创建元素节点createElement</h3><p>createElement()方法可创建元素节点。此方法可返回一个 Element 对象。</p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">document.createElement(tagName)
+</code></pre>
+<p><strong>参数:</strong></p>
+<p>tagName：字符串值，这个字符串用来指明创建元素的类型。</p>
+<p><strong>注意：</strong>要与appendChild() 或 insertBefore()方法联合使用，将元素显示在页面中。</p>
+<p>我们来创建一个按钮，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+   var body = document.body; 
+   var input = document.createElement(&quot;input&quot;);  
+   input.type = &quot;button&quot;;  
+   input.value = &quot;创建一个按钮&quot;;  
+   body.appendChild(input);  
+ &lt;/script&gt;
+</code></pre>
+<p>效果：在HTML文档中，创建一个按钮。</p>
+<p>我们也可以使用setAttribute来设置属性，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;  
+   var body= document.body;             
+   var btn = document.createElement(&quot;input&quot;);  
+   btn.setAttribute(&quot;type&quot;, &quot;text&quot;);  
+   btn.setAttribute(&quot;name&quot;, &quot;q&quot;);  
+   btn.setAttribute(&quot;value&quot;, &quot;使用setAttribute&quot;);  
+   btn.setAttribute(&quot;onclick&quot;, &quot;javascript:alert(&#39;This is a text!&#39;);&quot;);       
+   body.appendChild(btn);  
+&lt;/script&gt;
+</code></pre>
+<p>效果：在HTML文档中，创建一个文本框，使用setAttribute设置属性值。 当点击这个文本框时，会弹出对话框“This is a text!”。</p>
+<h3 id="网页卷去的距离与偏移量"><a href="#网页卷去的距离与偏移量" class="headerlink" title="网页卷去的距离与偏移量"></a>网页卷去的距离与偏移量</h3><p><strong>我们先来看看下面的图：</strong></p>
+<p><a href="http://img.mukewang.com/5347b2b10001e1a307520686.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/5347b2b10001e1a307520686.jpg" alt="img"></a></p>
+<p><strong>scrollLeft:</strong>设置或获取位于给定对象左边界与窗口中目前可见内容的最左端之间的距离 ，即左边灰色的内容。</p>
+<p><strong>scrollTop:</strong>设置或获取位于对象最顶端与窗口中可见内容的最顶端之间的距离 ，即上边灰色的内容。</p>
+<p><strong>offsetLeft:</strong>获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 。</p>
+<p><strong>offsetTop:</strong>获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算顶端位置 。</p>
+<p><strong>注意:</strong></p>
+<p><strong>1. 区分大小写</strong></p>
+<p><strong>2. offsetParent：布局中设置postion属性(Relative、Absolute、fixed)的父容器，从最近的父节点开始，一层层向上找，直到HTML的body。</strong></p>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    function req(){
+          var div = document.getElementById(&quot;div1&quot;);
+          document.getElementById(&quot;li1&quot;).innerHTML = (div.offsetTop)+&quot;px&quot;;//div1距离屏幕顶部的距离
+          document.getElementById(&quot;li2&quot;).innerHTML = (div.offsetLeft)+&quot;px&quot;;//div1距离屏幕左部的距离
+          document.getElementById(&quot;li3&quot;).innerHTML = (div.scrollTop)+&quot;px&quot;;//div1纵向滚动条滚动的距离
+          document.getElementById(&quot;li4&quot;).innerHTML = (div.scrollLeft)+&quot;px&quot;;//div1横向滚动条滚动的距离
+     }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style=&quot;border:10px solid #ccc;padding:0px 0px;margin:5px 10px&quot;&gt;
+    &lt;div style=&quot;width:60%;border-right:3px dashed blue;float:left;&quot;&gt;
+        &lt;div style=&quot;float:left;&quot;&gt;
+            &lt;div id=&quot;div1&quot; style=&quot;border:5px blue solid;height:300px;width:200px;overflow:auto&quot;&gt;
+                &lt;div style=&quot;height:500px;width:400px&quot;&gt;请调整横竖滚动条后，点击按钮后查看offsetTop、offsetLeft、scrollTop、scrollLeft值。&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;input type=&quot;button&quot; value=&quot;点击我!&quot; onclick=&quot;req()&quot; style=&quot;border: 1px solid purple;height: 55px;&quot;/&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;div style=&quot;width:35%;height:65px;float:right;&quot;&gt;
+        &lt;ul style=&quot;list-style-type: none; line-height:38px;ss&quot;&gt;结果：
+            &lt;li&gt;offsetTop : &lt;span id=&quot;li1&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;offsetLeft : &lt;span id=&quot;li2&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt; scrollTop : &lt;span id=&quot;li3&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;scrollLeft : &lt;span id=&quot;li4&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;总结：offsetLeft与offsetTop的值是相对不变的。&lt;span id=&quot;lix&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+    &lt;/div&gt;
+    &lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="编程练习-4"><a href="#编程练习-4" class="headerlink" title="编程练习"></a>编程练习</h3><p>制作一个表格，显示班级的学生信息。</p>
+<p><strong>要求：</strong></p>
+<ol>
+<li><p>鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff</p>
+</li>
+<li><p>点击添加按钮，能动态在最后添加一行</p>
+</li>
+<li><p>点击删除按钮，则删除当前行</p>
+</li>
+</ol>
+<p><strong>任务</strong></p>
+<p>第一步： 首先，我们创建删除函数，并在删除按钮上添加点击事件；</p>
+<pre><code class="lang-javascript">提示: 使用removeChild()。
+</code></pre>
+<p>第二步： 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；</p>
+<pre><code class="lang-javascript">提示: 使用createElement()、innerHTML、appendChild()。
+</code></pre>
+<p>第三步： 更改鼠标移动改变背景则可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。</p>
+<pre><code class="lang-javascript">提示:
+1. 获取表格的行，getElementsByTagName 。
+2. 使用for进行循环，为每行添加事件及背景颜色设置。
+</code></pre>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt; new document &lt;/title&gt; 
+  &lt;script type=&quot;text/javascript&quot;&gt; 
+
+      window.onload = function(){
+     // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
+        var tr=document.getElementById(&quot;tr&quot;);
+        for(var i=0;i&lt;tr.length;i++)
+        {
+            btrchange(tr[i]);
+        }
+     }
+    function btrchange(obj)
+    {
+        obj.onmouseover=function()
+        {
+            obj.style.backgroundColor=&quot;#f2f2f2&quot;;
+        }
+        obj.onmouseout=function()
+        {
+            obj.style.backgroundColor=&quot;#fff&quot;;
+        }
+    }
+      // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
+     function add()
+     {
+        var num=prompt(&quot;请输入学号&quot;);
+        var name=prompt(&quot;请输入姓名&quot;);
+        var newtr=document.createElement(&quot;tr&quot;);
+        newtr.innerHTML=&quot;&lt;td&gt;&quot;+num+&quot;&lt;/td&gt;&quot;+&quot;&lt;td&gt;&quot;+name+&quot;&lt;/td&gt;&quot;+&#39;&lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this)&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;&#39;;
+        var table=document.getElementById(&quot;table&quot;).lastChild;
+        table.appendChild(newtr);
+     }
+
+     // 创建删除函数
+     function del(obj)
+     {
+        var table=document.getElementById(&quot;table&quot;).lastChild;
+        var tr=obj.parentNode.parentNode;
+        table.removeChild(tr);
+     }
+
+
+  &lt;/script&gt; 
+ &lt;/head&gt; 
+ &lt;body&gt; 
+       &lt;table border=&quot;1&quot; width=&quot;50%&quot; id=&quot;table&quot;&gt;
+       &lt;tr&gt;
+        &lt;th&gt;学号&lt;/th&gt;
+        &lt;th&gt;姓名&lt;/th&gt;
+        &lt;th&gt;操作&lt;/th&gt;
+       &lt;/tr&gt;  
+
+       &lt;tr&gt;
+        &lt;td&gt;xh001&lt;/td&gt;
+        &lt;td&gt;王小明&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this)&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;
+       &lt;/tr&gt;
+
+       &lt;tr&gt;
+        &lt;td&gt;xh002&lt;/td&gt;
+        &lt;td&gt;刘小芳&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this)&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;
+       &lt;/tr&gt;
+
+       &lt;/table&gt;
+       &lt;input type=&quot;button&quot; value=&quot;添加一行&quot;  onclick=&quot;add()&quot;/&gt;   &lt;!--在添加按钮上添加点击事件  --&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="编程挑战"><a href="#编程挑战" class="headerlink" title="编程挑战"></a>编程挑战</h2><p>现在利用之前我们学过的JavaScript知识，实现选项卡切换的效果。</p>
+<p><strong>效果图:</strong></p>
+<p><img src="http://img1.sycdn.imooc.com/53bd0e9e000163d203390200.jpg" alt="img"></p>
+<p><strong>文字素材:</strong></p>
+<p>房产：</p>
+<p>  275万购昌平邻铁三居 总价20万买一居<br>   200万内购五环三居 140万安家东三环<br>   北京首现零首付楼盘 53万购东5环50平<br>   京楼盘直降5000 中信府 公园楼王现房</p>
+<p>家居:</p>
+<p>   40平出租屋大改造 美少女的混搭小窝<br>    经典清新简欧爱家 90平老房焕发新生<br>    新中式的酷色温情 66平撞色活泼家居<br>    瓷砖就像选好老婆 卫生间烟道的设计</p>
+<p>二手房：</p>
+<p>   通州豪华3居260万 二环稀缺2居250w甩<br>    西3环通透2居290万 130万2居限量抢购<br>    黄城根小学学区仅260万 121平70万抛!<br>    独家别墅280万 苏州桥2居优惠价248万</p>
+<p><strong>任务</strong></p>
+<p>大家先思考和分析实现思路，然后在动手实现</p>
+<p>一、HTML页面布局</p>
+<pre><code>提示:
+选项卡标题使用ul..li
+选项卡内容使用div
+</code></pre><p>二、CSS样式制作</p>
+<pre><code>提示:
+整个选项卡的样式设置
+选项卡标题的样式设置
+选项卡内容的样式设置
+一开始只显示一个选项卡内容，其它选项卡内容隐藏。
+</code></pre><p>三、JS实现选项卡切换</p>
+<pre><code>提示:
+获取选项卡标题和选项卡内容
+选项卡内容多个，需要循环遍历来操作，得知哪个选项卡和哪个选项内容匹配
+通过改变DOM的css类名称,当前点击的选项卡显示，其它隐藏。
+</code></pre><p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;title&gt;实践题 - 选项卡&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+     /* 
+     标签和文本结合区域效果制作：
+     1.用ul做分类标签
+     2.把ul的display定义为block使ul区域和下面div区域结合在一起
+     3.给ul定义一个下边框或者给div内容区域定义一个上边框
+     4.所有li标签默认样式不设下边框，作为激活显示的li标签加宽其#fff（白色）
+     区域的下边框，覆盖。
+     */  
+*{
+    margin:0px; padding:0px; font:12px normal; font-family:微软雅黑;
+    }       
+ #tabs{
+     width:290px; height:150px; padding:5px; margin:20px;
+ }
+ #tabs ul{
+     list-style:none; display:block; height:30px; line-height:30px;
+ }
+ #tabs ul li{
+     float:left; width:60px; height:28px; line-height:28px; text-align:center;
+     display:inline-block;margin:0px 3px; border:1px solid #aaa;border-bottom:none;
+     cursor:pointer; background:#fff; list-style:none;
+ }
+ #tabs ul li.on{
+     border-top:2px solid saddlebrown; border-bottom:2px solid #fff;
+ }
+ #tabs div{
+     height:120px; line-height:25px; border:1px solid #336699;border-top:2px saddlebrown solid;padding:5px;
+ }
+ .hide{display:none;}
+    &lt;/style&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+    window.onload=function(){
+        var tabs=document.getElementById(&quot;tabs&quot;);
+        var sli=document.getElementsByTagName(&quot;li&quot;);
+        var sdiv=tabs.getElementsByTagName(&quot;div&quot;);
+        for(var i=0;i&lt;sli.length;i++)
+        {
+            sli[i].index=i;
+            sli[i].onmouseover=function(){
+                for(var j=0;j&lt;sli.length;j++)
+                {
+                    sli[j].className=&quot;&quot;;
+                    sdiv[j].className=&quot;hide&quot;;
+                }
+                this.className=&quot;on&quot;;
+                sdiv[this.index].className=&quot;&quot;;
+            }
+        }
+    }
+
+    &lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- HTML页面布局 --&gt;
+&lt;div id=&quot;tabs&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;on&quot;&gt;房产&lt;/li&gt;
+        &lt;li&gt;家居&lt;/li&gt;
+        &lt;li&gt;二手房&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;
+    275万购昌平邻铁三居 总价20万买一居&lt;br&gt;
+    200万内购五环三居 140万安家东三环&lt;br&gt;
+    北京首现零首付楼盘 53万购东5环50平&lt;br&gt;
+    京楼盘直降5000 中信府 公园楼王现房&lt;br&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hide&quot;&gt;
+     40平出租屋大改造 美少女的混搭小窝&lt;br&gt;
+     经典清新简欧爱家 90平老房焕发新生&lt;br&gt;
+     新中式的酷色温情 66平撞色活泼家居&lt;br&gt;
+     瓷砖就像选好老婆 卫生间烟道的设计&lt;br&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hide&quot;&gt;
+     通州豪华3居260万 二环稀缺2居250w甩&lt;br&gt;
+     西3环通透2居290万 130万2居限量抢购&lt;br&gt;
+     黄城根小学学区仅260万 121平70万抛!&lt;br&gt;
+     独家别墅280万 苏州桥2居优惠价248万&lt;br&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>henucm<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/29/JS%E9%AB%98%E7%BA%A7%E7%AF%87/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;29&#x2F;JS%E9%AB%98%E7%BA%A7%E7%AF%87&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;29&#x2F;JS%E9%AB%98%E7%BA%A7%E7%AF%87&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3Ni8yMjQ4Nw==">
+    <script id="livere-comment-js">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1581349776637"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>

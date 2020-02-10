@@ -1,6 +1,2750 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>jQuery学习</title>
+    <url>/2020/02/10/jQuery%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>jQuery基础知识<br><a id="more"></a><br>[TOC]</p>
+<h2 id="jQuery学习"><a href="#jQuery学习" class="headerlink" title="jQuery学习"></a>jQuery学习</h2><h2 id="day1"><a href="#day1" class="headerlink" title="day1"></a>day1</h2><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>1、什么是javascript库？<br>    一个用javascript封装了很多属性和方法的文件。</p>
+<p>2、javascript库有哪些？<br>    jQuery、Prototype、YUI、Dojo、Ext JS、移动端的zepto等</p>
+<h3 id="初始jQuery"><a href="#初始jQuery" class="headerlink" title="初始jQuery"></a>初始jQuery</h3><p>jQuery的概念：jQuery是javascript实现的一个库。设计宗旨是”Write Less，Do More”,即写的少，做的多。<br>jQuery的优点：<br>    跨浏览器兼容<br>    链式编程，隐式迭代<br>    简化DOM操作，支持事件、样式、动画<br>    支持插件扩展开发<br>    开源免费</p>
+<h3 id="jQuery顶级对象"><a href="#jQuery顶级对象" class="headerlink" title="jQuery顶级对象"></a>jQuery顶级对象</h3><pre><code class="lang-javascript">        // 1. $ 是jQuery的别称（另外的名字）
+        // $(function() {
+        //     alert(11)
+        // });
+        jQuery(function() {
+            // alert(11)
+            // $(&#39;div&#39;).hide();
+            jQuery(&#39;div&#39;).hide();
+        });
+        // 2. $同时也是jQuery的 顶级对象
+</code></pre>
+<h3 id="DOM对象和jQuery对象"><a href="#DOM对象和jQuery对象" class="headerlink" title="DOM对象和jQuery对象"></a>DOM对象和jQuery对象</h3><pre><code class="lang-javascript">        // 1. DOM对象转换为 jQuery对象
+        // (1) 我们直接获取视频，得到就是jQuery对象
+        // $(&#39;video&#39;);
+        // (2) 我们已经使用原生js 获取过来 DOM对象
+        var myvideo = document.querySelector(&#39;video&#39;);
+        // $(myvideo).play(); 错误 jquery里面没有play 这个方法
+        // 2.  jQuery对象转换为DOM对象
+        // myvideo.play();
+        $(&#39;video&#39;)[0].play()
+        $(&#39;video&#39;).get(0).play()
+</code></pre>
+<h3 id="隐式迭代（重要）"><a href="#隐式迭代（重要）" class="headerlink" title="隐式迭代（重要）"></a>隐式迭代（重要）</h3><p>遍历内部DOM（伪数组形式存储）的过程叫做隐式迭代</p>
+<p>隐式迭代 就是把匹配的所有元素内部进行遍历循环  给每一个元素添加css这个方法</p>
+<pre><code class="lang-javascript">// 给所有的div设置背景颜色为粉色 jQuery对象不能使用style
+$(&#39;div&#39;).css(&#39;background&#39;,&#39;pink&#39;);
+</code></pre>
+<h3 id="jQuery-筛选选择器"><a href="#jQuery-筛选选择器" class="headerlink" title="jQuery 筛选选择器"></a>jQuery 筛选选择器</h3><p><a href="https://imgchr.com/i/1IZx0S" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/10/1IZx0S.md.png" alt="1IZx0S.md.png"></a></p>
+<p><a href="https://imgchr.com/i/1IZO6P" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/10/1IZO6P.png" alt="1IZO6P.png"></a></p>
+<p><a href="https://imgchr.com/i/1IZXOf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/10/1IZXOf.md.png" alt="1IZXOf.md.png"></a></p>
+<p><strong>重点：</strong></p>
+<p>$(“li”).parent()  | $(“ul”).children(“li”) | $(“ul”).find(“li”) | $(“.first”).siblings(“li”) | $(“li”).eq(2) </p>
+<h3 id="jQuery修改样式css方法"><a href="#jQuery修改样式css方法" class="headerlink" title="jQuery修改样式css方法"></a>jQuery修改样式css方法</h3><pre><code class="lang-javascript">//获取值
+var strColor=$(this).css(&#39;color&#39;);
+//赋值
+var strColor=$(this).css(&#39;color&#39;,&#39;red&#39;);
+//赋值
+$(this).css({ &quot;color&quot;:&quot;white&quot;,&quot;font-size&quot;:&quot;20px&quot;});
+</code></pre>
+<h3 id="jQuery修改样式操作类"><a href="#jQuery修改样式操作类" class="headerlink" title="jQuery修改样式操作类"></a>jQuery修改样式操作类</h3><pre><code class="lang-javascript">//添加类
+$(&quot;div&quot;).addClass(&quot;current&quot;);
+//删除类
+$(&quot;div&quot;).removeClass(&quot;current&quot;);
+//切换类
+$(&quot;div&quot;).toggleClass(&quot;current&quot;);
+</code></pre>
+<p>👆 和DOM中的classList 里面用法类似 </p>
+<h3 id="jQuery滑动效果以及事件切换"><a href="#jQuery滑动效果以及事件切换" class="headerlink" title="jQuery滑动效果以及事件切换"></a>jQuery滑动效果以及事件切换</h3><pre><code class="lang-javascript">//滑入
+$(&quot;div&quot;).slideDown();
+//滑出
+$(&quot;div&quot;).slideUp();
+//切换类
+$(&quot;div&quot;).slideToggle();
+</code></pre>
+<h3 id="jQuery停止动画排队-在动画前面加-stop"><a href="#jQuery停止动画排队-在动画前面加-stop" class="headerlink" title="jQuery停止动画排队  在动画前面加 stop()"></a>jQuery停止动画排队  在动画前面加 stop()</h3><h3 id="jQuery淡入淡出以及突出显示案例"><a href="#jQuery淡入淡出以及突出显示案例" class="headerlink" title="jQuery淡入淡出以及突出显示案例"></a>jQuery淡入淡出以及突出显示案例</h3><pre><code class="lang-javascript">//淡入 1000-时间
+$(&quot;div&quot;).fadeIn(1000)
+//淡出
+$(&quot;div&quot;).fadeOut(1000)
+//修改透明度
+$(&quot;div&quot;).fadeToggle(1000,0.5);
+</code></pre>
+<h3 id="jQuery自定义动画animate方法"><a href="#jQuery自定义动画animate方法" class="headerlink" title="jQuery自定义动画animate方法"></a>jQuery自定义动画animate方法</h3><pre><code>$(function() {
+            $(&quot;button&quot;).click(function() {
+                $(&quot;div&quot;).animate({
+                    left: 500,
+                    top: 300,
+                    opacity: .4,
+                    width: 500
+                }, 500);
+            })
+        })
+</code></pre><p><strong>$(selector).animate(styles,speed,easing,callback)</strong></p>
+<p><strong>speed：规定动画的速度。默认是 “normal”。 可能的值：毫秒 （比如 1500） | “slow” | “normal” | “fast”</strong></p>
+<p><strong>easing：规定在不同的动画点中设置动画速度的 easing 函数。内置的 easing 函数：swing | linear</strong></p>
+<p><strong>callback：animate 函数执行完之后，要执行的函数。</strong></p>
+<h2 id="day2"><a href="#day2" class="headerlink" title="day2"></a>day2</h2><h3 id="jQuery属性操作"><a href="#jQuery属性操作" class="headerlink" title="jQuery属性操作"></a>jQuery属性操作</h3><pre><code class="lang-javascript">// 1.普通属性和表单属性操作
+// 获取值
+$(&quot;a&quot;).prop(&quot;href&quot;);
+// 赋值
+$(&quot;input&quot;).prop(&quot;checked&quot;,true);
+
+//2.普通属性和自定义属性操作
+//获取值
+$(&quot;a&quot;).attr(&quot;href&quot;);
+//赋值
+$(&quot;a&quot;).attr(&quot;aaa&quot;,&quot;我们都挺好&quot;);
+
+//3.自定义属性和H5新增属性 data-list
+//获取值 
+$(&quot;a&quot;).data(&quot;uname&quot;);
+//赋值
+$(&quot;a&quot;).data(&quot;uname&quot;,&quot;哈哈哈&quot;);
+</code></pre>
+<h3 id="jQuery文本属性值"><a href="#jQuery文本属性值" class="headerlink" title="jQuery文本属性值"></a>jQuery文本属性值</h3><pre><code class="lang-javascript">//1.类比DOM中innerHTML属性方法：html()
+//获取值
+$(&quot;a&quot;).html();
+//赋值
+$(&quot;a&quot;).html(&quot;赋值内容，识别标签&quot;);
+
+//2.类比DOM中innerText属性方法：text()
+//获取值
+$(&quot;a&quot;).text();
+//赋值
+$(&quot;a&quot;).text(&quot;赋值内容,NO识别标签&quot;);
+
+//3.类比DOM中value属性方法：val()
+//获取值
+$(&quot;input&quot;).val();
+//赋值
+$(&quot;input&quot;).val(&quot;val()操作标签，必须带有value属性---表达标签&quot;);
+</code></pre>
+<h3 id="jQuery数据的遍历-each"><a href="#jQuery数据的遍历-each" class="headerlink" title="jQuery数据的遍历 $.each()"></a>jQuery数据的遍历 $.each()</h3><pre><code class="lang-javascript">// 1. each() 方法遍历元素
+var sum = 0;
+var arr = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
+$(&quot;div&quot;).each(function(i, domEle) {
+        $(domEle).css(&quot;color&quot;, arr[i]);
+         sum += parseInt($(domEle).text());
+}
+
+// 2. $.each() 方法遍历元素 主要用于遍历数据，处理数据
+// $.each($(&quot;div&quot;), function(i, ele) {
+//     console.log(i);
+//     console.log(ele);
+// });
+// $.each(arr, function(i, ele) {
+//     console.log(i);
+//     console.log(ele);
+// })
+$.each({
+name: &quot;andy&quot;,
+age: 18
+}, function(i, ele) {
+console.log(i); // 输出的是 name age 属性名
+console.log(ele); // 输出的是 andy  18 属性值
+})
+</code></pre>
+<h3 id="jQuery创建添加删除元素-重要"><a href="#jQuery创建添加删除元素-重要" class="headerlink" title="jQuery创建添加删除元素(重要)"></a>jQuery创建添加删除元素(重要)</h3><pre><code class="lang-javascript">//1.创建元素
+$(&quot;&lt;li&gt;我是后来创建的li&lt;.li&gt;&quot;);
+
+//2.添加元素
+$(&quot;ul&quot;).append(li);      // 内部添加并且放到内容的最后面 
+$(&quot;ul&quot;).prepend(li);      // 内部添加并且放到内容的最前面
+$(&quot;.test&quot;).after(div);     // .test的后面兄弟形式加一个
+$(&quot;.test&quot;).before(div);     // .test的前面兄弟形式加一个
+
+//3.删除元素
+$(&quot;ul&quot;).remove();      // 可以删除匹配的元素 自杀(包括自己)
+$(&quot;ul&quot;).empty();     // 可以删除匹配的元素里面的子节点 孩子
+$(&quot;ul&quot;).html(&quot;&quot;);     // 可以删除匹配的元素里面的子节点 孩子
+</code></pre>
+<h3 id="jQuery尺寸操作"><a href="#jQuery尺寸操作" class="headerlink" title="jQuery尺寸操作"></a>jQuery尺寸操作</h3><p><img src="https://s2.ax1x.com/2020/02/10/1IYNse.png" alt="1IYNse.png"></p>
+<h3 id="jQuery位置操作"><a href="#jQuery位置操作" class="headerlink" title="jQuery位置操作"></a>jQuery位置操作</h3><p>1.offset() 设置或者获取偏移位置<br>    offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。<br>    返回值是一个对象，有2个属性 left、top ；<br>    offset().top  用于获取距离文档顶部的距离，offset().left 用于获取距离文档左侧的距离。<br>    可以设置元素的偏移：offset({ top: 10, left: 30 });</p>
+<p>2.position() 获取元素偏移<br>    position() 方法用于返回被选元素相对于带有定位的父级偏移坐标<br>    返回值是一个对象，有2个属性 left、top。<br>    position().top 用于获取距离定位父级顶部的距离<br>    position().left 用于获取距离定位父级左侧的距离。如果父级都没有定位，则以文档为准。<br>    该方法只能获取</p>
+<h3 id="jQuery操作元素被卷去的头部"><a href="#jQuery操作元素被卷去的头部" class="headerlink" title="jQuery操作元素被卷去的头部"></a>jQuery操作元素被卷去的头部</h3><p>1.scrollTop() 设置或者获取元素被卷去的头部<br>    scrollTop() 方法设置或返回被选元素被卷去的头部。<br>    不跟参数是获取，参数为不带单位的数字则是设置被卷去的头部</p>
+<p>2.scrollLeft() 同理</p>
+<h2 id="day3"><a href="#day3" class="headerlink" title="day3"></a>day3</h2><h3 id="jQuery事件注册"><a href="#jQuery事件注册" class="headerlink" title="jQuery事件注册"></a>jQuery事件注册</h3><pre><code class="lang-javascript">//1.on()可以一次绑定多个事件，也可以多此为同一个事件添加多个逻辑
+$(&quot;div&quot;).on(&quot;mouseenter mouseleave&quot;,function(){
+    $(this).toggleClass(&quot;current&quot;);
+})
+//2.on()可以做事件委托，就是给未来动态创建除了的子元素绑定事件
+$(&quot;ol&quot;).on(&quot;click&quot;,&quot;li&quot;,function(){
+    $(&quot;ol&quot;).on(&quot;click&quot;,&quot;li&quot;,function(){
+        alert(11);
+    })
+})
+</code></pre>
+<h3 id="jQuery事件处理"><a href="#jQuery事件处理" class="headerlink" title="jQuery事件处理"></a>jQuery事件处理</h3><pre><code class="lang-javascript">//1.off()可以把以节绑定在某个事件上的逻辑取消
+ $(&quot;div&quot;).off(&quot;click&quot;);
+//2.one()可以绑定只触发一次的事件
+$(&quot;ol&quot;).one(&quot;click&quot;,&quot;li&quot;,function(){
+    alert(11);
+})
+</code></pre>
+<h3 id="jQuery事件触发"><a href="#jQuery事件触发" class="headerlink" title="jQuery事件触发"></a>jQuery事件触发</h3><p>1、jQuery中的事件对象兼容性更好，获取更方便，操作几乎和DOM中的event完全一样。例如：</p>
+<pre><code class="lang-javascript">$(&quot;div&quot;).on(&quot;click&quot;,function(event){
+    event.stopPropagation();
+    event.preventDefault();
+})
+</code></pre>
+<h3 id="jQuery自动触发事件"><a href="#jQuery自动触发事件" class="headerlink" title="jQuery自动触发事件"></a>jQuery自动触发事件</h3><pre><code class="lang-javascript">$(&quot;div&quot;).on(&quot;click&quot;, function() {
+    alert(11);
+});
+
+// 自动触发事件
+// 1. 元素.事件()
+// $(&quot;div&quot;).click();会触发元素的默认行为
+// 2. 元素.trigger(&quot;事件&quot;)
+// $(&quot;div&quot;).trigger(&quot;click&quot;);会触发元素的默认行为
+$(&quot;input&quot;).trigger(&quot;focus&quot;);
+// 3. 元素.triggerHandler(&quot;事件&quot;) 就是不会触发元素的默认行为
+$(&quot;div&quot;).triggerHandler(&quot;click&quot;);
+$(&quot;input&quot;).on(&quot;focus&quot;, function() {
+$(this).val(&quot;你好吗&quot;);
+});
+// $(&quot;input&quot;).triggerHandler(&quot;focus&quot;);
+</code></pre>
+<h3 id="jQuery对象拷贝"><a href="#jQuery对象拷贝" class="headerlink" title="jQuery对象拷贝"></a>jQuery对象拷贝</h3><pre><code class="lang-javascript">var targetObj = {
+    id: 0,
+    msg: {
+        sex: &#39;男&#39;
+    }
+};
+var obj = {
+    id: 1,
+    name: &quot;andy&quot;,
+    msg: {
+        age: 18
+    }
+};
+$.extend(targetObj, obj); // 会覆盖targetObj 里面原来的数据
+// 1. 浅拷贝把原来对象里面的复杂数据类型地址拷贝给目标对象
+targetObj.msg.age = 20;
+console.log(targetObj); //结果都为20 因为拷贝的是地址
+console.log(obj); //结果都为20 因为拷贝的是地址
+// 2. 深拷贝把里面的数据完全复制一份给目标对象 如果里面有不冲突的属性,会合并到一起 
+$.extend(true, targetObj, obj);
+// console.log(targetObj); // 会覆盖targetObj 里面原来的数据
+targetObj.msg.age = 20;
+console.log(targetObj); // msg :{sex: &quot;男&quot;, age: 20}
+console.log(obj); //不会被覆盖
+</code></pre>
+<h3 id="jQuery多库共存"><a href="#jQuery多库共存" class="headerlink" title="jQuery多库共存"></a>jQuery多库共存</h3><pre><code class="lang-javascript">function $(ele) {
+    return document.querySelector(ele);
+}
+console.log($(&quot;div&quot;));
+// 1. 如果$ 符号冲突 我们就使用 jQuery
+jQuery.each();
+// 2. 让jquery 释放对$ 控制权 让用自己决定
+var suibian = jQuery.noConflict();
+console.log(suibian(&quot;span&quot;));
+suibian.each();
+</code></pre>
+<h3 id="jQuery插件"><a href="#jQuery插件" class="headerlink" title="jQuery插件"></a>jQuery插件</h3><p>主要有 jQuery之家 | jQuery插件库 | boostrap</p>
+<p>使用插件大致步骤 （bootstrap）</p>
+<p>优先引入 bootstrap.min.css、jquery.min.js、bootstrap.min.js  这三项</p>
+]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>jQuery</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>移动web学习</title>
+    <url>/2020/02/02/%E7%A7%BB%E5%8A%A8web%E5%9B%9B%E7%A7%8D%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p>四种移动web布局方式<br><a id="more"></a><br>[TOC]</p>
+<p>资料：<a href="https://pan.baidu.com/s/1dqaeDQNzP5FOqOTTQeKsbQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1dqaeDQNzP5FOqOTTQeKsbQ</a></p>
+<h2 id="移动web开发之流式布局"><a href="#移动web开发之流式布局" class="headerlink" title="移动web开发之流式布局"></a>移动web开发之流式布局</h2><p>流式布局比较简单放两个案例自行了解</p>
+<pre><code class="lang-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 100%;
+            max-width: 980px;
+            min-width: 320px;
+        }
+        section div{
+            float: left;
+            width: 50%;
+            height: 400px;
+        }
+        section div:nth-child(1){
+            background-color: pink;
+        }
+        section div:nth-child(2){
+            background-color: purple;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：京东网页"><a href="#案例：京东网页" class="headerlink" title="案例：京东网页"></a>案例：京东网页</h3><h4 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h4><pre><code class="lang-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/index.css&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 顶部 --&gt;
+    &lt;header class=&quot;app&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src=&quot;images/close.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/logo.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;打开京东APP，购物更轻松&lt;/li&gt;
+            &lt;li&gt;立即打开&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- 搜索 --&gt;
+    &lt;div class=&quot;search-wrap&quot;&gt;
+        &lt;div class=&quot;search-btn&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;search&quot;&gt;
+            &lt;div class=&quot;jd-icon&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;sou&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;search-login&quot;&gt;登录&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 主体内容图 --&gt;
+    &lt;div class=&quot;main-content&quot;&gt;
+        &lt;!-- 滑动图 --&gt;
+        &lt;div class=&quot;slider&quot;&gt;
+            &lt;img src=&quot;upload/banner.dpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;!-- 品牌日 --&gt;
+        &lt;div class=&quot;brand&quot;&gt;
+            &lt;div&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;img src=&quot;upload/pic11.dpg&quot; alt=&quot;&quot;&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;img src=&quot;upload/pic22.dpg&quot; alt=&quot;&quot;&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;img src=&quot;upload/pic33.dpg&quot; alt=&quot;&quot;&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;nav&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;!-- 新闻模块 --&gt;
+        &lt;div class=&quot;news&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;
+                &lt;img src=&quot;upload/new1.dpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;
+                &lt;img src=&quot;upload/new2.dpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;
+                &lt;img src=&quot;upload/new3.dpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h4><pre><code class="lang-css">body{
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: -apple-system,Helvetica,sans-serif;
+    background-color: #ccc;
+    height: 2000px;
+}
+/*点击高亮我们需要清除清除  设置为transparent 完成透明*/
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式*/
+input {
+    -webkit-appearance: none;
+}
+
+/*禁用长按页面时的弹出菜单*/
+img,
+a {
+    -webkit-touch-callout: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    color: #666;
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+.news{
+    margin-top: 200px;
+}
+.app{
+    height: 45px;
+}
+.app ul li{
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    background-color: #333333;
+    text-align: center;
+    color: white;
+}
+.app ul li:nth-child(1){
+    width: 8%;
+}
+.app ul li:nth-child(1) img{
+    width: 10px;
+}
+.app ul li:nth-child(2){
+    width: 10%;
+}
+.app ul li:nth-child(2) img{
+    width: 30px;
+    vertical-align: middle;
+}
+.app ul li:nth-child(3){
+    width: 57%;
+}
+.app ul li:nth-child(4){
+    width: 25%;
+    background-color: #F63515;
+}
+/* 搜索 */
+.search-wrap{
+    position: fixed;
+    height: 44px;
+    width: 100%;
+    overflow: hidden;
+    min-width: 320px;
+    max-width: 640px;
+}
+.search-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+}
+.search-btn::before{
+    content: &quot;&quot;;
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+.search-login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+ }
+.search{
+    position: relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 7px 50px;
+    border-radius: 15px;
+} 
+.jd-icon{
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background: url(../images/jd.png) no-repeat;
+    background-size: 20px 15px;
+}
+.jd-icon::after{
+    position: absolute;
+    content: &quot;&quot;;
+    display: block;
+    right: -8px;
+    top: 0;
+    width: 1.5px;
+    height: 15px;
+    background-color: #ccc;
+}
+.sou{
+    position: absolute;
+    width: 18px;
+    height: 15px;
+    top: 8px;
+    left: 50px;
+    /* 精灵图做法 */
+    background: url(../images/jd-sprites.png) no-repeat -81px 0;
+    background-size: 200px auto;
+}
+.slider img{
+    width: 100%;
+}
+.brand{
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+.brand div{
+    width: 33.33%;
+    float: left;
+}
+.brand div img{
+    width: 100%;
+}
+nav{
+    margin-top: 5px;
+}
+nav a{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+nav a img{
+    width: 40px;
+    margin: 10px 0;
+}
+nav a span{
+    display: block;
+}
+.news a{
+    float: left;
+    box-sizing: border-box;
+}
+.news img{
+    width: 100%;
+}
+.news a:nth-child(1){
+    width: 50%;
+}
+.news a:nth-child(n+2){
+    width: 25%;
+    border-left: 0.5px solid #ccc;
+}
+</code></pre>
+<h2 id="移动web开发之flex布局"><a href="#移动web开发之flex布局" class="headerlink" title="移动web开发之flex布局"></a>移动web开发之flex布局</h2><h3 id="Flex布局原理"><a href="#Flex布局原理" class="headerlink" title="Flex布局原理"></a>Flex布局原理</h3><ul>
+<li>Flex布局原理就是：给父盒子添加flex属性，来控制子盒子的位置排 列方式从而实现flex布局。</li>
+<li>当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。 </li>
+<li>Flex布局又叫伸缩布局、弹性布局、伸缩盒布局、弹性盒布局、flex 布局</li>
+</ul>
+<h3 id="Flex布局父项常见属性（重点）"><a href="#Flex布局父项常见属性（重点）" class="headerlink" title="Flex布局父项常见属性（重点）"></a>Flex布局父项常见属性（重点）</h3><h4 id="1-flex设置主轴方向"><a href="#1-flex设置主轴方向" class="headerlink" title="1. flex设置主轴方向"></a>1. flex设置主轴方向</h4><ul>
+<li>Flex布局中默认的主轴是row，x轴。如果想改变主轴方向可通过设置flex-direction来改变 </li>
+<li><code>flex-direction:column;</code> 将主轴改为y轴，纵轴</li>
+<li><code>flex-direction:row;</code> 将主轴改为x轴，横轴 </li>
+<li><code>flex-direction:row- reverse;</code> 主轴为x轴，并且翻转 </li>
+<li><code>flex-direction:column- reverse ;</code> 主轴为y轴，并且翻转 </li>
+</ul>
+<h4 id="2-开启flex布局后默认为不换行"><a href="#2-开启flex布局后默认为不换行" class="headerlink" title="2. 开启flex布局后默认为不换行"></a>2. 开启flex布局后默认为不换行</h4><ul>
+<li>如果想要换行效果设置<code>flex-wrap：wrap</code></li>
+</ul>
+<h4 id="3-Flex-flow就是flex-direction和flex-wrap的合写"><a href="#3-Flex-flow就是flex-direction和flex-wrap的合写" class="headerlink" title="3. Flex-flow就是flex-direction和flex-wrap的合写"></a>3. Flex-flow就是flex-direction和flex-wrap的合写</h4><h4 id="4-justify-content设置主轴子元素排列形式"><a href="#4-justify-content设置主轴子元素排列形式" class="headerlink" title="4. justify-content设置主轴子元素排列形式"></a>4. justify-content设置主轴子元素排列形式</h4><ul>
+<li>值为flex-start 所有子元素在主轴头部显示 </li>
+<li>值为flex-end 所有子元素在主轴尾部显示</li>
+<li>值为flex-center 所有子元素在主轴居中对齐 </li>
+<li>值为space-around 所有子元素平分剩余空间</li>
+<li>值为space-between 所有子元素先两边贴边在平分剩余空间</li>
+</ul>
+<h4 id="5-align-items设置侧轴子元素排列（单行）"><a href="#5-align-items设置侧轴子元素排列（单行）" class="headerlink" title="5. align-items设置侧轴子元素排列（单行）"></a>5. align-items设置侧轴子元素排列（单行）</h4><ul>
+<li>利用align-items能够设置侧轴元素对齐的方式在子项为单项（单行） 的时候使用</li>
+<li>align-items的值为flex-start 表示从头开始</li>
+<li>align-items的值为flex-end 表示从结尾开始 </li>
+<li>align-items的值为center 表示居中显示 </li>
+<li>align-items的值为stretch 会将子元素拉伸</li>
+</ul>
+<h4 id="6-align-content设置侧轴子元素排列（多行）"><a href="#6-align-content设置侧轴子元素排列（多行）" class="headerlink" title="6. align-content设置侧轴子元素排列（多行）"></a>6. align-content设置侧轴子元素排列（多行）</h4><ul>
+<li>Align-content适应于换行（多行）的情况下（单行情况下无效）， 可以设置 上对齐、 下对齐、居中、拉伸以及平均分配剩余空间等属 性值</li>
+<li>Align-item和align-content的区别单行找 align-items  多行找 align-content</li>
+</ul>
+<h3 id="Flex布局子项常见属性"><a href="#Flex布局子项常见属性" class="headerlink" title="Flex布局子项常见属性"></a>Flex布局子项常见属性</h3><h4 id="1-子项flex属性使用"><a href="#1-子项flex属性使用" class="headerlink" title="1. 子项flex属性使用"></a>1. 子项flex属性使用</h4><ul>
+<li>Flex用来设置分配剩余空间的比列的</li>
+<li>剩余空间是指父盒子的宽度减去<strong>没有设置</strong>flex的盒子的宽度 </li>
+<li>在将剩余空间按占比分配给各个子盒子 </li>
+<li>比列计算：当前子盒子的flex数值/所有flex的总和</li>
+</ul>
+<h4 id="2-align-self和order"><a href="#2-align-self和order" class="headerlink" title="2. align-self和order"></a>2. align-self和order</h4><pre><code class="lang-css">            /* 2在1前面 默认是0 -1比0小 */
+                order: -1;
+
+            /* 3号盒子下来底侧 */
+            align-self: flex-end;
+</code></pre>
+<p><img src="https://s2.ax1x.com/2020/02/05/1rO1qP.png" alt="1rO1qP.png"></p>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+<h2 id="移动web开发之rem布局"><a href="#移动web开发之rem布局" class="headerlink" title="移动web开发之rem布局"></a>移动web开发之rem布局</h2><h3 id="rem基础"><a href="#rem基础" class="headerlink" title="rem基础"></a>rem基础</h3><ul>
+<li>Rem是一个相对单位，相对于html的字体大小 </li>
+<li>如果整个页面很多地方用rem进行布局，只需要在不同屏幕下修改 html的字体大小，那么整个页面都会同步变化</li>
+</ul>
+<h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><ul>
+<li>媒体查询是css3语法，可以实现根据不同屏幕适配不同的样式 </li>
+<li>语法结构为：<code>@media screen and (max-width:800px) {css样式}</code> 屏幕宽度不大于800px</li>
+<li>利用媒体查询实现不同屏幕适配不同样式，发现规律可简写为判断 min-width 可以从小到大写即可 </li>
+<li>原理是：利用后面会层叠前面的样式</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/02/05/1rOXQA.png" alt="1rOXQA.png"></p>
+<h3 id="媒体查询-rem实现元素动态大小变化"><a href="#媒体查询-rem实现元素动态大小变化" class="headerlink" title="媒体查询+rem实现元素动态大小变化"></a>媒体查询+rem实现元素动态大小变化</h3><ul>
+<li>Link标签利用媒体查询实现按需引入 </li>
+</ul>
+<h3 id="Less的使用"><a href="#Less的使用" class="headerlink" title="Less的使用"></a>Less的使用</h3><ul>
+<li>首先我们选一套标准尺寸 750为准 </li>
+<li>我们用屏幕尺寸（750） 除以 我们划分的份数（15） 得到了 html 里面的文字大小 （50）这个文字大小其实也就是1rem的大小 </li>
+<li>因为屏幕大小不一样，但是划分的份数一样，所以最后html的文字 大小也就不一样，那么1rem在不同的屏幕下也就不一样</li>
+</ul>
+<pre><code class="lang-less">// 定义一个粉色的变量
+@color: pink;
+// 错误的变量名 @1color @color~@#
+// 变量名区分大小写 @color 和Color是两种不通的变量
+@font14: 14px;
+body{
+    background-color: @color;
+}
+div{
+    color: @color;
+    font-size: @font14;
+}
+// 1.less嵌套 子元素的样式直接写到父元素里面就好了
+a{
+    font-size: @font14;
+    color: red;
+    // 2.如果有伪类、交集选择器、伪元素选择器 我们内层选择器需要&amp;
+    &amp;:hover{
+        color: blue;
+    }
+}
+// 3.我们运算符的左右两侧必须敲一个空格隔开
+// 4.如果两个数参与运算 如果只有一个数有单位，则最后的结果就以这个单位为准
+// 5.两个数参与运算，如果两个数都有单位，而且不一样的单位 最后结果以第一个为准
+</code></pre>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+<h3 id="flexible-js技术"><a href="#flexible-js技术" class="headerlink" title="flexible.js技术"></a>flexible.js技术</h3><ul>
+<li>手机淘宝团队出的简洁高效 移动端适配库</li>
+<li>默认flexible是将屏幕划分10等分</li>
+</ul>
+<h3 id="cssrem-插件"><a href="#cssrem-插件" class="headerlink" title="cssrem 插件"></a>cssrem 插件</h3><ul>
+<li>Cssrem插件会自动将px转化为rem</li>
+<li>但是要注意 插件默认1rem = 16px </li>
+<li>需要将插件重新配置</li>
+</ul>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+<h2 id="移动web开发之响应式布局"><a href="#移动web开发之响应式布局" class="headerlink" title="移动web开发之响应式布局"></a>移动web开发之响应式布局</h2><p>前面都是单独制作移动端页面（主流）下面我们来看看响应式开发原理</p>
+<h3 id="响应式开发原理"><a href="#响应式开发原理" class="headerlink" title="响应式开发原理"></a>响应式开发原理</h3><ul>
+<li>默认效果是在一行显示，width固定居中，所以默认将父盒子设置 width：750px，利用margin居中</li>
+<li>当小于768的时候，父盒子占据一整行，并且子盒子占据三分之一 </li>
+<li>所以利用媒体查询判断，如果满足条件，将父盒子width：100%； </li>
+<li>将子盒子的width：33.3333%</li>
+</ul>
+<h3 id="Bootstrap使用"><a href="#Bootstrap使用" class="headerlink" title="Bootstrap使用"></a>Bootstrap使用</h3><p>一个很厉害的第三方库 和 前面几个创建基本文件夹一样 多一个bootstrap文件夹用来放 bootstrat资源 </p>
+<ul>
+<li>第一步创建基本文件夹，注意：多一个bootstrap文件夹用来放 bootstrat资源 </li>
+<li>第二步下载bootstrap文件放入项目 </li>
+<li>第三步将基本模板复制在html里 </li>
+<li>第四步引入资源文件</li>
+</ul>
+<h3 id="Bootstrap使用-栅格系统"><a href="#Bootstrap使用-栅格系统" class="headerlink" title="Bootstrap使用-栅格系统"></a>Bootstrap使用-栅格系统</h3><ul>
+<li>栅格系统就是默认将父元素分成12等分 </li>
+<li>如果想设置子元素的宽度 </li>
+<li>可根据占据的份数来决定子元素的宽度</li>
+<li>例如：子元素占据3等份，那么就相当于设置子元素width：25%， </li>
+<li>子元素占据4等份，那么就相当于设置子元素width：33.333%</li>
+</ul>
+<h3 id="Bootstrap栅格系统使用（上）"><a href="#Bootstrap栅格系统使用（上）" class="headerlink" title="Bootstrap栅格系统使用（上）"></a>Bootstrap栅格系统使用（上）</h3><ul>
+<li>栅格系统是分为行和列的 </li>
+<li>所以要先写行，创建一div添加类名为row即可 </li>
+<li>Row下面的div为列</li>
+<li>如何设置每列占多宽？</li>
+<li><strong>可以通过类名 col-xs-栅格的数量(设置超小屏幕)、 col-sm-栅格的 数量(设置小屏幕)、 col-md-栅格的数量(设置中等屏幕)、 col-lg栅格的数量(设置大屏幕)</strong> </li>
+<li><strong>如果列的栅格得数量加一起没有超过12咋可能出现空白并在一行显 示</strong> </li>
+<li><strong>如果列的栅格数量加一起超过12，则在开始超过12的那个换行显示</strong></li>
+</ul>
+<h3 id="Bootstrap栅格系统使用（下）"><a href="#Bootstrap栅格系统使用（下）" class="headerlink" title="Bootstrap栅格系统使用（下）"></a>Bootstrap栅格系统使用（下）</h3><ul>
+<li>列的类名可以写多个 </li>
+<li>也就是可以同时设置col-xs-、 col-sm-、 col-md-、 col-lgn </li>
+<li>这样的话，在不同屏幕下就会有不同的结构样式</li>
+</ul>
+<h3 id="Bootstrap列偏移"><a href="#Bootstrap列偏移" class="headerlink" title="Bootstrap列偏移"></a>Bootstrap列偏移</h3><ul>
+<li>使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过 为当前元素增加了左侧的边距（margin）。</li>
+</ul>
+<h3 id="响应式工具"><a href="#响应式工具" class="headerlink" title="响应式工具"></a>响应式工具</h3><ul>
+<li>visible-lg ：设置大屏幕显示</li>
+<li>hidden-lg：设置大屏幕隐藏</li>
+</ul>
+<h3 id="Boostrap案例"><a href="#Boostrap案例" class="headerlink" title="Boostrap案例"></a>Boostrap案例</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .container:nth-child(n-1){
+            margin-top: 50px;
+        }
+        .row&gt;div{
+            height: 50px;
+            background-color:pink;
+        }
+        span{
+            font-size: 15px;
+            color: #fff;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;!-- 我们列嵌套最好加1个行 row 这样可以取消父元素 --&gt;
+            &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-md-6&quot;&gt;a&lt;/div&gt;
+            &lt;div class=&quot;col-md-6&quot;&gt;b&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;3&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 两侧对齐 --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-md-3&quot;&gt;左侧&lt;/div&gt;
+            &lt;!-- 偏移的份数就是12 - 两个盒子的份数 = 6 --&gt;
+            &lt;div class=&quot;col-md-3 col-md-offset-6&quot;&gt;右侧&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- 中间对齐 --&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;!-- 如果只有一个盒子 那么就偏移 = (12 - 8) /2 --&gt;
+            &lt;div class=&quot;col-md-8 col-md-offset-2&quot;&gt;中间盒子&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 列排序 --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4 col-md-push-8&quot;&gt;左侧&lt;/div&gt;
+        &lt;div class=&quot;col-md-8 col-md-pull-4&quot;&gt;右侧&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 响应式工具 --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;
+                &lt;span class=&quot;visible-lg&quot;&gt;我会显示哦&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;2&lt;/div&gt;
+            &lt;div class=&quot;col-xs-3 hidden-lg&quot;&gt;我会变魔术&lt;/div&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;4&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+]]></content>
+      <categories>
+        <category>css3</category>
+        <category>html5</category>
+      </categories>
+      <tags>
+        <tag>移动web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Promis学习</title>
+    <url>/2020/01/31/Promis%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<p>这是一个比较古老的技术 过短时间过学一个比较新的技术<br><a id="more"></a></p>
+<h2 id="Promis简介"><a href="#Promis简介" class="headerlink" title="Promis简介"></a>Promis简介</h2><pre><code class="lang-javascript">    new Promise(
+    /* 执行器 executor */
+    function(resolve,reject){
+    //一段时耗很长的异步操作
+    resolve(); // 数据处理完成
+
+    reject(); // 数据处理出错
+    }
+    )
+    .then(function A(){
+    //成功，下一步
+    },function B(){
+    //失败，做相应处理
+    });
+</code></pre>
+<h3 id="Promise-两步执行的范例"><a href="#Promise-两步执行的范例" class="headerlink" title="Promise 两步执行的范例"></a>Promise 两步执行的范例</h3><pre><code class="lang-javascript">console.log(&#39;here we go&#39;);
+    new Promise(resolve=&gt;{
+        setTimeout(() =&gt; {
+            resolve(&#39;hello&#39;)
+        }, 2000);
+    })
+    .then(value=&gt;{
+        console.log(value);
+        return new Promise(resolve=&gt;{
+            setTimeout(() =&gt; {
+                resolve(&#39;world&#39;);
+            }, 2000);
+        });
+    })
+    .then(value=&gt;{
+        console.log(value+&#39; world&#39;);
+    })
+</code></pre>
+<h3 id="对已完成的Promise执行then"><a href="#对已完成的Promise执行then" class="headerlink" title="对已完成的Promise执行then"></a>对已完成的Promise执行then</h3><pre><code class="lang-javascript">console.log(&#39;start&#39;);
+    let promise = new Promise(resolve=&gt;{
+        setTimeout(() =&gt; {
+            console.log(&#39;the promise fulfilled&#39;);
+            resolve(&#39;hello,world&#39;);
+        }, 1000);
+    });
+    setTimeout(() =&gt; {
+        promise.then(value=&gt;{
+            console.log(value);
+        });
+    }, 3000);
+</code></pre>
+<p>运行结果：</p>
+<p><img src="https://s2.ax1x.com/2020/02/01/1G8UUI.png" alt="1G8UUI.png"></p>
+<h3 id="then-里不返回-Promise-执行-then"><a href="#then-里不返回-Promise-执行-then" class="headerlink" title="then 里不返回 Promise  执行 then"></a>then 里不返回 Promise  执行 then</h3><pre><code class="lang-javascript">    new Promise(resolve =&gt; { // 执行1
+    setTimeout(() =&gt; {
+        resolve(&#39;hello&#39;);
+    }, 1000);
+    })
+    .then(value =&gt; {
+        console.log(value);  // 执行2
+        console.log(&#39;everyone&#39;);
+        (function() { // 执行5。
+        //1、这段代码中没有返回新的值，下面一行返回的promise，实际是在这个函数中返回的，
+        //不是在then的响应函数中返回的，then返回的promise实例就没有等待里面的这个promise完成。
+        //2、一直在等待执行，等最后的then返回之后，再执行这个函数。
+        //3、没有进入promise队列中，但是进程仍然是登它执行完成后才算是完成。
+        return new Promise(resolve =&gt; { // 自己用自己的回调
+            setTimeout(() =&gt; {
+            console.log(&#39;mr&#39;);
+            resolve(&#39;marry&#39;);
+            }, 2000)
+        });
+        }());
+        return false; // 执行3。1、false会直接传递到下一步，成为下一个then的value
+    })
+    .then(value =&gt; { // 执行4
+        console.log(value + &#39;world&#39;); // value = false;
+    })
+</code></pre>
+<p>运行结果：</p>
+<p><img src="https://s2.ax1x.com/2020/02/01/1GJ30H.png" alt="1GJ30H.png"></p>
+<h3 id="then-的嵌套"><a href="#then-的嵌套" class="headerlink" title=".then()的嵌套"></a>.then()的嵌套</h3><p><img src="https://img1.mukewang.com/5e16d35a00016c5a12800720.jpg" alt=""></p>
+<p><img src="https://img4.mukewang.com/5bea8679000117e712800720.jpg" alt=""></p>
+<p><img src="https://img1.mukewang.com/5bea87220001a4e812800720.jpg" alt=""></p>
+<p><img src="https://img1.mukewang.com/5bea88af0001d2ef12800720.jpg" alt=""></p>
+<p><img src="https://img.mukewang.com/5bea8ca70001faa012800720.jpg" alt=""></p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>1、promise会自动捕获内部异常，并交给rejected响应函数处理。</p>
+<p>2、promise试图在现有的言语框架中解决异步回调带来的问题。在栈的语言基层运行池相关的问题就无法处理了，我们能捕获到的是异步完成回调之后的这部分栈信息，仍然无法确定是哪里导致的错误。</p>
+<p>3、promise执行器如果发送错误，执行器状态就会被置为rejected，fulfilled状态就不会被执行，</p>
+<p><strong>错误处理的两种做法</strong></p>
+<p>1、reject(‘错误信息’).then(null，message =&gt; {})；</p>
+<p>2、throw new Error（’错误信息’).catch(message =&gt; {})；</p>
+<p>推荐使用第二种，更加清晰好读，并且可以捕获前面的错误。</p>
+<pre><code class="lang-javascript">new Promise(resolve =&gt; {
+  setTimeout(() =&gt; {
+    throw new Error(&#39;bye&#39;);
+  }, 1000);
+})
+  .then(value =&gt; {
+    console.log(value + &#39;world&#39;);
+  })
+  .catch(error =&gt; { // 整体捕获错误的方法，可以捕获promise的错误，也可以捕获then中的错误
+    console.log(&#39;Error:&#39;, error.message);
+  })
+</code></pre>
+<h3 id="把任何异步操作包装成-promise"><a href="#把任何异步操作包装成-promise" class="headerlink" title="把任何异步操作包装成 promise"></a>把任何异步操作包装成 promise</h3><p>1、假设需求：</p>
+<p>（1）用户点击按钮，弹出确认窗体。</p>
+<p>（2）用户确认和取消有不同的处理。</p>
+<pre><code class="lang-javascript">let confirm = popupManager.confirm(&#39;您确定么&#39;);
+confirm.promise
+  .then(() =&gt; {
+    // do confirm staff
+  })
+  .catch(() =&gt; {
+    // do cancel staff
+  })
+
+// 窗体的构造函数
+class Confirm{
+  constructor() {
+    this.promise = new Promise((resolve, reject) =&gt; {
+      this.confirmButton.onClick = resolve;
+      this.cancelButton.onclick = reject;
+    })
+  }
+}
+</code></pre>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>异步处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css3学习</title>
+    <url>/2020/01/30/CSS3%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>关于CSS3的基础内容含样例<br><a id="more"></a><br>[TOC]</p>
+<h2 id="CSS3属性学习"><a href="#CSS3属性学习" class="headerlink" title="CSS3属性学习"></a>CSS3属性学习</h2><p><img src="https://s2.ax1x.com/2020/02/02/1tgHEj.png" alt="1tgHEj.png"></p>
+<h3 id="css3属性选择器"><a href="#css3属性选择器" class="headerlink" title="css3属性选择器"></a>css3属性选择器</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        /* 选择的是：既是button 又有disabled 这个属性的元素 */
+        /* 属性选择器的权重是10 */
+
+        /* 直接写属性值 */
+        button[disabled] {
+            cursor: default;
+        }
+        button {
+            cursor: pointer;
+        }
+        /* 属性等于值 */
+        input[type=&#39;search&#39;]{
+            color: pink;
+        }
+        /* 以某个值开头的属性值 */
+        div[class^=&#39;icon&#39;]{
+            color: rebeccapurple;
+        }
+        /* 以某个值结尾的属性值 */
+        div[class$=&#39;icon&#39;]{
+            color: green;
+        }
+        /* 可以再任意位置的 */
+        div[class*=&#39;icon&#39;]{
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button&gt;1&lt;/button&gt;
+    &lt;button&gt;2&lt;/button&gt;
+    &lt;button disabled=&quot;disabled&quot;&gt;3&lt;/button&gt;
+    &lt;button disabled=&quot;disabled&quot;&gt;4&lt;/button&gt;
+    &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;文本框&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;文本框&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;文本框&quot;&gt;
+
+    &lt;input type=&quot;search&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;搜索框&quot;&gt;
+    &lt;input type=&quot;search&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;搜索框&quot;&gt;
+    &lt;input type=&quot;search&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;搜索框&quot;&gt;
+
+    &lt;div class=&quot;icon1&quot;&gt;图标1&lt;/div&gt;
+    &lt;div class=&quot;icon2&quot;&gt;图标2&lt;/div&gt;
+    &lt;div class=&quot;icon3&quot;&gt;图标3&lt;/div&gt;
+    &lt;div class=&quot;iicon4&quot;&gt;图标4&lt;/div&gt;
+    &lt;div class=&quot;absicon&quot;&gt;图标5&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="css3结构伪类选择器"><a href="#css3结构伪类选择器" class="headerlink" title="css3结构伪类选择器"></a>css3结构伪类选择器</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=&lt;device-width&gt;, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        /* 选择第一个元素 */
+         ul li:first-child{
+            background-color: pink;
+        } 
+        /* 选择第二个元素 */
+        ul li:last-child{
+            background-color: red;
+        }
+        /*  ul li:nth-child(n) 我们要第几个 n就是几 
+            n可以是关键词 even偶 odd 奇 
+            n可以是公式 但是n是从0开始 例如 2*n选择2,4,6... 
+            不管里面的孩子是否是同一类型
+        */
+        ul li:nth-child(3){
+            background-color: green;
+        }
+        /* :nth-of-type() 选择指定类型的元素 权在为1+1+10*/
+        div span:nth-of-type(1){
+            background-color: pink;
+        }
+    &lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+        &lt;li&gt;5&lt;/li&gt;
+        &lt;li&gt;6&lt;/li&gt;
+        &lt;li&gt;7&lt;/li&gt;
+        &lt;li&gt;8&lt;/li&gt;
+        &lt;li&gt;9&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;
+        &lt;p&gt;我是一个屁&lt;/p&gt;
+        &lt;span&gt;我是span&lt;/span&gt;
+        &lt;span&gt;我是span&lt;/span&gt;
+        &lt;span&gt;我是span&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="https://s2.ax1x.com/2020/02/02/1tgIKS.png" alt="1tgIKS.png"></p>
+<h2 id="2D旋转-rotate"><a href="#2D旋转-rotate" class="headerlink" title="2D旋转 rotate"></a>2D旋转 rotate</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            border:1px solid pink;
+            margin: 100px auto;
+        }
+        div::before{
+            content: &quot;黑马&quot;;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: hotpink;
+            transform: rotate(180deg);
+            /* 设置中心点 */
+            transform-origin: left bottom;
+            /* 过渡写到本身上，谁做动画给谁加 */
+            transition: all 0.3s;
+        }
+        div:hover::before{
+            transform: rotate(0deg);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：模拟上下三角"><a href="#案例：模拟上下三角" class="headerlink" title="案例：模拟上下三角"></a>案例：模拟上下三角</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            position: relative;
+            width: 249px;
+            height: 35px;
+            border: 1px solid #000;
+            transform: translate(100px,100px);
+        }
+        div::after{
+            content: &quot;&quot;;
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            width: 10px;
+            height: 10px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+        }
+        div:hover::after{
+            transform: rotate(225deg);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="2D缩放-scale"><a href="#2D缩放-scale" class="headerlink" title="2D缩放 scale"></a>2D缩放 scale</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px auto;
+            transform-origin: left bottom;
+        }
+        div:hover{
+            /* 1.里面写的数字不跟单位 就是倍数的意思 */
+            /* transform: scale(5,5); */
+            /* 2.同比例缩放 同时修改宽度和高度 */
+            transform: scale(2);
+            /* 3.scale的优势之处不会影响其他的盒子 可以设置中心点 */
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：图片放大-分页按钮案例"><a href="#案例：图片放大-分页按钮案例" class="headerlink" title="案例：图片放大 分页按钮案例"></a>案例：图片放大 分页按钮案例</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            margin: 10px;
+            float: left;
+            overflow: hidden;
+        }
+        div img{
+            position: relative;
+            transition: all 0.4s;
+        }
+        div img:hover{
+            transform: scale(1.1);
+        }
+        li{
+            position:relative;
+            width: 30px;
+            height: 30px;
+            border: 1px solid pink;
+            float: left;
+            margin: 10px;
+            list-style: none;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transform-origin: all 0.3s;
+        }
+        li:hover{
+            transform: scale(1.2);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;a href=&quot;#&quot;&gt;
+        &lt;img src=&quot;media/scale.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;media/scale.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&lt;a href=&quot;#&quot;&gt;
+        &lt;img src=&quot;media/scale.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+     &lt;!-- ui&gt;li{$}*7 --&gt;
+     &lt;p&gt;
+    &lt;ui&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+        &lt;li&gt;5&lt;/li&gt;
+        &lt;li&gt;6&lt;/li&gt;
+        &lt;li&gt;7&lt;/li&gt;
+    &lt;/ui&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="2D转换综合写法顺序"><a href="#2D转换综合写法顺序" class="headerlink" title="2D转换综合写法顺序"></a>2D转换综合写法顺序</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all .5s;
+        }
+
+        div:hover {
+            /* transform: rotate(180deg) translate(150px, 50px); */
+            /* 我们同时有位移和其他属性，我们需要把位移放到最前面 */
+            transform: translate(150px, 50px) rotate(180deg) scale(1.2);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="css3动画基本使用"><a href="#css3动画基本使用" class="headerlink" title="css3动画基本使用"></a>css3动画基本使用</h3><p><img src="https://s2.ax1x.com/2020/02/02/1tggUA.png" alt="1tggUA.png"></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        /* from和to 等价于0% 100% */
+        @keyframes move {
+            /* 开始动画 */
+            0%{
+                transform: translate(0px,0px);
+            }
+            /* 结束动画 */
+            25%{
+                transform: translate(1000px,0px);
+            }
+            50%{
+                transform: translate(1000px,500px);
+            }
+            75%{
+                transform: translate(0px,500px);
+            }
+            100%{
+                transform: translate(0px,0px);
+            }
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 动画时间 */
+            animation-name: move;
+            /* 持续时间 */
+            animation-duration: 2s;
+            /* 运动曲线 */
+            animation-timing-function: ease;
+            /* 何时开始 */
+            animation-delay: 1s;
+
+            /* 重复次数 iteration重复的 count次数 infinite无限 */
+            /* animation-iteration-count: infinite; */
+
+            /* 是否反方向播放 默认normal 反方向alternate*/
+            /* animation-direction: alternate; */
+
+            /* 动画结束后的状态 默认值是backwards 回到起始位置 我们可以让他停留在结束状态 forwords */
+            animation-fill-mode: forwards;
+            /* 动画简写属性
+            animation: 动画名称 持续时间 运动曲线 何时开始 播放次数 是否反方向 动画起始或者结束的状态
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+            animation: move 2s ease 1s infinite alternate forwards; */
+        }
+        div:hover{
+            /* 鼠标经过div 让这个div 停止动画,鼠标离开就继续离开动画  默认running*/
+            animation-play-state: paused;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：大数据热点图"><a href="#案例：大数据热点图" class="headerlink" title="案例：大数据热点图"></a>案例：大数据热点图</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            background-color: #333;
+        }
+        .map{
+            position: relative;
+            width: 747px;
+            height: 616px;
+            background: url(media/map.png) no-repeat;
+            margin: 0px auto;
+        }
+        .city{
+            position: absolute;
+            top: 227px;
+            right: 193px;
+            color: #fff;
+        }
+        .tb{
+            top: 500px;
+            right: 80px;
+        }
+        .gd{
+            top: 542px;
+            right: 194px;
+        }
+        .dotted
+        {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+        .city div[class^=&quot;pulse&quot;]{
+            /* 保证我们小波纹在父盒子里面水平垂直居中 放大之后中心向四周发散*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.2s linear infinite;
+        }
+        .city div.pulse2{
+            animation-delay: 0.4s;
+        }
+        .city div.pulse3{
+            animation-delay: 0.8s;
+        }
+        @keyframes pulse {
+            0%{
+
+            }
+            70%{
+                /* transform: scale(5); 我们不要用scale 因为他会让 阴影变大 */
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+            100%{
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;map&quot;&gt;
+        &lt;div class=&quot;city&quot;&gt;
+            &lt;div class=&quot;dotted&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse1&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse2&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse3&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;city tb&quot;&gt;
+            &lt;div class=&quot;dotted&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse1&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse2&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse3&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;city gd&quot;&gt;
+            &lt;div class=&quot;dotted&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse1&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse2&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;pulse3&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="速度曲线步长-steps"><a href="#速度曲线步长-steps" class="headerlink" title="速度曲线步长 steps()"></a>速度曲线步长 steps()</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            overflow: hidden;
+            font-size: 20px;
+            width: 0px;
+            height: 30px;
+            background-color: pink;
+            /* 让我们的文字强制一行内显示 */
+            white-space: nowrap;
+
+            /* steps就是分几步来完成我们的动画 有了steps 就不要写 ease 或者linear 了*/
+            animation: w 2s steps(8) forwards;
+        }
+        @keyframes w {
+            0%{
+
+            }
+            100%{
+                width: 160px;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;我在河南大学等你&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：奔跑的熊大"><a href="#案例：奔跑的熊大" class="headerlink" title="案例：奔跑的熊大"></a>案例：奔跑的熊大</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            background-color: #ccc;
+        }
+        div.bear{
+            position: absolute;
+            top: 200px;
+            width: 200px;
+            height: 100px;
+            background: url(media/bear.png) no-repeat;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: bear 1s steps(8) infinite backwards,move 3s forwards;
+        }
+        div.mountain{
+            position: absolute;
+            width: 1400px;
+            height: 300px;
+            background: url(media/bg1.png) no-repeat;
+            animation: mount 10s ease-out  infinite;
+        }
+        @keyframes bear {
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1600px 0;
+            }
+        }
+        @keyframes move {
+            0%{
+                left: 0;
+            }
+            100%{
+                left: 50%;
+                /* margin-left: -100px; */
+                transform: translateX(-50%);
+            }
+        }
+        @keyframes mount {
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -2440px 0;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;mountain&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bear&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="3D动画"><a href="#3D动画" class="headerlink" title="3D动画"></a>3D动画</h2><p>属性基本上和2D差不多 重点<strong>左手准测</strong></p>
+<h3 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            /* 透视写到被观察元素的父盒子上面 */
+            perspective: 200px;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transform: translate3d(300px,100px,100px);
+            /* 1.tranlateZ 后面的单位我们一般跟px */
+            /* 2.translateZ(100px) 向外移动100px (向我们眼睛移动的)*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="3D旋转"><a href="#3D旋转" class="headerlink" title="3D旋转"></a>3D旋转</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            perspective: 500px;
+        }
+        img{
+            display: block;
+            margin: 100px auto;
+            transition: all 1s;
+        }
+        img:hover{
+            /* 左手定则 拇指指向x||y||z方向 */
+            /* 沿着x轴旋转 */
+            /* transform: rotateX(180deg); */
+            /* transform: rotate3d(1,0,0,180deg); */
+
+            /* 沿着y轴旋转 */
+            /* transform: rotateY(45deg); */
+            /* transform: rotateZ(45deg); */
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img src=&quot;media/pig.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="3D呈现"><a href="#3D呈现" class="headerlink" title="3D呈现"></a>3D呈现</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            perspective: 500px;
+        }
+        .box{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transition: all 3s;
+            /* 让子元素保持3d立体空间环境 */
+            transform-style: preserve-3d;
+        }
+        .box:hover{
+            transform: rotateY(60deg);
+        }
+        .box div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+        .box div:last-child{
+            background-color: indigo;
+            transform: rotateX(60deg);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr>
+<h3 id="案例：双面旋转的盒子"><a href="#案例：双面旋转的盒子" class="headerlink" title="案例：双面旋转的盒子"></a>案例：双面旋转的盒子</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            perspective: 400px;
+        }
+        .box{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            transition: all .4s;
+            transform-style: preserve-3d;
+        }
+        .box:hover{
+            transform: rotateY(180deg);
+        }
+        .front,
+        .back{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+            line-height: 300px;
+        }
+        .front{
+            background-color: black;
+            z-index: 1;
+        }
+        .back{
+            background-color: purple;
+            transform: rotateY(180deg);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;front&quot;&gt;河南大学&lt;/div&gt;
+        &lt;div class=&quot;back&quot;&gt;陈猛&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：3D导航栏"><a href="#案例：3D导航栏" class="headerlink" title="案例：3D导航栏"></a>案例：3D导航栏</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: 100px;
+        }
+        ul li{
+            perspective: 400px;
+            float: left;
+            display: block;
+            width: 120px;
+            height: 35px;
+            margin: 0px 5px;
+            list-style: none;
+            perspective: 500px;
+        }
+        .box{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all .4s;
+        }
+        .box:hover{
+            transform: rotateX(90deg);
+        }
+        .front,
+        .bottom{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+
+        }
+        .front{
+            background-color: pink;
+            z-index: 1;
+            transform: translateZ(17.5px);
+        }
+        .bottom{
+            background-color: purple;
+            /* 我们如果有移动 或者其他样式，必须先写我们的移动 */
+            transform:  translateY(17.5px) rotateX(-90deg);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;box&quot;&gt;
+                &lt;div class=&quot;front&quot;&gt;河南大学&lt;/div&gt;
+                &lt;div class=&quot;bottom&quot;&gt;陈猛&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;box&quot;&gt;
+                &lt;div class=&quot;front&quot;&gt;河南大学&lt;/div&gt;
+                &lt;div class=&quot;bottom&quot;&gt;陈猛&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;box&quot;&gt;
+                &lt;div class=&quot;front&quot;&gt;河南大学&lt;/div&gt;
+                &lt;div class=&quot;bottom&quot;&gt;陈猛&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：3D旋转木马"><a href="#案例：3D旋转木马" class="headerlink" title="案例：3D旋转木马"></a>案例：3D旋转木马</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            perspective: 1000px;
+        }
+        section{
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 150px auto;
+            transform-style: preserve-3d;
+            /* 添加动画 */
+            animation: rotate 6s linear infinite forwards;
+            background: url(media/pig.jpg);
+        }
+        @keyframes rotate {
+            0%{
+
+            }
+            100%{
+                transform: rotateY(360deg);
+            }
+        }
+        section div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(media/dog.jpg) no-repeat;
+        }
+        section:hover{
+            animation-play-state: paused;
+        }
+        section div:nth-child(1){
+            transform: translateZ(400px);
+        }
+        section div:nth-child(2){
+            transform: rotateY(60deg) translateZ(400px) ; 
+        }
+        section div:nth-child(3){
+            transform: rotateY(120deg) translateZ(400px) ; 
+        }
+        section div:nth-child(4){
+            transform: rotateY(180deg) translateZ(400px) ; 
+        }
+        section div:nth-child(5){
+            transform: rotateY(240deg) translateZ(400px) ; 
+        }
+        section div:nth-child(6){
+            transform: rotateY(300deg) translateZ(400px) ; 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="浏览器私有前缀"><a href="#浏览器私有前缀" class="headerlink" title="浏览器私有前缀"></a>浏览器私有前缀</h3><p><img src="https://s2.ax1x.com/2020/02/03/1UVXXd.png" alt="1UVXXd.png"></p>
+<h2 id="总结-css3-css2"><a href="#总结-css3-css2" class="headerlink" title="总结 ( css3,css2 )"></a>总结 ( css3,css2 )</h2><h3 id="css2"><a href="#css2" class="headerlink" title="css2"></a>css2</h3><p><img src="https://s2.ax1x.com/2020/02/03/1UZh8S.png" alt="1UZh8S.png"></p>
+<h3 id="css3"><a href="#css3" class="headerlink" title="css3"></a>css3</h3><p><img src="https://s2.ax1x.com/2020/02/03/1Uepr9.png" alt="1Uepr9.png"></p>
+]]></content>
+      <categories>
+        <category>css3</category>
+      </categories>
+      <tags>
+        <tag>基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript高级篇</title>
+    <url>/2020/01/29/JS%E9%AB%98%E7%BA%A7%E7%AF%87/</url>
+    <content><![CDATA[<p>关于JS的详细内容<br><a id="more"></a><br>[TOC]</p>
+<h2 id="JS高级篇"><a href="#JS高级篇" class="headerlink" title="JS高级篇"></a>JS高级篇</h2><h3 id="事件响应"><a href="#事件响应" class="headerlink" title="事件响应"></a>事件响应</h3><p>JavaScript 创建动态页面。事件是可以被 JavaScript 侦测到的行为。 网页中的每个元素都可以产生某些可以触发 JavaScript 函数或程序的事件。</p>
+<p>比如说，当用户单击按钮或者提交表单数据时，就发生一个鼠标单击（onclick）事件，需要浏览器做出处理，返回给用户一个结果。</p>
+<p>主要事件表：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1KzOvq.png" alt="1KzOvq.png"></p>
+<h3 id="编程练习"><a href="#编程练习" class="headerlink" title="编程练习"></a>编程练习</h3><p>使用JS完成一个简单的计算器功能。实现2个输入框中输入整数后，点击第三个输入框能给出2个整数的加减乘除。</p>
+<p>提示：获取元素的值设置和获取方法为：例：赋值：document.getElementById(“id”）.value = 1； 取值：var = document.getElementById(“id”）.value；</p>
+<p><strong>任务</strong></p>
+<p>第一步： 创建构建运算函数count()。</p>
+<p>第二步： 获取两个输入框中的值和获取选择框的值。</p>
+<pre><code>提示：document.getElementById( id名 ).value 获取或设置 id名的值。
+</code></pre><p>第三步： 获取通过下拉框来选择的值来改变加减乘除的运算法则。</p>
+<pre><code>提示：使用switch判断运算法则。
+</code></pre><p>第四步： 通过 = 按钮来调用创建的函数，得到结果。</p>
+<p><strong>注意:</strong> 使用<code>parseInt()</code>函数可解析一个字符串,并返回一个整数。</p>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt; 事件&lt;/title&gt;  
+  &lt;script type=&quot;text/javascript&quot;&gt;
+   function count(){
+    var num1=document.getElementById(&quot;txt1&quot;).value;
+    var num2=document.getElementById(&quot;txt2&quot;).value;
+    var opt=document.getElementById(&quot;select&quot;).value;
+    var sum=0;
+    if(opt==&quot;+&quot;)
+    {
+      sum=parseInt(num1)+parseInt(num2);
+    }
+    else if(opt==&quot;-&quot;)
+    sum=parseInt(num1)-parseInt(num2);
+    else if(opt==&quot;*&quot;)
+    sum=parseInt(num1)*parseInt(num2);
+    else
+    sum=parseInt(num1)/parseInt(num2); 
+    document.getElementById(&quot;fruit&quot;).value=sum;
+    //获取第一个输入框的值
+    //获取第二个输入框的值
+    //获取选择框的值
+    //获取通过下拉框来选择的值来改变加减乘除的运算法则
+    //设置结果输入框的值
+   }
+  &lt;/script&gt; 
+ &lt;/head&gt; 
+ &lt;body&gt;
+   &lt;input type=&#39;text&#39; id=&#39;txt1&#39; /&gt; 
+   &lt;select id=&#39;select&#39;&gt;
+        &lt;option value=&#39;+&#39;&gt;+&lt;/option&gt;
+        &lt;option value=&quot;-&quot;&gt;-&lt;/option&gt;
+        &lt;option value=&quot;*&quot;&gt;*&lt;/option&gt;
+        &lt;option value=&quot;/&quot;&gt;/&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;input type=&#39;text&#39; id=&#39;txt2&#39; /&gt; 
+   &lt;input type=&#39;button&#39; value=&#39; = &#39; onclick=&quot;count()&quot;/&gt; &lt;!--通过 = 按钮来调用创建的函数，得到结果--&gt; 
+   &lt;input type=&#39;text&#39; id=&#39;fruit&#39; /&gt;   
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="JS内置对象"><a href="#JS内置对象" class="headerlink" title="JS内置对象"></a>JS内置对象</h3><p>日期对象可以储存任意一个日期，并且可以精确到毫秒数（1/1000 秒）。</p>
+<p>定义一个时间对象 :</p>
+<pre><code class="lang-javascript">var Udate=new Date();
+</code></pre>
+<p><strong>注意**</strong>:**使用关键字new，Date()的首字母必须大写。 </p>
+<p>使 Udate 成为日期对象，并且已有初始值：<strong>当前时间(当前电脑系统时间)</strong>。</p>
+<p>如果要自定义初始值，可以用以下方法：</p>
+<pre><code class="lang-javascript">var d = new Date(2012, 10, 1);  //2012年10月1日
+var d = new Date(&#39;Oct 1, 2012&#39;); //2012年10月1日
+</code></pre>
+<p>我们最好使用下面介绍的“方法”来严格定义时间。</p>
+<p><strong>访问方法语法：</strong>“&lt;日期对象&gt;.&lt;方法&gt;”</p>
+<p>Date对象中处理时间和日期的常用方法：</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MA4rd.png" alt="1MA4rd.png"></p>
+<h2 id="String-字符串对象"><a href="#String-字符串对象" class="headerlink" title="String 字符串对象"></a>String 字符串对象</h2><p>在之前的学习中已经使用字符串对象了，定义字符串的方法就是直接赋值。比如：</p>
+<pre><code class="lang-javascript">var mystr = &quot;I love JavaScript!&quot;
+</code></pre>
+<p>定义mystr字符串后，我们就可以访问它的属性和方法。</p>
+<p><strong>访问字符串对象的属性length:</strong></p>
+<p>stringObject.length; 返回该字符串的长度。</p>
+<pre><code class="lang-javascript">var mystr=&quot;Hello World!&quot;;
+var myl=mystr.length;
+</code></pre>
+<p>以上代码执行后，myl 的值将是：12</p>
+<p><strong>访问字符串对象的方法：</strong></p>
+<p>使用 String 对象的 toUpperCase() 方法来将字符串小写字母转换为大写：</p>
+<pre><code class="lang-javascript">var mystr=&quot;Hello world!&quot;;
+var mynum=mystr.toUpperCase();
+以上代码执行后，mynum 的值是：HELLO WORLD!
+</code></pre>
+<h3 id="返回指定位置的字符"><a href="#返回指定位置的字符" class="headerlink" title="返回指定位置的字符"></a>返回指定位置的字符</h3><p>charAt() 方法可返回指定位置的字符。返回的字符是长度为 1 的字符串。</p>
+<p><strong>语法:</strong></p>
+<pre><code>stringObject.charAt(index)
+</code></pre><p><strong>参数说明：</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MViTI.png" alt="1MViTI.png"></p>
+<p><strong>注意**</strong>：**1.字符串中第一个字符的下标是 0。最后一个字符的下标为字符串长度减一（string.length-1）。</p>
+<p>2.如果参数 index 不在 0 与 string.length-1 之间，该方法将返回一个空字符串。</p>
+<p><strong>如:</strong>在字符串 “I love JavaScript!” 中，返回位置2的字符：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mystr=&quot;I love JavaScript!&quot;
+  document.write(mystr.charAt(2));
+&lt;/script&gt;
+</code></pre>
+<p><strong>注意：</strong>一个空格也算一个字符。</p>
+<p>以上代码的运行结果：</p>
+<pre><code class="lang-javascript">l
+</code></pre>
+<h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p><strong>我们将按照不同的方式来分割字符串：</strong></p>
+<p>使用指定符号分割字符串，代码如下:</p>
+<pre><code>var mystr = &quot;www.imooc.com&quot;;
+document.write(mystr.split(&quot;.&quot;)+&quot;&lt;br&gt;&quot;);
+document.write(mystr.split(&quot;.&quot;, 2)+&quot;&lt;br&gt;&quot;);
+</code></pre><p><strong>运行结果:</strong></p>
+<pre><code>www,imooc,com
+www,imooc
+</code></pre><p>将字符串分割为字符，代码如下：</p>
+<pre><code>document.write(mystr.split(&quot;&quot;)+&quot;&lt;br&gt;&quot;);
+document.write(mystr.split(&quot;&quot;, 5));
+</code></pre><p>运行结果:</p>
+<pre><code>w,w,w,.,i,m,o,o,c,.,c,o,m
+w,w,w,.,i
+</code></pre><h3 id="返回指定字符首次出现的位置"><a href="#返回指定字符首次出现的位置" class="headerlink" title="返回指定字符首次出现的位置"></a>返回指定字符首次出现的位置</h3><p><strong>注意：</strong>1.indexOf() 方法区分大小写。</p>
+<p>2.如果要检索的字符串值没有出现，则该方法返回 -1。</p>
+<p>例如: 对 “I love JavaScript!” 字符串内进行不同的检索：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var str=&quot;I love JavaScript!&quot;
+  document.write(str.indexOf(&quot;I&quot;) + &quot;&lt;br /&gt;&quot;);
+  document.write(str.indexOf(&quot;v&quot;) + &quot;&lt;br /&gt;&quot;);
+  document.write(str.indexOf(&quot;v&quot;,8));
+&lt;/script&gt;
+</code></pre>
+<p>以上代码的输出：</p>
+<pre><code class="lang-javascript">0
+4
+9
+</code></pre>
+<h3 id="提取字符串substring"><a href="#提取字符串substring" class="headerlink" title="提取字符串substring()"></a>提取字符串substring()</h3><p><strong>注意：</strong></p>
+<p>\1. 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符，其长度为 stop 减start。</p>
+<p>\2. 如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。</p>
+<p>\3. 如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数。</p>
+<p>使用 substring() 从字符串中提取字符串，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mystr=&quot;I love JavaScript&quot;;
+  document.write(mystr.substring(7));
+  document.write(mystr.substring(2,6));
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果**</strong>:**</p>
+<pre><code class="lang-javascript">JavaScript
+love
+</code></pre>
+<h3 id="提取指定数目的字符substr"><a href="#提取指定数目的字符substr" class="headerlink" title="提取指定数目的字符substr()"></a>提取指定数目的字符substr()</h3><p><strong>注意：</strong>如果参数startPos是负数，从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。</p>
+<p>如果startPos为负数且绝对值大于字符串长度，startPos为0。</p>
+<p>使用 substr() 从字符串中提取一些字符，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mystr=&quot;I love JavaScript!&quot;;
+  document.write(mystr.substr(7));
+  document.write(mystr.substr(2,4));
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果：</strong></p>
+<pre><code class="lang-javascript">JavaScript!
+love
+</code></pre>
+<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><p>Math对象，提供对数据的数学计算。</p>
+<p>使用 Math 的属性和方法，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var mypi=Math.PI; 
+  var myabs=Math.abs(-15);
+  document.write(mypi);
+  document.write(myabs);
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果**</strong>:**</p>
+<pre><code class="lang-javascript">3.141592653589793
+15
+</code></pre>
+<p><strong>注意：</strong>Math 对象是一个固有的对象，无需创建它，直接把 Math 作为对象使用就可以调用其所有属性和方法。这是它与Date,String对象的区别。</p>
+<p>Math 对象属性</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MZqG6.png" alt="1MZqG6.png"></p>
+<p>Math 对象方法</p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MZOxO.png" alt="1MZOxO.png"></p>
+<h2 id="Array-数组对象"><a href="#Array-数组对象" class="headerlink" title="Array 数组对象"></a>Array 数组对象</h2><p><strong>数组定义的方法：</strong></p>
+<p>1.定义了一个空数组:</p>
+<pre><code class="lang-javascript">var  数组名= new Array();
+</code></pre>
+<p>2.定义时指定有n个空元素的数组：</p>
+<pre><code class="lang-javascript">var 数组名 =new Array(n);
+</code></pre>
+<p>3.定义数组的时候，直接初始化数据：</p>
+<pre><code class="lang-javascript">var  数组名 = [&lt;元素1&gt;, &lt;元素2&gt;, &lt;元素3&gt;...];
+</code></pre>
+<p>我们定义myArray数组，并赋值，<strong>代码如下：</strong></p>
+<pre><code class="lang-javascript">var myArray = [2, 8, 6];
+</code></pre>
+<p><strong>说明：</strong>定义了一个数组 myArray，里边的元素是：myArray[0] = 2; myArray[1] = 8; myArray[2] = 6。</p>
+<p><strong>数组元素使用：</strong></p>
+<pre><code class="lang-javascript">数组名[下标] = 值;
+</code></pre>
+<p><strong>注意</strong>: 数组的下标用方括号括起来，从0开始。</p>
+<p><strong>数组属性：</strong></p>
+<p>length 用法：&lt;数组对象&gt;.length；返回：数组的长度，即数组里有多少个元素。它等于数组里最后一个元素的下标加一。</p>
+<p><strong>数组方法：</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/28/1MeGyF.png" alt="1MeGyF.png"></p>
+<h3 id="选定元素slice"><a href="#选定元素slice" class="headerlink" title="选定元素slice()"></a>选定元素slice()</h3><p>slice() 方法可从已有的数组中返回选定的元素。</p>
+<p><strong>语法</strong></p>
+<pre><code>arrayObject.slice(start,end)
+</code></pre><p><strong>参数说明：</strong></p>
+<p><a href="http://img.mukewang.com/533299680001637b05160145.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/533299680001637b05160145.jpg" alt="img"></a></p>
+<p><strong>注意：</strong></p>
+<p>1.可使用负值从数组的尾部选取元素。</p>
+<p>2.如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。</p>
+<p>3.<code>String.slice()</code> 与 <code>Array.slice()</code> 相似。</p>
+<p>我们将创建一个新数组，然后从其中选取的元素，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var myarr = new Array(1,2,3,4,5,6);
+  document.write(myarr + &quot;&lt;br&gt;&quot;);
+  document.write(myarr.slice(2,4) + &quot;&lt;br&gt;&quot;);
+  document.write(myarr);
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果：</strong></p>
+<pre><code class="lang-javascript">1,2,3,4,5,6
+3,4
+1,2,3,4,5,6
+</code></pre>
+<h3 id="数组排序sort"><a href="#数组排序sort" class="headerlink" title="数组排序sort()"></a>数组排序sort()</h3><pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  function sortNum(a,b) {
+  return a - b;
+ //升序，如降序，把“a - b”该成“b - a”
+}
+ var myarr = new Array(&quot;80&quot;,&quot;16&quot;,&quot;50&quot;,&quot;6&quot;,&quot;100&quot;,&quot;1&quot;);
+  document.write(myarr + &quot;&lt;br&gt;&quot;);
+  document.write(myarr.sort(sortNum));
+&lt;/script&gt;
+</code></pre>
+<p><strong>运行结果：</strong></p>
+<pre><code class="lang-javascript">80,16,50,6,100,1
+1,6,16,50,80,100
+</code></pre>
+<h3 id="编程练习-1"><a href="#编程练习-1" class="headerlink" title="编程练习"></a>编程练习</h3><p>某班的成绩出来了，现在老师要把班级的成绩打印出来。</p>
+<p><strong>效果图:</strong></p>
+<pre><code>XXXX年XX月X日 星期X--班级总分为:81
+</code></pre><p><strong>格式要求：</strong></p>
+<p>1、显示打印的日期。 格式为类似“XXXX年XX月XX日 星期X” 的当前的时间。</p>
+<p>2、计算出该班级的平均分（保留整数）。</p>
+<p><strong>同学成绩数据如下：</strong></p>
+<p>“小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76”</p>
+<p><strong>任务</strong></p>
+<p>第一步：可通过javascript的日期对象来得到当前的日期。</p>
+<pre><code>提示:使用Date()日期对象，注意星期返回值为0-6，所以要转成文字&quot;星期X&quot;
+</code></pre><p>第二步：一长窜的字符串不好弄，找规律后分割放到数组里更好操作哦。</p>
+<p>第三步：分割字符串得到分数，然后求和取整。</p>
+<pre><code>提示：parseInt() 字符串类型转成整型。
+</code></pre><p>代码：</p>
+<pre><code class="lang-javascript">&lt;!DOCTYPE  HTML&gt;
+&lt;html &gt;
+&lt;head&gt;
+&lt;title&gt;系好安全带,准备启航&lt;/title&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+  //通过javascript的日期对象来得到当前的日期，并输出。
+  var currentdate=new Date();
+  var weekday = [&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;];
+  document.write(
+    currentdate.getFullYear()+&quot;年&quot;+(currentdate.getMonth()+1)+&quot;月&quot;+currentdate.getDate()+&quot;日&quot;+&quot; &quot;+weekday[currentdate.getDay()]
+  );
+  //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作哦
+  var scoreStr = &quot;小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76&quot;;
+  var scorceArr = scoreStr.split(&quot;;&quot;);
+  var sum=0;
+  //从数组中将成绩撮出来，然后求和取整，并输出。
+  for(var i=0;i&lt;scorceArr.length;i++)
+  {
+    sum+=parseInt(scorceArr[i].substr(scorceArr[i].indexOf(&quot;:&quot;)+1));
+  }
+  document.write(&quot;&lt;br/&gt;&quot;+&quot;班级总分为：&quot;+sum+&quot;&lt;br/&gt;&quot;);
+  document.write(&quot;班级平均分&quot;+Math.floor(sum/scorceArr.length));
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><p>window对象是BOM的核心，window对象指当前的浏览器窗口。</p>
+<p><strong>window对象方法:</strong></p>
+<p><strong><a href="http://img.mukewang.com/535483720001a54506670563.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/535483720001a54506670563.jpg" alt="img"></a></strong></p>
+<p><strong>注意:</strong>在JavaScript基础篇中，已讲解了部分属性，window对象重点讲解计时器。</p>
+<h3 id="JavaScript-计时器"><a href="#JavaScript-计时器" class="headerlink" title="JavaScript 计时器"></a>JavaScript 计时器</h3><p>在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。<br> <strong>计时器类型：</strong><br> 一次性计时器：仅在指定的延迟时间之后触发一次。<br> 间隔性触发计时器：每隔一定的时间间隔就触发一次。<br> <strong>计时器方法：</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/56976e1700014fc504090143.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/56976e1700014fc504090143.jpg" alt="img"></a></p>
+<h3 id="History-对象"><a href="#History-对象" class="headerlink" title="History 对象"></a>History 对象</h3><p>history对象记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。</p>
+<p><strong>注意:从\</strong>窗口*<em>被打开的那一刻开始记录，每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联。*</em></p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">window.history.[属性|方法]
+</code></pre>
+<p><strong>注意：</strong>window可以省略。</p>
+<p><strong>History 对象属性</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/53548c030001759e05840068.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53548c030001759e05840068.jpg" alt="img"></a></p>
+<p><strong>History 对象方法</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/53548c200001228206210123.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53548c200001228206210123.jpg" alt="img"></a></strong></p>
+<p>使用length属性，当前窗口的浏览历史总长度，<strong>代码如下：</strong></p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  var HL = window.history.length;
+  document.write(HL);
+&lt;/script&gt;
+</code></pre>
+<h3 id="返回前一个浏览的页面"><a href="#返回前一个浏览的页面" class="headerlink" title="返回前一个浏览的页面"></a>返回前一个浏览的页面</h3><p>back()方法，加载 history 列表中的前一个 URL。</p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">window.history.back();
+</code></pre>
+<p>比如，返回前一个浏览的页面，<strong>代码如下：</strong></p>
+<pre><code class="lang-javascript">window.history.back();
+</code></pre>
+<p><strong>注意：等同于点击浏览器的倒退按钮。</strong></p>
+<p>back()相当于go(-1),<strong>代码如下:</strong></p>
+<pre><code class="lang-javascript">window.history.go(-1);
+</code></pre>
+<h3 id="Location对象"><a href="#Location对象" class="headerlink" title="Location对象"></a>Location对象</h3><p>location用于获取或设置窗体的URL，并且可以用于解析URL。</p>
+<p><strong>语法:</strong></p>
+<pre><code>location.[属性|方法]
+</code></pre><p><strong>location对象属性图示:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/53605c5a0001b26909900216.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53605c5a0001b26909900216.jpg" alt="img"></a></p>
+<p><strong>location 对象属性：</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/5354b1d00001c4ec06220271.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354b1d00001c4ec06220271.jpg" alt="img"></a></strong></p>
+<p><strong>location 对象方法:</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/5354b1eb00016a2405170126.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354b1eb00016a2405170126.jpg" alt="img"></a></strong></p>
+<h3 id="Navigator对象"><a href="#Navigator对象" class="headerlink" title="Navigator对象"></a>Navigator对象</h3><p>Navigator 对象包含有关浏览器的信息，通常用于检测浏览器与操作系统的版本。</p>
+<p><strong>对象属性:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5354cff70001428b06880190.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354cff70001428b06880190.jpg" alt="img"></a></p>
+<p>查看浏览器的名称和版本，<strong>代码如下:</strong></p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+   var browser=navigator.appName;
+   var b_version=navigator.appVersion;
+   document.write(&quot;Browser name&quot;+browser);
+   document.write(&quot;&lt;br&gt;&quot;);
+   document.write(&quot;Browser version&quot;+b_version);
+&lt;/script&gt;
+</code></pre>
+<p>返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)</p>
+<p><strong>语法</strong></p>
+<pre><code>navigator.userAgent
+</code></pre><p>几种浏览的user_agent.，像360的兼容模式用的是IE、极速模式用的是chrom的内核。</p>
+<p><a href="http://img1.sycdn.imooc.com/535a3a4a0001e03f06870189.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/535a3a4a0001e03f06870189.jpg" alt="img"></a></p>
+<p>使用userAgent判断使用的是什么浏览器(假设使用的是IE8浏览器),<strong>代码如下:</strong></p>
+<pre><code class="lang-javascript">function validB(){ 
+  var u_agent = navigator.userAgent; 
+  var B_name=&quot;Failed to identify the browser&quot;; 
+  if(u_agent.indexOf(&quot;Firefox&quot;)&gt;-1){ 
+      B_name=&quot;Firefox&quot;; 
+  }else if(u_agent.indexOf(&quot;Chrome&quot;)&gt;-1){ 
+      B_name=&quot;Chrome&quot;; 
+  }else if(u_agent.indexOf(&quot;MSIE&quot;)&gt;-1&amp;&amp;u_agent.indexOf(&quot;Trident&quot;)&gt;-1){ 
+      B_name=&quot;IE(8-10)&quot;;  
+  }
+    document.write(&quot;B_name:&quot;+B_name+&quot;&lt;br&gt;&quot;);
+    document.write(&quot;u_agent:&quot;+u_agent+&quot;&lt;br&gt;&quot;); 
+}
+</code></pre>
+<p><strong>运行结果:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/535dea1e00017b0b06880265.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/535dea1e00017b0b06880265.jpg" alt="img"></a></p>
+<h3 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h3><p>screen对象用于获取用户的屏幕信息。</p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">window.screen.属性
+</code></pre>
+<p><strong>对象属性:</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/5354d2810001a47706210213.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5354d2810001a47706210213.jpg" alt="img"></a></strong></p>
+<h3 id="编程练习-2"><a href="#编程练习-2" class="headerlink" title="编程练习"></a>编程练习</h3><p>制作一个跳转提示页面：</p>
+<p><strong>要求：</strong></p>
+<p>\1. 如果打开该页面后，如果不做任何操作则5秒后自动跳转到一个新的地址，如慕课网主页。</p>
+<p>\2. 如果点击“返回”按钮则返回前一个页面。</p>
+<p><strong>效果:</strong></p>
+<p><strong><a href="http://img1.sycdn.imooc.com/537d6fed0001572608080402.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/537d6fed0001572608080402.jpg" alt="img"></a></strong></p>
+<p><strong>注意: 在窗口中运行该程序时，该窗口一定要有历史浏览记录，否则”返回”无效果。</strong></p>
+<p><strong>任务</strong></p>
+<p>第一步： 先编写好网页布局，如下:</p>
+<p>  <a href="http://img1.sycdn.imooc.com/537d6eba0001779f03840115.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/537d6eba0001779f03840115.jpg" alt="img"></a></p>
+<p>第二步： 获取显示秒数的元素，通过定时器来更改秒数。</p>
+<p>第三步： 通过window的location和history对象来控制网页的跳转。</p>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt;浏览器对象&lt;/title&gt;  
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;!--先编写好网页布局--&gt;
+  &lt;h1&gt;操作成功&lt;/h1&gt;
+  &lt;input type=&quot;text&quot; id=&quot;mytime&quot;value=&quot;5&quot;&gt;&lt;/input&gt;
+  &lt;span&gt;秒后回到主页&lt;/span&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt; 
+   //获取显示秒数的元素，通过定时器来更改秒数。
+   var num=5;
+    function changeNum(){
+        document.getElementById(&quot;mytime&quot;).value=num;
+        num=num-1;
+        if(num==0){
+            window.location=&quot;http://www.imooc.com/&quot;;
+        }
+    }
+    setInterval(&quot;changeNum()&quot;,1000);
+    //changeNum();
+   //通过window的location和history对象来控制网页的跳转。
+ &lt;/script&gt; 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="认识DOM"><a href="#认识DOM" class="headerlink" title="认识DOM"></a>认识DOM</h2><p>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。</p>
+<p><strong>先来看看下面代码:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5375ca640001c67307860420.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5375ca640001c67307860420.jpg" alt="img"></a></p>
+<p><strong>将HTML代码分解为DOM节点层次图:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5375ca7e0001dd8d04830279.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5375ca7e0001dd8d04830279.jpg" alt="img"></a></p>
+<p><strong>HTML**</strong>文档可以说由节点构成的集合，DOM节点有:**</p>
+<p><strong>1.</strong> <strong>元素节点：</strong>上图中<html>、<body>、<p>等都是元素节点，即标签。</p>
+<p><strong>2.</strong> <strong>文本节点:</strong>向用户展示的内容，如<li>...</li>中的JavaScript、DOM、CSS等文本。</p>
+<p><strong>3.</strong> <strong>属性节点:</strong>元素属性，如<a>标签的链接属性href=”<a href="http://www.imooc.com&quot;。" target="_blank" rel="noopener">http://www.imooc.com&quot;。</a></p>
+<p><strong>节点属性:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5375c953000117ee05240129.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5375c953000117ee05240129.jpg" alt="img"></a></p>
+<p><strong>遍历节点树:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/53f17a6400017d2905230219.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/53f17a6400017d2905230219.jpg" alt="img"></a></p>
+<p><strong>以上图ul为例，它的父级节点body,它的子节点3个li,它的兄弟结点h2、P。</strong></p>
+<p><strong>DOM操作:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/538d29da000152db05360278.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/538d29da000152db05360278.jpg" alt="img"></a></p>
+<p><strong>注意:</strong>前两个是document方法。</p>
+<h3 id="区别getElementByID-getElementsByName-getElementsByTagName"><a href="#区别getElementByID-getElementsByName-getElementsByTagName" class="headerlink" title="区别getElementByID,getElementsByName,getElementsByTagName"></a>区别<code>getElementByID,getElementsByName,getElementsByTagName</code></h3><p><strong>以人来举例说明，人有能标识身份的身份证，有姓名，有类别(大人、小孩、老人)等。</strong></p>
+<ol>
+<li><p>ID 是一个人的身份证号码，是唯一的。所以通过<code>getElementById</code>获取的是指定的一个人。</p>
+</li>
+<li><p>Name 是他的名字，可以重复。所以通过<code>getElementsByName</code>获取名字相同的人集合。</p>
+</li>
+<li><p><code>TagName</code>可看似某类，<code>getElementsByTagName</code>获取相同类的人集合。如获取小孩这类人，<code>getElementsByTagName(&quot;小孩&quot;)</code>。</p>
+</li>
+</ol>
+<p><strong>把上面的例子转换到HTML中，如下:</strong></p>
+<pre><code class="lang-javascript">&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby1&quot;&gt;  音乐
+</code></pre>
+<p>input标签就像人的类别。</p>
+<p>name属性就像人的姓名。</p>
+<p>id属性就像人的身份证。</p>
+<p><strong>方法总结如下:</strong></p>
+<p><a href="http://img1.sycdn.imooc.com/5405263300018bcf05760129.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5405263300018bcf05760129.jpg" alt="img"></a></p>
+<p><strong>注意：</strong>方法区分大小写</p>
+<p>通过下面的例子(6个name=”hobby”的复选项，两个按钮)来区分三种方法的不同:</p>
+<pre><code class="lang-javascript">  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby1&quot;&gt;  音乐
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby2&quot;&gt;  登山
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby3&quot;&gt;  游泳
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby4&quot;&gt;  阅读
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby5&quot;&gt;  打球
+  &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby6&quot;&gt;  跑步 
+  &lt;input type=&quot;button&quot; value = &quot;全选&quot; id=&quot;button1&quot;&gt;
+  &lt;input type=&quot;button&quot; value = &quot;全不选&quot; id=&quot;button1&quot;&gt;
+</code></pre>
+<ol>
+<li><p><code>document.getElementsByTagName(&quot;input&quot;)</code>，结果为获取所有标签为input的元素，共8个。</p>
+</li>
+<li><p><code>document.getElementsByName(&quot;hobby&quot;)</code>，结果为获取属性name=”hobby”的元素，共6个。</p>
+</li>
+<li><p><code>document.getElementById(&quot;hobby6&quot;)</code>，结果为获取属性id=”hobby6”的元素，只有一个，”跑步”这个复选项。</p>
+</li>
+</ol>
+<h3 id="编程练习-3"><a href="#编程练习-3" class="headerlink" title="编程练习"></a>编程练习</h3><p>1.在第27行处补充完整，实现当点击”全选”按钮时，将选中所有的复选项。</p>
+<pre><code>提示:document.getElementsByTagName(&quot;input&quot;)获取的是所有input标签，包括复选项和按钮，所以要判断是否是复选项，如是选中。
+</code></pre><p>2.在第33行处补充完整，实现当点击”全不选”按钮时，将取消所有选中的复选项。</p>
+<p>3.在第40行处补充完整，在文本框中输入输入1-6数值，当点击”确定”按钮时，根据输入的数值，通过id选中相应的复选项。</p>
+<p>代码：</p>
+<pre><code class="lang-php+HTML">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;无标题文档&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;form&gt;
+          请选择你爱好:&lt;br&gt;
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby1&quot;&gt;  音乐
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby2&quot;&gt;  登山
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby3&quot;&gt;  游泳
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby4&quot;&gt;  阅读
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby5&quot;&gt;  打球
+          &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; id=&quot;hobby6&quot;&gt;  跑步 &lt;br&gt;
+          &lt;input type=&quot;button&quot; value = &quot;全选&quot; onclick = &quot;checkall();&quot;&gt;
+          &lt;input type=&quot;button&quot; value = &quot;全不选&quot; onclick = &quot;clearall();&quot;&gt;
+          &lt;p&gt;请输入您要选择爱好的序号，序号为1-6:&lt;/p&gt;
+          &lt;input id=&quot;wb&quot; name=&quot;wb&quot; type=&quot;text&quot; &gt;
+          &lt;input name=&quot;ok&quot; type=&quot;button&quot; value=&quot;确定&quot; onclick = &quot;checkone();&quot;&gt;
+        &lt;/form&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        function checkall(){
+            var hobby = document.getElementsByTagName(&quot;input&quot;);
+        // 任务1 
+           for(var i=0;i&lt;hobby.length;i++)
+           {
+               hobby[i].checked=true;
+           }
+        }
+        function clearall(){
+            var hobby = document.getElementsByName(&quot;hobby&quot;);
+            for(var i=0;i&lt;hobby.length;i++)
+            {
+                hobby[i].checked=false;
+            }
+        // 任务2    
+
+        }
+
+        function checkone(){
+            var j=document.getElementById(&quot;wb&quot;).value;
+            if(parseInt(j)&gt;6||parseInt(j)&lt;0)
+            {
+                alert(&quot;请输入1-6之间的数字&quot;);
+            }
+        // 任务3
+            var hobby=document.getElementsByTagName(&quot;input&quot;);
+            hobby[parseInt(j)-1].checked=true;
+        }
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h3><p>在文档对象模型 (DOM) 中，每个节点都是一个对象。DOM 节点有三个重要的属性 ：</p>
+<ol>
+<li><code>nodeName</code> : 节点的名称</li>
+<li><code>nodeValue</code> ：节点的值</li>
+<li><code>nodeType</code> ：节点的类型</li>
+</ol>
+<p><strong>一、<code>nodeName</code> 属性:</strong> 节点的名称，是只读的。</p>
+<ol>
+<li>元素节点的 <code>nodeName</code> 与标签名相同</li>
+<li>属性节点的 <code>nodeName</code> 是属性的名称</li>
+<li>文本节点的 <code>nodeName</code> 永远是 <code>#text</code></li>
+<li>文档节点的 <code>nodeName</code> 永远是 <code>#document</code></li>
+</ol>
+<p><strong>二、<code>nodeValue</code> 属性：</strong>节点的值</p>
+<ol>
+<li>元素节点的 <code>nodeValue</code> 是 undefined 或 null</li>
+<li>文本节点的 <code>nodeValue</code> 是文本自身</li>
+<li>属性节点的 <code>nodeValue</code> 是属性的值</li>
+</ol>
+<p><strong>三、<code>nodeType</code> 属性:</strong> 节点的类型，是只读的。以下常用的几种结点类型:</p>
+<p><strong>元素类型   节点类型</strong><br>  元素      1<br>  属性      2<br>  文本      3<br>  注释      8<br>  文档      9</p>
+<h3 id="插入节点appendChild"><a href="#插入节点appendChild" class="headerlink" title="插入节点appendChild()"></a>插入节点<code>appendChild()</code></h3><p>在指定节点的最后一个子节点列表之后添加一个新的子节点。</p>
+<p><strong>语法:</strong></p>
+<pre><code>appendChild(newnode)
+</code></pre><p><strong>参数:</strong></p>
+<p><code>newnode</code>：指定追加的节点。</p>
+<p>我们来看看，div标签内创建一个新的 P 标签，代码如下:</p>
+<p><a href="http://img1.sycdn.imooc.com/5398fd020001ad4905890193.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5398fd020001ad4905890193.jpg" alt="img"></a></p>
+<p><strong>运行结果:</strong></p>
+<pre><code class="lang-javascript">HTML
+JavaScript
+This is a new p
+</code></pre>
+<h3 id="插入节点insertBefore"><a href="#插入节点insertBefore" class="headerlink" title="插入节点insertBefore()"></a>插入节点<code>insertBefore()</code></h3><p><code>insertBefore()</code> 方法可在已有的子节点前插入一个新的子节点。</p>
+<p><strong>语法:</strong></p>
+<p><code>insertBefore(newnode,node);</code></p>
+<p><strong>参数:</strong></p>
+<p><code>newnode:</code> 要插入的新节点。</p>
+<p>node: 指定此节点前插入节点。</p>
+<p>我们在来看看下面代码，在指定节点前插入节点。</p>
+<p><a href="http://img1.sycdn.imooc.com/5395318100010c6806960431.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/5395318100010c6806960431.jpg" alt="img"></a></p>
+<p><strong>运行结果:</strong></p>
+<pre><code class="lang-javascript">This is a new p
+JavaScript
+HTML
+</code></pre>
+<p><strong>注意:</strong> <code>otest.insertBefore(newnode,node);</code> 也可以改为: <code>otest.insertBefore(newnode,otest.childNodes[0]);</code> </p>
+<h3 id="替换元素节点replaceChild"><a href="#替换元素节点replaceChild" class="headerlink" title="替换元素节点replaceChild()"></a>替换元素节点<code>replaceChild()</code></h3><p><code>replaceChild</code> 实现子节点(对象)的替换。返回被替换对象的引用。 </p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">node.replaceChild (newnode,oldnew )
+</code></pre>
+<p><strong>参数：</strong></p>
+<p>newnode : 必需，用于替换 oldnew 的对象。<br> oldnew : 必需，被 newnode 替换的对象。</p>
+<p>我们来看看下面的代码:</p>
+<p><a href="http://img1.sycdn.imooc.com/539557d70001c3ee07190429.jpg" target="_blank" rel="noopener"><img src="http://img1.sycdn.imooc.com/539557d70001c3ee07190429.jpg" alt="img"></a> </p>
+<p>效果: 将文档中的 Java 改为 JavaScript。</p>
+<p><strong>注意:</strong> </p>
+<ol>
+<li><p>当 oldnode 被替换时，所有与之相关的属性内容都将被移除。 </p>
+</li>
+<li><p>newnode 必须先被建立。 </p>
+</li>
+</ol>
+<h3 id="创建元素节点createElement"><a href="#创建元素节点createElement" class="headerlink" title="创建元素节点createElement"></a>创建元素节点createElement</h3><p>createElement()方法可创建元素节点。此方法可返回一个 Element 对象。</p>
+<p><strong>语法：</strong></p>
+<pre><code class="lang-javascript">document.createElement(tagName)
+</code></pre>
+<p><strong>参数:</strong></p>
+<p>tagName：字符串值，这个字符串用来指明创建元素的类型。</p>
+<p><strong>注意：</strong>要与appendChild() 或 insertBefore()方法联合使用，将元素显示在页面中。</p>
+<p>我们来创建一个按钮，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+   var body = document.body; 
+   var input = document.createElement(&quot;input&quot;);  
+   input.type = &quot;button&quot;;  
+   input.value = &quot;创建一个按钮&quot;;  
+   body.appendChild(input);  
+ &lt;/script&gt;
+</code></pre>
+<p>效果：在HTML文档中，创建一个按钮。</p>
+<p>我们也可以使用setAttribute来设置属性，代码如下：</p>
+<pre><code class="lang-javascript">&lt;script type=&quot;text/javascript&quot;&gt;  
+   var body= document.body;             
+   var btn = document.createElement(&quot;input&quot;);  
+   btn.setAttribute(&quot;type&quot;, &quot;text&quot;);  
+   btn.setAttribute(&quot;name&quot;, &quot;q&quot;);  
+   btn.setAttribute(&quot;value&quot;, &quot;使用setAttribute&quot;);  
+   btn.setAttribute(&quot;onclick&quot;, &quot;javascript:alert(&#39;This is a text!&#39;);&quot;);       
+   body.appendChild(btn);  
+&lt;/script&gt;
+</code></pre>
+<p>效果：在HTML文档中，创建一个文本框，使用setAttribute设置属性值。 当点击这个文本框时，会弹出对话框“This is a text!”。</p>
+<h3 id="网页卷去的距离与偏移量"><a href="#网页卷去的距离与偏移量" class="headerlink" title="网页卷去的距离与偏移量"></a>网页卷去的距离与偏移量</h3><p><strong>我们先来看看下面的图：</strong></p>
+<p><a href="http://img.mukewang.com/5347b2b10001e1a307520686.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/5347b2b10001e1a307520686.jpg" alt="img"></a></p>
+<p><strong>scrollLeft:</strong>设置或获取位于给定对象左边界与窗口中目前可见内容的最左端之间的距离 ，即左边灰色的内容。</p>
+<p><strong>scrollTop:</strong>设置或获取位于对象最顶端与窗口中可见内容的最顶端之间的距离 ，即上边灰色的内容。</p>
+<p><strong>offsetLeft:</strong>获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 。</p>
+<p><strong>offsetTop:</strong>获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算顶端位置 。</p>
+<p><strong>注意:</strong></p>
+<p><strong>1. 区分大小写</strong></p>
+<p><strong>2. offsetParent：布局中设置postion属性(Relative、Absolute、fixed)的父容器，从最近的父节点开始，一层层向上找，直到HTML的body。</strong></p>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    function req(){
+          var div = document.getElementById(&quot;div1&quot;);
+          document.getElementById(&quot;li1&quot;).innerHTML = (div.offsetTop)+&quot;px&quot;;//div1距离屏幕顶部的距离
+          document.getElementById(&quot;li2&quot;).innerHTML = (div.offsetLeft)+&quot;px&quot;;//div1距离屏幕左部的距离
+          document.getElementById(&quot;li3&quot;).innerHTML = (div.scrollTop)+&quot;px&quot;;//div1纵向滚动条滚动的距离
+          document.getElementById(&quot;li4&quot;).innerHTML = (div.scrollLeft)+&quot;px&quot;;//div1横向滚动条滚动的距离
+     }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style=&quot;border:10px solid #ccc;padding:0px 0px;margin:5px 10px&quot;&gt;
+    &lt;div style=&quot;width:60%;border-right:3px dashed blue;float:left;&quot;&gt;
+        &lt;div style=&quot;float:left;&quot;&gt;
+            &lt;div id=&quot;div1&quot; style=&quot;border:5px blue solid;height:300px;width:200px;overflow:auto&quot;&gt;
+                &lt;div style=&quot;height:500px;width:400px&quot;&gt;请调整横竖滚动条后，点击按钮后查看offsetTop、offsetLeft、scrollTop、scrollLeft值。&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;input type=&quot;button&quot; value=&quot;点击我!&quot; onclick=&quot;req()&quot; style=&quot;border: 1px solid purple;height: 55px;&quot;/&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;div style=&quot;width:35%;height:65px;float:right;&quot;&gt;
+        &lt;ul style=&quot;list-style-type: none; line-height:38px;ss&quot;&gt;结果：
+            &lt;li&gt;offsetTop : &lt;span id=&quot;li1&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;offsetLeft : &lt;span id=&quot;li2&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt; scrollTop : &lt;span id=&quot;li3&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;scrollLeft : &lt;span id=&quot;li4&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;总结：offsetLeft与offsetTop的值是相对不变的。&lt;span id=&quot;lix&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+    &lt;/div&gt;
+    &lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="编程练习-4"><a href="#编程练习-4" class="headerlink" title="编程练习"></a>编程练习</h3><p>制作一个表格，显示班级的学生信息。</p>
+<p><strong>要求：</strong></p>
+<ol>
+<li><p>鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff</p>
+</li>
+<li><p>点击添加按钮，能动态在最后添加一行</p>
+</li>
+<li><p>点击删除按钮，则删除当前行</p>
+</li>
+</ol>
+<p><strong>任务</strong></p>
+<p>第一步： 首先，我们创建删除函数，并在删除按钮上添加点击事件；</p>
+<pre><code class="lang-javascript">提示: 使用removeChild()。
+</code></pre>
+<p>第二步： 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；</p>
+<pre><code class="lang-javascript">提示: 使用createElement()、innerHTML、appendChild()。
+</code></pre>
+<p>第三步： 更改鼠标移动改变背景则可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。</p>
+<pre><code class="lang-javascript">提示:
+1. 获取表格的行，getElementsByTagName 。
+2. 使用for进行循环，为每行添加事件及背景颜色设置。
+</code></pre>
+<p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt; new document &lt;/title&gt; 
+  &lt;script type=&quot;text/javascript&quot;&gt; 
+
+      window.onload = function(){
+     // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
+        var tr=document.getElementById(&quot;tr&quot;);
+        for(var i=0;i&lt;tr.length;i++)
+        {
+            btrchange(tr[i]);
+        }
+     }
+    function btrchange(obj)
+    {
+        obj.onmouseover=function()
+        {
+            obj.style.backgroundColor=&quot;#f2f2f2&quot;;
+        }
+        obj.onmouseout=function()
+        {
+            obj.style.backgroundColor=&quot;#fff&quot;;
+        }
+    }
+      // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
+     function add()
+     {
+        var num=prompt(&quot;请输入学号&quot;);
+        var name=prompt(&quot;请输入姓名&quot;);
+        var newtr=document.createElement(&quot;tr&quot;);
+        newtr.innerHTML=&quot;&lt;td&gt;&quot;+num+&quot;&lt;/td&gt;&quot;+&quot;&lt;td&gt;&quot;+name+&quot;&lt;/td&gt;&quot;+&#39;&lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this)&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;&#39;;
+        var table=document.getElementById(&quot;table&quot;).lastChild;
+        table.appendChild(newtr);
+     }
+
+     // 创建删除函数
+     function del(obj)
+     {
+        var table=document.getElementById(&quot;table&quot;).lastChild;
+        var tr=obj.parentNode.parentNode;
+        table.removeChild(tr);
+     }
+
+
+  &lt;/script&gt; 
+ &lt;/head&gt; 
+ &lt;body&gt; 
+       &lt;table border=&quot;1&quot; width=&quot;50%&quot; id=&quot;table&quot;&gt;
+       &lt;tr&gt;
+        &lt;th&gt;学号&lt;/th&gt;
+        &lt;th&gt;姓名&lt;/th&gt;
+        &lt;th&gt;操作&lt;/th&gt;
+       &lt;/tr&gt;  
+
+       &lt;tr&gt;
+        &lt;td&gt;xh001&lt;/td&gt;
+        &lt;td&gt;王小明&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this)&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;
+       &lt;/tr&gt;
+
+       &lt;tr&gt;
+        &lt;td&gt;xh002&lt;/td&gt;
+        &lt;td&gt;刘小芳&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this)&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;
+       &lt;/tr&gt;
+
+       &lt;/table&gt;
+       &lt;input type=&quot;button&quot; value=&quot;添加一行&quot;  onclick=&quot;add()&quot;/&gt;   &lt;!--在添加按钮上添加点击事件  --&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="编程挑战"><a href="#编程挑战" class="headerlink" title="编程挑战"></a>编程挑战</h2><p>现在利用之前我们学过的JavaScript知识，实现选项卡切换的效果。</p>
+<p><strong>效果图:</strong></p>
+<p><img src="http://img1.sycdn.imooc.com/53bd0e9e000163d203390200.jpg" alt="img"></p>
+<p><strong>文字素材:</strong></p>
+<p>房产：</p>
+<p>  275万购昌平邻铁三居 总价20万买一居<br>   200万内购五环三居 140万安家东三环<br>   北京首现零首付楼盘 53万购东5环50平<br>   京楼盘直降5000 中信府 公园楼王现房</p>
+<p>家居:</p>
+<p>   40平出租屋大改造 美少女的混搭小窝<br>    经典清新简欧爱家 90平老房焕发新生<br>    新中式的酷色温情 66平撞色活泼家居<br>    瓷砖就像选好老婆 卫生间烟道的设计</p>
+<p>二手房：</p>
+<p>   通州豪华3居260万 二环稀缺2居250w甩<br>    西3环通透2居290万 130万2居限量抢购<br>    黄城根小学学区仅260万 121平70万抛!<br>    独家别墅280万 苏州桥2居优惠价248万</p>
+<p><strong>任务</strong></p>
+<p>大家先思考和分析实现思路，然后在动手实现</p>
+<p>一、HTML页面布局</p>
+<pre><code>提示:
+选项卡标题使用ul..li
+选项卡内容使用div
+</code></pre><p>二、CSS样式制作</p>
+<pre><code>提示:
+整个选项卡的样式设置
+选项卡标题的样式设置
+选项卡内容的样式设置
+一开始只显示一个选项卡内容，其它选项卡内容隐藏。
+</code></pre><p>三、JS实现选项卡切换</p>
+<pre><code>提示:
+获取选项卡标题和选项卡内容
+选项卡内容多个，需要循环遍历来操作，得知哪个选项卡和哪个选项内容匹配
+通过改变DOM的css类名称,当前点击的选项卡显示，其它隐藏。
+</code></pre><p>代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;title&gt;实践题 - 选项卡&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+     /* 
+     标签和文本结合区域效果制作：
+     1.用ul做分类标签
+     2.把ul的display定义为block使ul区域和下面div区域结合在一起
+     3.给ul定义一个下边框或者给div内容区域定义一个上边框
+     4.所有li标签默认样式不设下边框，作为激活显示的li标签加宽其#fff（白色）
+     区域的下边框，覆盖。
+     */  
+*{
+    margin:0px; padding:0px; font:12px normal; font-family:微软雅黑;
+    }       
+ #tabs{
+     width:290px; height:150px; padding:5px; margin:20px;
+ }
+ #tabs ul{
+     list-style:none; display:block; height:30px; line-height:30px;
+ }
+ #tabs ul li{
+     float:left; width:60px; height:28px; line-height:28px; text-align:center;
+     display:inline-block;margin:0px 3px; border:1px solid #aaa;border-bottom:none;
+     cursor:pointer; background:#fff; list-style:none;
+ }
+ #tabs ul li.on{
+     border-top:2px solid saddlebrown; border-bottom:2px solid #fff;
+ }
+ #tabs div{
+     height:120px; line-height:25px; border:1px solid #336699;border-top:2px saddlebrown solid;padding:5px;
+ }
+ .hide{display:none;}
+    &lt;/style&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+    window.onload=function(){
+        var tabs=document.getElementById(&quot;tabs&quot;);
+        var sli=document.getElementsByTagName(&quot;li&quot;);
+        var sdiv=tabs.getElementsByTagName(&quot;div&quot;);
+        for(var i=0;i&lt;sli.length;i++)
+        {
+            sli[i].index=i;
+            sli[i].onmouseover=function(){
+                for(var j=0;j&lt;sli.length;j++)
+                {
+                    sli[j].className=&quot;&quot;;
+                    sdiv[j].className=&quot;hide&quot;;
+                }
+                this.className=&quot;on&quot;;
+                sdiv[this.index].className=&quot;&quot;;
+            }
+        }
+    }
+
+    &lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- HTML页面布局 --&gt;
+&lt;div id=&quot;tabs&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;on&quot;&gt;房产&lt;/li&gt;
+        &lt;li&gt;家居&lt;/li&gt;
+        &lt;li&gt;二手房&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;
+    275万购昌平邻铁三居 总价20万买一居&lt;br&gt;
+    200万内购五环三居 140万安家东三环&lt;br&gt;
+    北京首现零首付楼盘 53万购东5环50平&lt;br&gt;
+    京楼盘直降5000 中信府 公园楼王现房&lt;br&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hide&quot;&gt;
+     40平出租屋大改造 美少女的混搭小窝&lt;br&gt;
+     经典清新简欧爱家 90平老房焕发新生&lt;br&gt;
+     新中式的酷色温情 66平撞色活泼家居&lt;br&gt;
+     瓷砖就像选好老婆 卫生间烟道的设计&lt;br&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hide&quot;&gt;
+     通州豪华3居260万 二环稀缺2居250w甩&lt;br&gt;
+     西3环通透2居290万 130万2居限量抢购&lt;br&gt;
+     黄城根小学学区仅260万 121平70万抛!&lt;br&gt;
+     独家别墅280万 苏州桥2居优惠价248万&lt;br&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>javascript入门篇</title>
     <url>/2020/01/28/JS%E5%85%A5%E9%97%A8%E7%AF%87/</url>
     <content><![CDATA[<p>关于JS基础知识<br><a id="more"></a></p>
@@ -639,7 +3383,7 @@ arr[2]=&#39;Volvo&#39;;
   </entry>
   <entry>
     <title>Javascript 面向对象编程（一）：封装</title>
-    <url>/2020/01/19/2020-01-19-1/</url>
+    <url>/2020/01/19/Javascript%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%B0%81%E8%A3%85/</url>
     <content><![CDATA[<p>学习Javascript，最难的地方是什么？我觉得，Object（对象）最难。因为Javascript的Object模型很独特，和其他语言都不一样，初学者不容易掌握。下面就是我的学习笔记，希望对大家学习这个部分有所帮助。</p>
 <a id="more"></a>
 <h2 id="一、生成实例对象的原始模式"><a href="#一、生成实例对象的原始模式" class="headerlink" title="一、生成实例对象的原始模式"></a>一、生成实例对象的原始模式</h2><p>假定我们把猫看成一个对象</p>
@@ -752,7 +3496,7 @@ alert(&quot;type&quot; in cat1); // true
   </entry>
   <entry>
     <title>小程序学习</title>
-    <url>/2020/01/16/2020-01-16-1/</url>
+    <url>/2020/01/16/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<p>小程序学习<br><a id="more"></a></p>
 <h1 id="获取目前所处位置"><a href="#获取目前所处位置" class="headerlink" title="获取目前所处位置"></a>获取目前所处位置</h1><p><img src="https://i.loli.net/2020/01/18/tvjCBleVqTi3brK.jpg" alt="162538-15586863381bcc.jpg"></p>
 <pre><code class="lang-javascript">onShow(){

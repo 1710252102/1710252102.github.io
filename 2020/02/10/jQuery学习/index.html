@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>jQuery学习 - henucm</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="jQuery基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery学习">
+<meta property="og:url" content="http://yoursite.com/2020/02/10/jQuery%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="henucm">
+<meta property="og:description" content="jQuery基础知识">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/10/1IZx0S.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/10/1IZO6P.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/10/1IZXOf.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/10/1IYNse.png">
+<meta property="article:published_time" content="2020-02-10T11:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-10T15:47:47.139Z">
+<meta property="article:author" content="henucm">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/10/1IZx0S.md.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1581349776614">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="henucm" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="henucm">
+            <img src="/images/avatar.png" alt="henucm">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>12</div>
+        <div><span>标签</span>9</div>
+        <div><span>分类</span>6</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+                <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+                <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+                <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/1710252102/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/">Javascript</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/">css3</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/html5/">html5</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/jQuery/">jQuery</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/">javascript</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/微信小程序/">微信小程序</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">基础知识</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" style="font-size: 10px;">异步处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 15px;">数据类型</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E7%A7%BB%E5%8A%A8web/" style="font-size: 10px;">移动web</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">面向对象</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 henucm
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://imgchr.com/i/1I07NQ">
+        
+        <h1>jQuery学习</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月10日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1,873 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/javascript/">javascript</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/javascript/jQuery/">jQuery</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/jQuery/" rel="tag">jQuery</a>
+    
+  </div>
+  <article>
+    <p>jQuery基础知识<br><a id="more"></a><br>[TOC]</p>
+<h2 id="jQuery学习"><a href="#jQuery学习" class="headerlink" title="jQuery学习"></a>jQuery学习</h2><h2 id="day1"><a href="#day1" class="headerlink" title="day1"></a>day1</h2><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>1、什么是javascript库？<br>    一个用javascript封装了很多属性和方法的文件。</p>
+<p>2、javascript库有哪些？<br>    jQuery、Prototype、YUI、Dojo、Ext JS、移动端的zepto等</p>
+<h3 id="初始jQuery"><a href="#初始jQuery" class="headerlink" title="初始jQuery"></a>初始jQuery</h3><p>jQuery的概念：jQuery是javascript实现的一个库。设计宗旨是”Write Less，Do More”,即写的少，做的多。<br>jQuery的优点：<br>    跨浏览器兼容<br>    链式编程，隐式迭代<br>    简化DOM操作，支持事件、样式、动画<br>    支持插件扩展开发<br>    开源免费</p>
+<h3 id="jQuery顶级对象"><a href="#jQuery顶级对象" class="headerlink" title="jQuery顶级对象"></a>jQuery顶级对象</h3><pre><code class="lang-javascript">        // 1. $ 是jQuery的别称（另外的名字）
+        // $(function() {
+        //     alert(11)
+        // });
+        jQuery(function() {
+            // alert(11)
+            // $(&#39;div&#39;).hide();
+            jQuery(&#39;div&#39;).hide();
+        });
+        // 2. $同时也是jQuery的 顶级对象
+</code></pre>
+<h3 id="DOM对象和jQuery对象"><a href="#DOM对象和jQuery对象" class="headerlink" title="DOM对象和jQuery对象"></a>DOM对象和jQuery对象</h3><pre><code class="lang-javascript">        // 1. DOM对象转换为 jQuery对象
+        // (1) 我们直接获取视频，得到就是jQuery对象
+        // $(&#39;video&#39;);
+        // (2) 我们已经使用原生js 获取过来 DOM对象
+        var myvideo = document.querySelector(&#39;video&#39;);
+        // $(myvideo).play(); 错误 jquery里面没有play 这个方法
+        // 2.  jQuery对象转换为DOM对象
+        // myvideo.play();
+        $(&#39;video&#39;)[0].play()
+        $(&#39;video&#39;).get(0).play()
+</code></pre>
+<h3 id="隐式迭代（重要）"><a href="#隐式迭代（重要）" class="headerlink" title="隐式迭代（重要）"></a>隐式迭代（重要）</h3><p>遍历内部DOM（伪数组形式存储）的过程叫做隐式迭代</p>
+<p>隐式迭代 就是把匹配的所有元素内部进行遍历循环  给每一个元素添加css这个方法</p>
+<pre><code class="lang-javascript">// 给所有的div设置背景颜色为粉色 jQuery对象不能使用style
+$(&#39;div&#39;).css(&#39;background&#39;,&#39;pink&#39;);
+</code></pre>
+<h3 id="jQuery-筛选选择器"><a href="#jQuery-筛选选择器" class="headerlink" title="jQuery 筛选选择器"></a>jQuery 筛选选择器</h3><p><a href="https://imgchr.com/i/1IZx0S" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/10/1IZx0S.md.png" alt="1IZx0S.md.png"></a></p>
+<p><a href="https://imgchr.com/i/1IZO6P" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/10/1IZO6P.png" alt="1IZO6P.png"></a></p>
+<p><a href="https://imgchr.com/i/1IZXOf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/10/1IZXOf.md.png" alt="1IZXOf.md.png"></a></p>
+<p><strong>重点：</strong></p>
+<p>$(“li”).parent()  | $(“ul”).children(“li”) | $(“ul”).find(“li”) | $(“.first”).siblings(“li”) | $(“li”).eq(2) </p>
+<h3 id="jQuery修改样式css方法"><a href="#jQuery修改样式css方法" class="headerlink" title="jQuery修改样式css方法"></a>jQuery修改样式css方法</h3><pre><code class="lang-javascript">//获取值
+var strColor=$(this).css(&#39;color&#39;);
+//赋值
+var strColor=$(this).css(&#39;color&#39;,&#39;red&#39;);
+//赋值
+$(this).css({ &quot;color&quot;:&quot;white&quot;,&quot;font-size&quot;:&quot;20px&quot;});
+</code></pre>
+<h3 id="jQuery修改样式操作类"><a href="#jQuery修改样式操作类" class="headerlink" title="jQuery修改样式操作类"></a>jQuery修改样式操作类</h3><pre><code class="lang-javascript">//添加类
+$(&quot;div&quot;).addClass(&quot;current&quot;);
+//删除类
+$(&quot;div&quot;).removeClass(&quot;current&quot;);
+//切换类
+$(&quot;div&quot;).toggleClass(&quot;current&quot;);
+</code></pre>
+<p>👆 和DOM中的classList 里面用法类似 </p>
+<h3 id="jQuery滑动效果以及事件切换"><a href="#jQuery滑动效果以及事件切换" class="headerlink" title="jQuery滑动效果以及事件切换"></a>jQuery滑动效果以及事件切换</h3><pre><code class="lang-javascript">//滑入
+$(&quot;div&quot;).slideDown();
+//滑出
+$(&quot;div&quot;).slideUp();
+//切换类
+$(&quot;div&quot;).slideToggle();
+</code></pre>
+<h3 id="jQuery停止动画排队-在动画前面加-stop"><a href="#jQuery停止动画排队-在动画前面加-stop" class="headerlink" title="jQuery停止动画排队  在动画前面加 stop()"></a>jQuery停止动画排队  在动画前面加 stop()</h3><h3 id="jQuery淡入淡出以及突出显示案例"><a href="#jQuery淡入淡出以及突出显示案例" class="headerlink" title="jQuery淡入淡出以及突出显示案例"></a>jQuery淡入淡出以及突出显示案例</h3><pre><code class="lang-javascript">//淡入 1000-时间
+$(&quot;div&quot;).fadeIn(1000)
+//淡出
+$(&quot;div&quot;).fadeOut(1000)
+//修改透明度
+$(&quot;div&quot;).fadeToggle(1000,0.5);
+</code></pre>
+<h3 id="jQuery自定义动画animate方法"><a href="#jQuery自定义动画animate方法" class="headerlink" title="jQuery自定义动画animate方法"></a>jQuery自定义动画animate方法</h3><pre><code>$(function() {
+            $(&quot;button&quot;).click(function() {
+                $(&quot;div&quot;).animate({
+                    left: 500,
+                    top: 300,
+                    opacity: .4,
+                    width: 500
+                }, 500);
+            })
+        })
+</code></pre><p><strong>$(selector).animate(styles,speed,easing,callback)</strong></p>
+<p><strong>speed：规定动画的速度。默认是 “normal”。 可能的值：毫秒 （比如 1500） | “slow” | “normal” | “fast”</strong></p>
+<p><strong>easing：规定在不同的动画点中设置动画速度的 easing 函数。内置的 easing 函数：swing | linear</strong></p>
+<p><strong>callback：animate 函数执行完之后，要执行的函数。</strong></p>
+<h2 id="day2"><a href="#day2" class="headerlink" title="day2"></a>day2</h2><h3 id="jQuery属性操作"><a href="#jQuery属性操作" class="headerlink" title="jQuery属性操作"></a>jQuery属性操作</h3><pre><code class="lang-javascript">// 1.普通属性和表单属性操作
+// 获取值
+$(&quot;a&quot;).prop(&quot;href&quot;);
+// 赋值
+$(&quot;input&quot;).prop(&quot;checked&quot;,true);
+
+//2.普通属性和自定义属性操作
+//获取值
+$(&quot;a&quot;).attr(&quot;href&quot;);
+//赋值
+$(&quot;a&quot;).attr(&quot;aaa&quot;,&quot;我们都挺好&quot;);
+
+//3.自定义属性和H5新增属性 data-list
+//获取值 
+$(&quot;a&quot;).data(&quot;uname&quot;);
+//赋值
+$(&quot;a&quot;).data(&quot;uname&quot;,&quot;哈哈哈&quot;);
+</code></pre>
+<h3 id="jQuery文本属性值"><a href="#jQuery文本属性值" class="headerlink" title="jQuery文本属性值"></a>jQuery文本属性值</h3><pre><code class="lang-javascript">//1.类比DOM中innerHTML属性方法：html()
+//获取值
+$(&quot;a&quot;).html();
+//赋值
+$(&quot;a&quot;).html(&quot;赋值内容，识别标签&quot;);
+
+//2.类比DOM中innerText属性方法：text()
+//获取值
+$(&quot;a&quot;).text();
+//赋值
+$(&quot;a&quot;).text(&quot;赋值内容,NO识别标签&quot;);
+
+//3.类比DOM中value属性方法：val()
+//获取值
+$(&quot;input&quot;).val();
+//赋值
+$(&quot;input&quot;).val(&quot;val()操作标签，必须带有value属性---表达标签&quot;);
+</code></pre>
+<h3 id="jQuery数据的遍历-each"><a href="#jQuery数据的遍历-each" class="headerlink" title="jQuery数据的遍历 $.each()"></a>jQuery数据的遍历 $.each()</h3><pre><code class="lang-javascript">// 1. each() 方法遍历元素
+var sum = 0;
+var arr = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
+$(&quot;div&quot;).each(function(i, domEle) {
+        $(domEle).css(&quot;color&quot;, arr[i]);
+         sum += parseInt($(domEle).text());
+}
+
+// 2. $.each() 方法遍历元素 主要用于遍历数据，处理数据
+// $.each($(&quot;div&quot;), function(i, ele) {
+//     console.log(i);
+//     console.log(ele);
+// });
+// $.each(arr, function(i, ele) {
+//     console.log(i);
+//     console.log(ele);
+// })
+$.each({
+name: &quot;andy&quot;,
+age: 18
+}, function(i, ele) {
+console.log(i); // 输出的是 name age 属性名
+console.log(ele); // 输出的是 andy  18 属性值
+})
+</code></pre>
+<h3 id="jQuery创建添加删除元素-重要"><a href="#jQuery创建添加删除元素-重要" class="headerlink" title="jQuery创建添加删除元素(重要)"></a>jQuery创建添加删除元素(重要)</h3><pre><code class="lang-javascript">//1.创建元素
+$(&quot;&lt;li&gt;我是后来创建的li&lt;.li&gt;&quot;);
+
+//2.添加元素
+$(&quot;ul&quot;).append(li);      // 内部添加并且放到内容的最后面 
+$(&quot;ul&quot;).prepend(li);      // 内部添加并且放到内容的最前面
+$(&quot;.test&quot;).after(div);     // .test的后面兄弟形式加一个
+$(&quot;.test&quot;).before(div);     // .test的前面兄弟形式加一个
+
+//3.删除元素
+$(&quot;ul&quot;).remove();      // 可以删除匹配的元素 自杀(包括自己)
+$(&quot;ul&quot;).empty();     // 可以删除匹配的元素里面的子节点 孩子
+$(&quot;ul&quot;).html(&quot;&quot;);     // 可以删除匹配的元素里面的子节点 孩子
+</code></pre>
+<h3 id="jQuery尺寸操作"><a href="#jQuery尺寸操作" class="headerlink" title="jQuery尺寸操作"></a>jQuery尺寸操作</h3><p><img src="https://s2.ax1x.com/2020/02/10/1IYNse.png" alt="1IYNse.png"></p>
+<h3 id="jQuery位置操作"><a href="#jQuery位置操作" class="headerlink" title="jQuery位置操作"></a>jQuery位置操作</h3><p>1.offset() 设置或者获取偏移位置<br>    offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。<br>    返回值是一个对象，有2个属性 left、top ；<br>    offset().top  用于获取距离文档顶部的距离，offset().left 用于获取距离文档左侧的距离。<br>    可以设置元素的偏移：offset({ top: 10, left: 30 });</p>
+<p>2.position() 获取元素偏移<br>    position() 方法用于返回被选元素相对于带有定位的父级偏移坐标<br>    返回值是一个对象，有2个属性 left、top。<br>    position().top 用于获取距离定位父级顶部的距离<br>    position().left 用于获取距离定位父级左侧的距离。如果父级都没有定位，则以文档为准。<br>    该方法只能获取</p>
+<h3 id="jQuery操作元素被卷去的头部"><a href="#jQuery操作元素被卷去的头部" class="headerlink" title="jQuery操作元素被卷去的头部"></a>jQuery操作元素被卷去的头部</h3><p>1.scrollTop() 设置或者获取元素被卷去的头部<br>    scrollTop() 方法设置或返回被选元素被卷去的头部。<br>    不跟参数是获取，参数为不带单位的数字则是设置被卷去的头部</p>
+<p>2.scrollLeft() 同理</p>
+<h2 id="day3"><a href="#day3" class="headerlink" title="day3"></a>day3</h2><h3 id="jQuery事件注册"><a href="#jQuery事件注册" class="headerlink" title="jQuery事件注册"></a>jQuery事件注册</h3><pre><code class="lang-javascript">//1.on()可以一次绑定多个事件，也可以多此为同一个事件添加多个逻辑
+$(&quot;div&quot;).on(&quot;mouseenter mouseleave&quot;,function(){
+    $(this).toggleClass(&quot;current&quot;);
+})
+//2.on()可以做事件委托，就是给未来动态创建除了的子元素绑定事件
+$(&quot;ol&quot;).on(&quot;click&quot;,&quot;li&quot;,function(){
+    $(&quot;ol&quot;).on(&quot;click&quot;,&quot;li&quot;,function(){
+        alert(11);
+    })
+})
+</code></pre>
+<h3 id="jQuery事件处理"><a href="#jQuery事件处理" class="headerlink" title="jQuery事件处理"></a>jQuery事件处理</h3><pre><code class="lang-javascript">//1.off()可以把以节绑定在某个事件上的逻辑取消
+ $(&quot;div&quot;).off(&quot;click&quot;);
+//2.one()可以绑定只触发一次的事件
+$(&quot;ol&quot;).one(&quot;click&quot;,&quot;li&quot;,function(){
+    alert(11);
+})
+</code></pre>
+<h3 id="jQuery事件触发"><a href="#jQuery事件触发" class="headerlink" title="jQuery事件触发"></a>jQuery事件触发</h3><p>1、jQuery中的事件对象兼容性更好，获取更方便，操作几乎和DOM中的event完全一样。例如：</p>
+<pre><code class="lang-javascript">$(&quot;div&quot;).on(&quot;click&quot;,function(event){
+    event.stopPropagation();
+    event.preventDefault();
+})
+</code></pre>
+<h3 id="jQuery自动触发事件"><a href="#jQuery自动触发事件" class="headerlink" title="jQuery自动触发事件"></a>jQuery自动触发事件</h3><pre><code class="lang-javascript">$(&quot;div&quot;).on(&quot;click&quot;, function() {
+    alert(11);
+});
+
+// 自动触发事件
+// 1. 元素.事件()
+// $(&quot;div&quot;).click();会触发元素的默认行为
+// 2. 元素.trigger(&quot;事件&quot;)
+// $(&quot;div&quot;).trigger(&quot;click&quot;);会触发元素的默认行为
+$(&quot;input&quot;).trigger(&quot;focus&quot;);
+// 3. 元素.triggerHandler(&quot;事件&quot;) 就是不会触发元素的默认行为
+$(&quot;div&quot;).triggerHandler(&quot;click&quot;);
+$(&quot;input&quot;).on(&quot;focus&quot;, function() {
+$(this).val(&quot;你好吗&quot;);
+});
+// $(&quot;input&quot;).triggerHandler(&quot;focus&quot;);
+</code></pre>
+<h3 id="jQuery对象拷贝"><a href="#jQuery对象拷贝" class="headerlink" title="jQuery对象拷贝"></a>jQuery对象拷贝</h3><pre><code class="lang-javascript">var targetObj = {
+    id: 0,
+    msg: {
+        sex: &#39;男&#39;
+    }
+};
+var obj = {
+    id: 1,
+    name: &quot;andy&quot;,
+    msg: {
+        age: 18
+    }
+};
+$.extend(targetObj, obj); // 会覆盖targetObj 里面原来的数据
+// 1. 浅拷贝把原来对象里面的复杂数据类型地址拷贝给目标对象
+targetObj.msg.age = 20;
+console.log(targetObj); //结果都为20 因为拷贝的是地址
+console.log(obj); //结果都为20 因为拷贝的是地址
+// 2. 深拷贝把里面的数据完全复制一份给目标对象 如果里面有不冲突的属性,会合并到一起 
+$.extend(true, targetObj, obj);
+// console.log(targetObj); // 会覆盖targetObj 里面原来的数据
+targetObj.msg.age = 20;
+console.log(targetObj); // msg :{sex: &quot;男&quot;, age: 20}
+console.log(obj); //不会被覆盖
+</code></pre>
+<h3 id="jQuery多库共存"><a href="#jQuery多库共存" class="headerlink" title="jQuery多库共存"></a>jQuery多库共存</h3><pre><code class="lang-javascript">function $(ele) {
+    return document.querySelector(ele);
+}
+console.log($(&quot;div&quot;));
+// 1. 如果$ 符号冲突 我们就使用 jQuery
+jQuery.each();
+// 2. 让jquery 释放对$ 控制权 让用自己决定
+var suibian = jQuery.noConflict();
+console.log(suibian(&quot;span&quot;));
+suibian.each();
+</code></pre>
+<h3 id="jQuery插件"><a href="#jQuery插件" class="headerlink" title="jQuery插件"></a>jQuery插件</h3><p>主要有 jQuery之家 | jQuery插件库 | boostrap</p>
+<p>使用插件大致步骤 （bootstrap）</p>
+<p>优先引入 bootstrap.min.css、jquery.min.js、bootstrap.min.js  这三项</p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>henucm<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/02/10/jQuery%E5%AD%A6%E4%B9%A0/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;10&#x2F;jQuery%E5%AD%A6%E4%B9%A0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;10&#x2F;jQuery%E5%AD%A6%E4%B9%A0&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3Ni8yMjQ4Nw==">
+    <script id="livere-comment-js">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1581349776619"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>移动web学习 - henucm</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="四种移动web布局方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动web学习">
+<meta property="og:url" content="http://yoursite.com/2020/02/02/%E7%A7%BB%E5%8A%A8web%E5%9B%9B%E7%A7%8D%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="henucm">
+<meta property="og:description" content="四种移动web布局方式">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/05/1rO1qP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/05/1rOXQA.png">
+<meta property="article:published_time" content="2020-02-02T11:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-10T15:46:11.377Z">
+<meta property="article:author" content="henucm">
+<meta property="article:tag" content="移动web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/05/1rO1qP.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1581349776620">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="henucm" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="henucm">
+            <img src="/images/avatar.png" alt="henucm">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>12</div>
+        <div><span>标签</span>9</div>
+        <div><span>分类</span>6</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+                <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+                <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+                <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/1710252102/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/">Javascript</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/">css3</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/html5/">html5</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/jQuery/">jQuery</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/">javascript</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/微信小程序/">微信小程序</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">基础知识</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" style="font-size: 10px;">异步处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 15px;">数据类型</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E7%A7%BB%E5%8A%A8web/" style="font-size: 10px;">移动web</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">面向对象</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 henucm
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://imgchr.com/i/1I07NQ">
+        
+        <h1>移动web学习</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月02日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3,224 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 15 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/css3/">css3</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/css3/html5/">html5</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E7%A7%BB%E5%8A%A8web/" rel="tag">移动web</a>
+    
+  </div>
+  <article>
+    <p>四种移动web布局方式<br><a id="more"></a><br>[TOC]</p>
+<p>资料：<a href="https://pan.baidu.com/s/1dqaeDQNzP5FOqOTTQeKsbQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1dqaeDQNzP5FOqOTTQeKsbQ</a></p>
+<h2 id="移动web开发之流式布局"><a href="#移动web开发之流式布局" class="headerlink" title="移动web开发之流式布局"></a>移动web开发之流式布局</h2><p>流式布局比较简单放两个案例自行了解</p>
+<pre><code class="lang-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 100%;
+            max-width: 980px;
+            min-width: 320px;
+        }
+        section div{
+            float: left;
+            width: 50%;
+            height: 400px;
+        }
+        section div:nth-child(1){
+            background-color: pink;
+        }
+        section div:nth-child(2){
+            background-color: purple;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="案例：京东网页"><a href="#案例：京东网页" class="headerlink" title="案例：京东网页"></a>案例：京东网页</h3><h4 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h4><pre><code class="lang-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/index.css&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 顶部 --&gt;
+    &lt;header class=&quot;app&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src=&quot;images/close.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;images/logo.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;打开京东APP，购物更轻松&lt;/li&gt;
+            &lt;li&gt;立即打开&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- 搜索 --&gt;
+    &lt;div class=&quot;search-wrap&quot;&gt;
+        &lt;div class=&quot;search-btn&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;search&quot;&gt;
+            &lt;div class=&quot;jd-icon&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;sou&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;search-login&quot;&gt;登录&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 主体内容图 --&gt;
+    &lt;div class=&quot;main-content&quot;&gt;
+        &lt;!-- 滑动图 --&gt;
+        &lt;div class=&quot;slider&quot;&gt;
+            &lt;img src=&quot;upload/banner.dpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;!-- 品牌日 --&gt;
+        &lt;div class=&quot;brand&quot;&gt;
+            &lt;div&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;img src=&quot;upload/pic11.dpg&quot; alt=&quot;&quot;&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;img src=&quot;upload/pic22.dpg&quot; alt=&quot;&quot;&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;img src=&quot;upload/pic33.dpg&quot; alt=&quot;&quot;&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;nav&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;&quot;&gt;
+                &lt;img src=&quot;upload/nav1.webp&quot; alt=&quot;&quot;&gt;
+                &lt;span&gt;京东超市&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;!-- 新闻模块 --&gt;
+        &lt;div class=&quot;news&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;
+                &lt;img src=&quot;upload/new1.dpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;
+                &lt;img src=&quot;upload/new2.dpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;
+                &lt;img src=&quot;upload/new3.dpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h4><pre><code class="lang-css">body{
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: -apple-system,Helvetica,sans-serif;
+    background-color: #ccc;
+    height: 2000px;
+}
+/*点击高亮我们需要清除清除  设置为transparent 完成透明*/
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式*/
+input {
+    -webkit-appearance: none;
+}
+
+/*禁用长按页面时的弹出菜单*/
+img,
+a {
+    -webkit-touch-callout: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    color: #666;
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+.news{
+    margin-top: 200px;
+}
+.app{
+    height: 45px;
+}
+.app ul li{
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    background-color: #333333;
+    text-align: center;
+    color: white;
+}
+.app ul li:nth-child(1){
+    width: 8%;
+}
+.app ul li:nth-child(1) img{
+    width: 10px;
+}
+.app ul li:nth-child(2){
+    width: 10%;
+}
+.app ul li:nth-child(2) img{
+    width: 30px;
+    vertical-align: middle;
+}
+.app ul li:nth-child(3){
+    width: 57%;
+}
+.app ul li:nth-child(4){
+    width: 25%;
+    background-color: #F63515;
+}
+/* 搜索 */
+.search-wrap{
+    position: fixed;
+    height: 44px;
+    width: 100%;
+    overflow: hidden;
+    min-width: 320px;
+    max-width: 640px;
+}
+.search-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+}
+.search-btn::before{
+    content: &quot;&quot;;
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+.search-login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+ }
+.search{
+    position: relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 7px 50px;
+    border-radius: 15px;
+} 
+.jd-icon{
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background: url(../images/jd.png) no-repeat;
+    background-size: 20px 15px;
+}
+.jd-icon::after{
+    position: absolute;
+    content: &quot;&quot;;
+    display: block;
+    right: -8px;
+    top: 0;
+    width: 1.5px;
+    height: 15px;
+    background-color: #ccc;
+}
+.sou{
+    position: absolute;
+    width: 18px;
+    height: 15px;
+    top: 8px;
+    left: 50px;
+    /* 精灵图做法 */
+    background: url(../images/jd-sprites.png) no-repeat -81px 0;
+    background-size: 200px auto;
+}
+.slider img{
+    width: 100%;
+}
+.brand{
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+.brand div{
+    width: 33.33%;
+    float: left;
+}
+.brand div img{
+    width: 100%;
+}
+nav{
+    margin-top: 5px;
+}
+nav a{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+nav a img{
+    width: 40px;
+    margin: 10px 0;
+}
+nav a span{
+    display: block;
+}
+.news a{
+    float: left;
+    box-sizing: border-box;
+}
+.news img{
+    width: 100%;
+}
+.news a:nth-child(1){
+    width: 50%;
+}
+.news a:nth-child(n+2){
+    width: 25%;
+    border-left: 0.5px solid #ccc;
+}
+</code></pre>
+<h2 id="移动web开发之flex布局"><a href="#移动web开发之flex布局" class="headerlink" title="移动web开发之flex布局"></a>移动web开发之flex布局</h2><h3 id="Flex布局原理"><a href="#Flex布局原理" class="headerlink" title="Flex布局原理"></a>Flex布局原理</h3><ul>
+<li>Flex布局原理就是：给父盒子添加flex属性，来控制子盒子的位置排 列方式从而实现flex布局。</li>
+<li>当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。 </li>
+<li>Flex布局又叫伸缩布局、弹性布局、伸缩盒布局、弹性盒布局、flex 布局</li>
+</ul>
+<h3 id="Flex布局父项常见属性（重点）"><a href="#Flex布局父项常见属性（重点）" class="headerlink" title="Flex布局父项常见属性（重点）"></a>Flex布局父项常见属性（重点）</h3><h4 id="1-flex设置主轴方向"><a href="#1-flex设置主轴方向" class="headerlink" title="1. flex设置主轴方向"></a>1. flex设置主轴方向</h4><ul>
+<li>Flex布局中默认的主轴是row，x轴。如果想改变主轴方向可通过设置flex-direction来改变 </li>
+<li><code>flex-direction:column;</code> 将主轴改为y轴，纵轴</li>
+<li><code>flex-direction:row;</code> 将主轴改为x轴，横轴 </li>
+<li><code>flex-direction:row- reverse;</code> 主轴为x轴，并且翻转 </li>
+<li><code>flex-direction:column- reverse ;</code> 主轴为y轴，并且翻转 </li>
+</ul>
+<h4 id="2-开启flex布局后默认为不换行"><a href="#2-开启flex布局后默认为不换行" class="headerlink" title="2. 开启flex布局后默认为不换行"></a>2. 开启flex布局后默认为不换行</h4><ul>
+<li>如果想要换行效果设置<code>flex-wrap：wrap</code></li>
+</ul>
+<h4 id="3-Flex-flow就是flex-direction和flex-wrap的合写"><a href="#3-Flex-flow就是flex-direction和flex-wrap的合写" class="headerlink" title="3. Flex-flow就是flex-direction和flex-wrap的合写"></a>3. Flex-flow就是flex-direction和flex-wrap的合写</h4><h4 id="4-justify-content设置主轴子元素排列形式"><a href="#4-justify-content设置主轴子元素排列形式" class="headerlink" title="4. justify-content设置主轴子元素排列形式"></a>4. justify-content设置主轴子元素排列形式</h4><ul>
+<li>值为flex-start 所有子元素在主轴头部显示 </li>
+<li>值为flex-end 所有子元素在主轴尾部显示</li>
+<li>值为flex-center 所有子元素在主轴居中对齐 </li>
+<li>值为space-around 所有子元素平分剩余空间</li>
+<li>值为space-between 所有子元素先两边贴边在平分剩余空间</li>
+</ul>
+<h4 id="5-align-items设置侧轴子元素排列（单行）"><a href="#5-align-items设置侧轴子元素排列（单行）" class="headerlink" title="5. align-items设置侧轴子元素排列（单行）"></a>5. align-items设置侧轴子元素排列（单行）</h4><ul>
+<li>利用align-items能够设置侧轴元素对齐的方式在子项为单项（单行） 的时候使用</li>
+<li>align-items的值为flex-start 表示从头开始</li>
+<li>align-items的值为flex-end 表示从结尾开始 </li>
+<li>align-items的值为center 表示居中显示 </li>
+<li>align-items的值为stretch 会将子元素拉伸</li>
+</ul>
+<h4 id="6-align-content设置侧轴子元素排列（多行）"><a href="#6-align-content设置侧轴子元素排列（多行）" class="headerlink" title="6. align-content设置侧轴子元素排列（多行）"></a>6. align-content设置侧轴子元素排列（多行）</h4><ul>
+<li>Align-content适应于换行（多行）的情况下（单行情况下无效）， 可以设置 上对齐、 下对齐、居中、拉伸以及平均分配剩余空间等属 性值</li>
+<li>Align-item和align-content的区别单行找 align-items  多行找 align-content</li>
+</ul>
+<h3 id="Flex布局子项常见属性"><a href="#Flex布局子项常见属性" class="headerlink" title="Flex布局子项常见属性"></a>Flex布局子项常见属性</h3><h4 id="1-子项flex属性使用"><a href="#1-子项flex属性使用" class="headerlink" title="1. 子项flex属性使用"></a>1. 子项flex属性使用</h4><ul>
+<li>Flex用来设置分配剩余空间的比列的</li>
+<li>剩余空间是指父盒子的宽度减去<strong>没有设置</strong>flex的盒子的宽度 </li>
+<li>在将剩余空间按占比分配给各个子盒子 </li>
+<li>比列计算：当前子盒子的flex数值/所有flex的总和</li>
+</ul>
+<h4 id="2-align-self和order"><a href="#2-align-self和order" class="headerlink" title="2. align-self和order"></a>2. align-self和order</h4><pre><code class="lang-css">            /* 2在1前面 默认是0 -1比0小 */
+                order: -1;
+
+            /* 3号盒子下来底侧 */
+            align-self: flex-end;
+</code></pre>
+<p><img src="https://s2.ax1x.com/2020/02/05/1rO1qP.png" alt="1rO1qP.png"></p>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+<h2 id="移动web开发之rem布局"><a href="#移动web开发之rem布局" class="headerlink" title="移动web开发之rem布局"></a>移动web开发之rem布局</h2><h3 id="rem基础"><a href="#rem基础" class="headerlink" title="rem基础"></a>rem基础</h3><ul>
+<li>Rem是一个相对单位，相对于html的字体大小 </li>
+<li>如果整个页面很多地方用rem进行布局，只需要在不同屏幕下修改 html的字体大小，那么整个页面都会同步变化</li>
+</ul>
+<h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><ul>
+<li>媒体查询是css3语法，可以实现根据不同屏幕适配不同的样式 </li>
+<li>语法结构为：<code>@media screen and (max-width:800px) {css样式}</code> 屏幕宽度不大于800px</li>
+<li>利用媒体查询实现不同屏幕适配不同样式，发现规律可简写为判断 min-width 可以从小到大写即可 </li>
+<li>原理是：利用后面会层叠前面的样式</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/02/05/1rOXQA.png" alt="1rOXQA.png"></p>
+<h3 id="媒体查询-rem实现元素动态大小变化"><a href="#媒体查询-rem实现元素动态大小变化" class="headerlink" title="媒体查询+rem实现元素动态大小变化"></a>媒体查询+rem实现元素动态大小变化</h3><ul>
+<li>Link标签利用媒体查询实现按需引入 </li>
+</ul>
+<h3 id="Less的使用"><a href="#Less的使用" class="headerlink" title="Less的使用"></a>Less的使用</h3><ul>
+<li>首先我们选一套标准尺寸 750为准 </li>
+<li>我们用屏幕尺寸（750） 除以 我们划分的份数（15） 得到了 html 里面的文字大小 （50）这个文字大小其实也就是1rem的大小 </li>
+<li>因为屏幕大小不一样，但是划分的份数一样，所以最后html的文字 大小也就不一样，那么1rem在不同的屏幕下也就不一样</li>
+</ul>
+<pre><code class="lang-less">// 定义一个粉色的变量
+@color: pink;
+// 错误的变量名 @1color @color~@#
+// 变量名区分大小写 @color 和Color是两种不通的变量
+@font14: 14px;
+body{
+    background-color: @color;
+}
+div{
+    color: @color;
+    font-size: @font14;
+}
+// 1.less嵌套 子元素的样式直接写到父元素里面就好了
+a{
+    font-size: @font14;
+    color: red;
+    // 2.如果有伪类、交集选择器、伪元素选择器 我们内层选择器需要&amp;
+    &amp;:hover{
+        color: blue;
+    }
+}
+// 3.我们运算符的左右两侧必须敲一个空格隔开
+// 4.如果两个数参与运算 如果只有一个数有单位，则最后的结果就以这个单位为准
+// 5.两个数参与运算，如果两个数都有单位，而且不一样的单位 最后结果以第一个为准
+</code></pre>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+<h3 id="flexible-js技术"><a href="#flexible-js技术" class="headerlink" title="flexible.js技术"></a>flexible.js技术</h3><ul>
+<li>手机淘宝团队出的简洁高效 移动端适配库</li>
+<li>默认flexible是将屏幕划分10等分</li>
+</ul>
+<h3 id="cssrem-插件"><a href="#cssrem-插件" class="headerlink" title="cssrem 插件"></a>cssrem 插件</h3><ul>
+<li>Cssrem插件会自动将px转化为rem</li>
+<li>但是要注意 插件默认1rem = 16px </li>
+<li>需要将插件重新配置</li>
+</ul>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+<h2 id="移动web开发之响应式布局"><a href="#移动web开发之响应式布局" class="headerlink" title="移动web开发之响应式布局"></a>移动web开发之响应式布局</h2><p>前面都是单独制作移动端页面（主流）下面我们来看看响应式开发原理</p>
+<h3 id="响应式开发原理"><a href="#响应式开发原理" class="headerlink" title="响应式开发原理"></a>响应式开发原理</h3><ul>
+<li>默认效果是在一行显示，width固定居中，所以默认将父盒子设置 width：750px，利用margin居中</li>
+<li>当小于768的时候，父盒子占据一整行，并且子盒子占据三分之一 </li>
+<li>所以利用媒体查询判断，如果满足条件，将父盒子width：100%； </li>
+<li>将子盒子的width：33.3333%</li>
+</ul>
+<h3 id="Bootstrap使用"><a href="#Bootstrap使用" class="headerlink" title="Bootstrap使用"></a>Bootstrap使用</h3><p>一个很厉害的第三方库 和 前面几个创建基本文件夹一样 多一个bootstrap文件夹用来放 bootstrat资源 </p>
+<ul>
+<li>第一步创建基本文件夹，注意：多一个bootstrap文件夹用来放 bootstrat资源 </li>
+<li>第二步下载bootstrap文件放入项目 </li>
+<li>第三步将基本模板复制在html里 </li>
+<li>第四步引入资源文件</li>
+</ul>
+<h3 id="Bootstrap使用-栅格系统"><a href="#Bootstrap使用-栅格系统" class="headerlink" title="Bootstrap使用-栅格系统"></a>Bootstrap使用-栅格系统</h3><ul>
+<li>栅格系统就是默认将父元素分成12等分 </li>
+<li>如果想设置子元素的宽度 </li>
+<li>可根据占据的份数来决定子元素的宽度</li>
+<li>例如：子元素占据3等份，那么就相当于设置子元素width：25%， </li>
+<li>子元素占据4等份，那么就相当于设置子元素width：33.333%</li>
+</ul>
+<h3 id="Bootstrap栅格系统使用（上）"><a href="#Bootstrap栅格系统使用（上）" class="headerlink" title="Bootstrap栅格系统使用（上）"></a>Bootstrap栅格系统使用（上）</h3><ul>
+<li>栅格系统是分为行和列的 </li>
+<li>所以要先写行，创建一div添加类名为row即可 </li>
+<li>Row下面的div为列</li>
+<li>如何设置每列占多宽？</li>
+<li><strong>可以通过类名 col-xs-栅格的数量(设置超小屏幕)、 col-sm-栅格的 数量(设置小屏幕)、 col-md-栅格的数量(设置中等屏幕)、 col-lg栅格的数量(设置大屏幕)</strong> </li>
+<li><strong>如果列的栅格得数量加一起没有超过12咋可能出现空白并在一行显 示</strong> </li>
+<li><strong>如果列的栅格数量加一起超过12，则在开始超过12的那个换行显示</strong></li>
+</ul>
+<h3 id="Bootstrap栅格系统使用（下）"><a href="#Bootstrap栅格系统使用（下）" class="headerlink" title="Bootstrap栅格系统使用（下）"></a>Bootstrap栅格系统使用（下）</h3><ul>
+<li>列的类名可以写多个 </li>
+<li>也就是可以同时设置col-xs-、 col-sm-、 col-md-、 col-lgn </li>
+<li>这样的话，在不同屏幕下就会有不同的结构样式</li>
+</ul>
+<h3 id="Bootstrap列偏移"><a href="#Bootstrap列偏移" class="headerlink" title="Bootstrap列偏移"></a>Bootstrap列偏移</h3><ul>
+<li>使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过 为当前元素增加了左侧的边距（margin）。</li>
+</ul>
+<h3 id="响应式工具"><a href="#响应式工具" class="headerlink" title="响应式工具"></a>响应式工具</h3><ul>
+<li>visible-lg ：设置大屏幕显示</li>
+<li>hidden-lg：设置大屏幕隐藏</li>
+</ul>
+<h3 id="Boostrap案例"><a href="#Boostrap案例" class="headerlink" title="Boostrap案例"></a>Boostrap案例</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .container:nth-child(n-1){
+            margin-top: 50px;
+        }
+        .row&gt;div{
+            height: 50px;
+            background-color:pink;
+        }
+        span{
+            font-size: 15px;
+            color: #fff;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;!-- 我们列嵌套最好加1个行 row 这样可以取消父元素 --&gt;
+            &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-md-6&quot;&gt;a&lt;/div&gt;
+            &lt;div class=&quot;col-md-6&quot;&gt;b&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;3&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 两侧对齐 --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-md-3&quot;&gt;左侧&lt;/div&gt;
+            &lt;!-- 偏移的份数就是12 - 两个盒子的份数 = 6 --&gt;
+            &lt;div class=&quot;col-md-3 col-md-offset-6&quot;&gt;右侧&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- 中间对齐 --&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;!-- 如果只有一个盒子 那么就偏移 = (12 - 8) /2 --&gt;
+            &lt;div class=&quot;col-md-8 col-md-offset-2&quot;&gt;中间盒子&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 列排序 --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4 col-md-push-8&quot;&gt;左侧&lt;/div&gt;
+        &lt;div class=&quot;col-md-8 col-md-pull-4&quot;&gt;右侧&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 响应式工具 --&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;
+                &lt;span class=&quot;visible-lg&quot;&gt;我会显示哦&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;2&lt;/div&gt;
+            &lt;div class=&quot;col-xs-3 hidden-lg&quot;&gt;我会变魔术&lt;/div&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;4&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>案例 以及 样例展示在最上面链接里面</strong></p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>henucm<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/02/02/%E7%A7%BB%E5%8A%A8web%E5%9B%9B%E7%A7%8D%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;%E7%A7%BB%E5%8A%A8web%E5%9B%9B%E7%A7%8D%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;%E7%A7%BB%E5%8A%A8web%E5%9B%9B%E7%A7%8D%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3Ni8yMjQ4Nw==">
+    <script id="livere-comment-js">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1581349776623"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>
