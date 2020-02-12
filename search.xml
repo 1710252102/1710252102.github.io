@@ -826,6 +826,160 @@ a{
       </tags>
   </entry>
   <entry>
+    <title>ES6入门篇</title>
+    <url>/2020/02/01/ES6%E5%85%A5%E9%97%A8%E7%AF%87/</url>
+    <content><![CDATA[<p>额… this问题 以及 es3 es5 es6 写法的不同 不是很全 后期会写一个比较全的<br><a id="more"></a></p>
+<h2 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a>ES6语法</h2><h3 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a>this指向问题</h3><p>this：指向最近调用function的那个东西</p>
+<pre><code class="lang-javascript">{
+  //es6语法
+  var factory = function(){
+        var _this = this;
+        this.a=&#39;a&#39;;
+        this.b=&#39;b&#39;;
+        this.c={
+        a: &#39;a+&#39;,
+            b:() =&gt; {
+            return this.a;
+        }
+      }
+  }
+  console.log(new factory().c.b());// a==&#39;a&#39;
+};
+//es5 es3语法
+{
+  var factory = function(){
+        var _this = this;
+        this.a=&#39;a&#39;;
+        this.b=&#39;b&#39;;
+        this.c={
+        a: &#39;a+&#39;,
+            b:funciton() {
+            return this.a;
+        }
+      }
+  }
+  console.log(new factory().c.b());// a==&#39;a+&#39;
+}
+</code></pre>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><pre><code class="lang-javascript">//es6 语法
+function checkParameter(){
+    throw new Errror(&#39;can\&#39;t be empty&#39;)
+}    
+function f(x = checkParameter(),y = 7,z = 42){
+    return x+y+z
+}
+console.log(f(1));
+f();//
+</code></pre>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><pre><code class="lang-javascript">//es3 es5 可变参数
+function f(){
+    var a=Array.prototype.slice.call(arguments);
+    var sum=0;
+    a.forEach(function(item){
+        sum+=item*1;
+    })
+    return sum
+}
+console.log(f(1,2,3,6));
+
+//es6 可变参数
+function f(...a){
+    var sum=0;
+    a.forEach(item =&gt; {
+        sum+=item*1
+    });
+    return sum
+}
+console.log(f(1,2,3,6));
+
+//es5合并数组
+var params=[&#39;hello&#39;,true,7];
+var other=[1,2].concat[params];
+console.log(other);
+
+//es6合并数组
+var params[&#39;hello&#39;,true,7];
+var other=[1,2,...params];
+console.log(other);
+</code></pre>
+<h3 id="对象代理"><a href="#对象代理" class="headerlink" title="对象代理"></a>对象代理</h3><pre><code class="lang-javascript">//es3 数据保护
+var Person = function(){
+    var data={
+    name:&#39;es3&#39;,
+    sex:&#39;male&#39;,
+    age:15
+    }
+    this.get = function(key){
+        return data[key]
+    }
+    this.get = function(key,value){
+        if(ke!=&#39;sex&#39;)
+        {
+            data[key] = value
+        }
+    }
+}
+// 声明一个实例
+var person = new Person();
+//读取
+console.table({name: person.get(&#39;name&#39;)},sex: person.get(&#39;sex&#39;));
+//修改
+person.set(&#39;sex&#39;,&#39;female&#39;);
+
+//es5 数据保护
+varPerson = {
+    name: &#39;es5&#39;,
+    age: 15
+};
+Object.defineProperty(Person,&#39;sex&#39;.{
+    writable:false,
+    value:&#39;male&#39;
+});
+//读取
+console.table({
+    name:Person.name,
+    age:Person.age,
+    sex:Person,sex
+});
+//修改
+Person.sex=&#39;female&#39;;
+
+//es6
+let Person={
+    name: &#39;es6&#39;,
+    sex: &#39;male&#39;,
+    age: 15
+};
+let person=new Proxy(Person,{
+    get(target,key){
+        return target[key]
+    },
+    set(target,key,value){
+        if(key!==&#39;sex&#39;){
+            target[key]=value;
+        }
+    }
+});
+
+console.table({
+    name:person.name,
+    age:person.age,
+    sex:person,sex
+});
+//修改
+person.sex=&#39;female&#39;;
+</code></pre>
+<p><img src="https://s2.ax1x.com/2020/02/01/1GZ5i4.png" alt="1GZ5i4.png"></p>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>es6</category>
+      </categories>
+      <tags>
+        <tag>基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Promis学习</title>
     <url>/2020/01/31/Promis%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<p>这是一个比较古老的技术 过短时间过学一个比较新的技术<br><a id="more"></a></p>
