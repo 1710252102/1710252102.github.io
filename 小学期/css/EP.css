@@ -1,0 +1,56 @@
+section.nav ul{
+	width: 100%;
+	display: table;
+}
+section.nav ul li{
+	width: 33.3%;
+	display: table-cell;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 0;
+}
+section.nav ul li:first-child{
+	color: #368BBB;
+}
+section.nav ul li:not(:first-child){
+	background-color: #D3D3D3;
+}
+.diamond{
+	/* display: none; */
+}
+.diamond img , .gold img , .silver img{
+	width: 100%;
+} 
+.diamond h4 , .gold h4 , .silver h4{
+	font-size: 13px;
+	text-align: center;
+	color: #808080;
+}
+.diamond div , .gold div{
+	margin-top: 5px;
+	background-color: #F5F5F5;
+}
+h2 , h3{
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 5px;
+}
+p{
+	font-size: 13px;
+	margin: 5px 20px;
+	padding-bottom: 5px;
+}
+.gold , .silver{
+	display: none;
+}
+
+.silver div{
+	margin-top: 5px;
+	background-color: #F5F5F5;
+	height: 284px;
+}
+footer ul li:nth-child(2) a{
+	color: red;
+}

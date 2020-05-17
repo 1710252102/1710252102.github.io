@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalabel=no">
+	<title>小滴服务</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/DS.css">
+	<link rel="stylesheet" href="css/HeaderFooter.css">
+</head>
+
+<body>
+	<!-- 页眉 -->
+	<header>小滴服务</header>
+	<!-- 第一部分 -->
+	<section>
+		<img id="bannerImg" src="./img/data/banner-1.png">
+		<script>
+			var imgNumber = 1;
+			var bannerImg = document.querySelector('#bannerImg');
+			function changeImg() {
+				imgNumber++;
+				if (imgNumber > 3) {
+					imgNumber = 1;
+				}
+				bannerImg.src = "./img/data/banner-" + imgNumber + ".png";
+				
+			}
+			setInterval(function(){
+				changeImg()
+			}, 3000)
+		</script>
+	</section>
+	<!-- 第二部分 -->
+	<section>
+		<ul>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQnHI.png"><span>企业项目</span></a></li>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQKEt.png"><span>平台风采</span></a></li>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQMUP.png"><span>报名流程</span></a></li>
+		</ul>
+		<ul>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQQ4f.png"><span>客户管理</span></a></li>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQ1C8.png"><span>财务管理</span></a></li>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQ38S.png"><span>新闻公告</span></a></li>
+		</ul>
+		<ul>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQ8gg.png"><span>工程案例</span></a></li>
+			<li><a href="javascript:;"><img src="https://s1.ax1x.com/2020/04/19/JuQGvQ.png"><span>修改密码</span></a></li>
+			<li><a href="javascript:;"><img
+						src="https://cdn.u1.huluxia.com/g3/M01/43/D9/wKgBOV6bt_mAYWZ1AAAIZYYKKWU763.png"><span>会员注册</span></a>
+			</li>
+		</ul>
+	</section>
+	<!-- 页脚 -->
+	<footer>
+		<!-- https://icon.qiantucdn.com/20200419/0f2c294d525364591f186c7d6151de902 -->
+		<ul>
+			<li><a href="DropleService.html"><img
+						src="https://icon.qiantucdn.com/20200419/29ef2a5baaea287236145fb14ecb9a5d2"><span>小滴服务</span></a>
+			</li>
+			<li><a href="EnterpriseProject.html"><img
+						src="https://icon.qiantucdn.com/20200419/faa7a298e42e47c57dfbf743475120ca2"><span>企业项目</span></a>
+			</li>
+			<li><a href="ServceProcess.html"><img
+						src="https://icon.qiantucdn.com/20200419/4f11fd9050401867ab3a96448620fc1c2"><span>服务流程</span></a>
+			</li>
+			<li><a href="PlatformPresence.html"><img
+						src="https://icon.qiantucdn.com/20200419/2223c8f7cea599e580bbf6220ae0c0e72"><span>平台风采</span></a>
+			</li>
+			<li><a href="MyDrops.html"><img
+						src="https://icon.qiantucdn.com/20200419/119fb1760f9818c127104433b45490a72"><span>我的小滴</span></a>
+			</li>
+		</ul>
+	</footer>
+</body>
+
+</html>

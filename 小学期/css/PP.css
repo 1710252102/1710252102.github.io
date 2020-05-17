@@ -1,0 +1,34 @@
+section img{
+	width: 100%;
+}
+h1{
+	font-size: 25px;
+	font-weight: bold;
+	color: #2182CC;
+	margin: 20px 20px;
+}
+hr{
+	width: 90%;
+	border: 1px solid rgb(230,230,230);
+}
+h5{
+	font-weight: bold;
+	margin: 10px 20px;
+}
+p{
+	color: rgb(100,100,100);
+	text-indent: 2em;
+	line-height: 22px;
+	text-align: justify;
+	font-size: 13.5px;
+	margin: 10px 20px;
+	/* padding-top: 2px; */
+	/* padding-bottom: 5px; */
+}
+footer ul li:nth-child(4) a{
+	color: red;
+}
+
+/* p::before{
+	/* content: '\00A0\00A0\00A0\00A0'; 
+} */

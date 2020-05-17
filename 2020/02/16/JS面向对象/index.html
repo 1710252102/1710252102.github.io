@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>JS面向对象 - henucm</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="关于类和对象 闭包 原型 基础值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS面向对象">
+<meta property="og:url" content="http://yoursite.com/2020/02/16/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="henucm">
+<meta property="og:description" content="关于类和对象 闭包 原型 基础值">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/14/1jn16f.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/14/1jMutJ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/14/1j6eHO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/14/1jX79A.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/14/1jXohd.png">
+<meta property="article:published_time" content="2020-02-16T11:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:29:49.282Z">
+<meta property="article:author" content="henucm">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/14/1jn16f.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1589701901299">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="henucm" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="henucm">
+            <img src="/images/avatar.png" alt="henucm">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>15</div>
+        <div><span>标签</span>10</div>
+        <div><span>分类</span>9</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+                <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+                <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+                <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/1710252102/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/">Javascript</a>
+          <span class="category-list-count">9</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/">css3</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/es5/">es5</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/es5/es6/">es6</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/html5/">html5</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/jQuery/">jQuery</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/">javascript</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/微信小程序/">微信小程序</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/面试/">面试</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">基础知识</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" style="font-size: 10px;">异步处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 15px;">数据类型</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E7%A7%BB%E5%8A%A8web/" style="font-size: 10px;">移动web</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">面向对象</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 henucm
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://s2.ax1x.com/2020/02/10/1I07NQ.jpg">
+        
+        <h1>JS面向对象</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月16日</a>
+    <a><i class="nexmoefont icon-areachart"></i>5,267 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 21 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/javascript/">javascript</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/javascript/%E9%9D%A2%E8%AF%95/">面试</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/javascript/" rel="tag">javascript</a>
+    
+  </div>
+  <article>
+    <p>关于类和对象 闭包 原型 基础值<br><a id="more"></a></p>
+<h2 id="JS面向对象"><a href="#JS面向对象" class="headerlink" title="JS面向对象"></a>JS面向对象</h2><h3 id="创建类和对象-类中添加方法"><a href="#创建类和对象-类中添加方法" class="headerlink" title="创建类和对象 类中添加方法"></a>创建类和对象 类中添加方法</h3><pre><code class="lang-javascript">// 1.创建类class 创建一个 明星类
+class Star{
+    // 类的共有属性放到 constructor 里面
+    constructor(uname,age){
+        this.uname=uname;
+        this.age=age;
+    }
+    sing(song) {
+        // console.log(&#39;我唱歌&#39;);
+        console.log(this.uname + song);
+    }
+}
+// 2.利用类创建对象 new
+var ldh = new Star(&#39;刘德华&#39;,18);
+var zxy = new Star(&#39;张学友&#39;,20);
+console.log(ldh);
+console.log(zxy);
+ldh.sing(&#39;冰雨&#39;);
+zxy.sing(&#39;李香兰&#39;);
+// (1) 类里面有个constructor 函数，可以接受传递过了的参数，同时返回实例对象
+// (2) constructor 函数 只要 new 可以实例时，就会自动调用这个函数，类也会自动生成这个函数
+// (3) 生成实例 new 不能忽略
+// (4) 注意语法规范，创建类 类名后面不要加小括号，生成实例 类名后面加小括号，构造函数不需要加function
+</code></pre>
+<h3 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h3><pre><code class="lang-javascript">//super 关键字调用父类普通函数
+class Father {
+    say() {
+        return &#39;我是爸爸&#39;;
+    }
+}
+class Son extends Father {
+    say() {
+        // console.log(&#39;我是儿子&#39;);
+        console.log(super.say() + &#39;的儿子&#39;);
+        // super.say() 就是调用父类中的普通函数 say()
+    }
+}
+var son = new Son();
+son.say();
+// 继承中的属性或者方法查找原则: 就近原则
+// 1. 继承中,如果实例化子类输出一个方法,先看子类有没有这个方法,如果有就先执行子类的
+// 2. 继承中,如果子类里面没有,就去查找父类有没有这个方法,如果有,就执行父类的这个方法(就近原则)
+</code></pre>
+<h3 id="子类继承父类加法方法-同时-扩展减法方法"><a href="#子类继承父类加法方法-同时-扩展减法方法" class="headerlink" title="子类继承父类加法方法 同时 扩展减法方法"></a>子类继承父类加法方法 同时 扩展减法方法</h3><pre><code class="lang-javascript">// 父类有加法方法
+class Father {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    sum() {
+        console.log(this.x + this.y);
+    }
+}
+// 子类继承父类加法方法 同时 扩展减法方法
+class Son extends Father {
+    constructor(x, y) {
+        // 利用super 调用父类的构造函数
+        // super 必须在子类this之前调用
+        super(x, y);
+        this.x = x;
+        this.y = y;
+    }
+    subtract() {
+        console.log(this.x - this.y);
+    }
+}
+var son = new Son(5, 3);
+son.subtract(); // 2
+son.sum(); // 8
+</code></pre>
+<h3 id="在编辑的方法中首先禁止选中文本使用"><a href="#在编辑的方法中首先禁止选中文本使用" class="headerlink" title="在编辑的方法中首先禁止选中文本使用"></a>在编辑的方法中首先禁止选中文本使用</h3><pre><code>window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+</code></pre><h2 id="构造函数和原型"><a href="#构造函数和原型" class="headerlink" title="构造函数和原型"></a>构造函数和原型</h2><h3 id="概述-创建对象的三种方法"><a href="#概述-创建对象的三种方法" class="headerlink" title="概述 创建对象的三种方法"></a>概述 创建对象的三种方法</h3><pre><code class="lang-javascript">// 1.利用 new Object 创建对象
+var obj1=new Object();
+
+// 2.利用对象字面量创建对象
+var obj2={};
+
+// 3.利用构造函数创建对象
+function Star(uname,age){
+    this.uname=uname;
+    this.age=age;
+    this.sing=function(){
+        console.log(&#39;我会唱歌&#39;);
+    }
+}
+var ldh=new Star(&#39;刘德华&#39;,18);
+var zxy=new Star(&#39;张学友&#39;,19);
+console.log(ldh);
+ldh.sing();
+zxy.sing();
+</code></pre>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p><strong>构造函数</strong>是一种特殊的函数，主要用来初始化对象，即为对象成员变量赋初始值，它总与 new 一起使用。我们可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面</p>
+<p>JavaScript 的构造函数中可以添加一些成员，可以在构造函数本身上添加，也可以在构造函数内部的 this 上添加。通过这两种方式添加的成员，就分别称为静态成员和实例成员。 </p>
+<p><strong>静态成员</strong>：在构造函数本上添加的成员称为静态成员，只能由构造函数本身来访问</p>
+<p><strong>实例成员</strong>：在构造函数内部创建的对象成员称为实例成员，只能由实例化的对象来访问</p>
+<pre><code class="lang-javascript">function Star(uname,age){
+    this.uname=uname;
+    this.age=age;
+    this.sing=function(){
+        console.log(&#39;我会唱歌&#39;);
+    }
+}
+var ldh = new Star(&#39;刘德华&#39;, 18);
+// 1.实例成员就是构造函数内部通过this添加的成员 uname age sing 就是实例成员
+// 实例成员只能通过实例化的对象来访问
+// console.log(Star.uname); // 不可以通过构造函数来访问实例成员
+// 2. 静态成员 在构造函数本身上添加的成员  sex 就是静态成员
+Star.sex = &#39;男&#39;;
+console.log(Star.sex); // 静态成员只能通过构造函数来访问
+</code></pre>
+<p><strong>构造函数方法很好用，但是存在浪费内存的问题。</strong>  所以通过原型对象就可以实现方法共享</p>
+<h3 id="构造函数原型-prototype"><a href="#构造函数原型-prototype" class="headerlink" title="构造函数原型 prototype"></a>构造函数原型 prototype</h3><p>JavaScript 规定，每一个构造函数都有一个 prototype 属性，指向另一个对象。注意这个 prototype 就是一个对象，这个对象的所有属性和方法，都会被构造函数所拥有。我们可以把那些不变的方法，直接定义在 prototype 对象上，这样所有对象的实例就可以共享这些方法。</p>
+<ol>
+<li><p>原型是什么 ？ </p>
+<p>一个对象，我们也称为 prototype 为原型对象。</p>
+</li>
+<li><p>原型的作用是什么 ？ </p>
+<p>共享方法</p>
+</li>
+</ol>
+<h3 id="对象原型-proto"><a href="#对象原型-proto" class="headerlink" title="对象原型 proto"></a>对象原型 <strong>proto</strong></h3><p>对象都会有一个属性 <strong>proto</strong> 指向构造函数的 prototype 原型对象，之所以我们对象可以使用构造函数prototype 原型对象的属性和方法，就是因为对象有 <strong>proto</strong> 原型的存在。</p>
+<ul>
+<li><strong>proto</strong>对象原型和原型对象 prototype 是等价的</li>
+<li><strong>proto</strong>对象原型的意义就在于为对象的查找机制提供一个方向，或者说一条路线，但是它是一个非标准属性，因此实际开发中，不可以使用这个属性，它只是内部指向原型对象 prototype</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/02/14/1jn16f.png" alt="1jn16f.png"></p>
+<h3 id="构造函数-constructor"><a href="#构造函数-constructor" class="headerlink" title="构造函数 constructor"></a>构造函数 constructor</h3><p>对象原型（ <strong>proto</strong>）和构造函数（prototype）原型对象里面都有一个属性 constructor 属性 ，constructor 我们称为构造函数，因为它指回构造函数本身。</p>
+<p>constructor 主要用于记录该对象引用于哪个构造函数，它可以让原型对象重新指向原来的构造函数。</p>
+<p>一般情况下，对象的方法都在构造函数的原型对象中设置。如果有多个对象的方法，我们可以给原型对象采取对象形式赋值，但是这样就会覆盖构造函数原型对象原来的内容，这样修改后的原型对象 constructor 就不再指向当前构造函数了。此时，我们可以在修改后的原型对象中，添加一个 constructor 指向原来的构造函数。代码中又注释</p>
+<pre><code class="lang-javascript">function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+        // 很多情况下,我们需要手动的利用constructor 这个属性指回 原来的构造函数
+        // Star.prototype.sing = function() {
+        //     console.log(&#39;我会唱歌&#39;);
+        // };
+        // Star.prototype.movie = function() {
+        //     console.log(&#39;我会演电影&#39;);
+        // }
+        Star.prototype = {
+            // 如果我们修改了原来的原型对象,给原型对象赋值的是一个对象,则必须手动的利用constructor指回原来的构造函数
+            constructor: Star,
+            sing: function() {
+                console.log(&#39;我会唱歌&#39;);
+            },
+            movie: function() {
+                console.log(&#39;我会演电影&#39;);
+            }
+        }
+        var ldh = new Star(&#39;刘德华&#39;, 18);
+        var zxy = new Star(&#39;张学友&#39;, 19);
+        console.log(Star.prototype);
+        console.log(ldh.__proto__);
+        console.log(Star.prototype.constructor);
+        console.log(ldh.__proto__.constructor);
+</code></pre>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p><img src="https://s2.ax1x.com/2020/02/14/1jMutJ.png" alt="1jMutJ.png"></p>
+<p>前面我们说 对象原型（ <strong>proto</strong>）和构造函数（prototype）原型对象里面都有一个属性 constructor 属性 ，constructor 我们称为构造函数，因为它指回构造函数本身。 就是因为 <code>ldh.__proto__===Star.__prototype__</code> </p>
+<h3 id="三者之间的总结"><a href="#三者之间的总结" class="headerlink" title="三者之间的总结"></a>三者之间的总结</h3><pre><code class="lang-tex">原型对象 prototype
+es6之前我们的面向对象是通过构造函数来实现的 但是构造函数里面有个缺点 以前是把方法放到函数里面 
+这样就会有一个问题 就是我们在创建对象实例的时候呢 但会为我们这个方法单独开辟内存空间来存放同一个函数（这样就比较浪费内存）
+解决方案：我们把这些公共的方法定义到 我们构造函数的原型对象身上 这样就可以实现了 这个方法的共享 所有的实例都可以使用这个方法
+
+原型是什么？
+原型是一个对象 每一个构造函数都给我们定义好了这个原型对象 
+原型对象的主要作用实现了方法的共享 不必再开辟内存空间 所有的实例对象都可以使用这个方法 这就是原型最伟大的地方
+
+对象原型 __protp__
+对象都会有一个属性 __proto__ 指向函数的prototype原型对象,之所以我们对象可以使用构造函数prootype原型对象的属性和方法，
+就是因为对象有__proto__原型的存在 对象身上系统自己添加一个 __proto__ 指向我们的原型对象
+
+constructor 构造函数
+对象原型(__proto__)和构造函数的原型对象(prototype)里面都有一个constructor属性,constructor我们称为构造函数，因为它指向构造函数本身
+constructor主要用于记录该对象引用哪个构造函数，它可以让原型对象重新指向原来的构造函数。
+</code></pre>
+<h3 id="JavaScript-的成员查找机制-规则"><a href="#JavaScript-的成员查找机制-规则" class="headerlink" title="JavaScript 的成员查找机制(规则)"></a>JavaScript 的成员查找机制(规则)</h3><p>当访问一个对象的属性(包括方法)时，首先查找这个对象自身有没有该属性。</p>
+<p>如果没有就查找它的原型(也就是<strong>proto</strong>指向的prototype 原型对象)。</p>
+<p>如果还没有就查找原型对象的原型(Object的原型对象)。</p>
+<p>依次类推一直找到Object为止(null)。</p>
+<p><strong>proto</strong>对象原型的意义就在于为对象成员成员查找机制提供一个方向，或者说一条路。永远指向的是构造函数的原型对象。</p>
+<h3 id="原型对象this指向"><a href="#原型对象this指向" class="headerlink" title="原型对象this指向"></a>原型对象this指向</h3><p>构造函数中的this指向我们实例对象。</p>
+<p>原型对象里面放的是方法，这个方法里面的this 指向的是这个方法的调用者，也就是实例对象。</p>
+<h3 id="扩展内置对象"><a href="#扩展内置对象" class="headerlink" title="扩展内置对象"></a>扩展内置对象</h3><p>可以通过原型对象，对原来的内置对象进行扩展自定义的方法。比如给数组增加自定义求偶数和的功能。</p>
+<pre><code class="lang-javascript">Array.prototype.sum=function(){
+    let result=0;
+    for(let i=0;i&lt;this.length;i++)
+    {
+        result+=this[i];
+    }
+    return result;
+}
+var arr=[1,2,3];
+console.log(arr.sum());
+</code></pre>
+<p>注意：数组和字符串内置对象不能给原型对象覆盖操作 Array.prototype = {} ，只能是 Array.prototype.xxx = function(){} 的方式。</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>ES6之前并没有给我们提供 extends 继承。我们可以通过构造函数+原型对象模拟实现继承，被称为组合继承。</p>
+<pre><code class="lang-javascript">// 借用父构造函数继承属性
+// 1. 父构造函数
+function Father(uname, age) {
+    // this 指向父构造函数的对象实例
+    this.uname = uname;
+    this.age = age;
+}
+Father.prototype.money = function() {
+    console.log(100000);
+
+};
+// 2 .子构造函数 
+function Son(uname, age, score) {
+    // this 指向子构造函数的对象实例
+    Father.call(this, uname, age);
+    this.score = score;
+}
+// Son.prototype = Father.prototype;  这样直接赋值会有问题,如果修改了子原型对象,父原型对象也会跟着一起变化
+// 因他们共有一个内存地址 所以我们可以通过再创建一个实例对象就可以实现
+Son.prototype = new Father();
+// 如果利用对象的形式修改了原型对象,别忘了利用constructor 指回原来的构造函数
+Son.prototype.constructor = Son;
+// 这个是子构造函数专门的方法
+Son.prototype.exam = function() {
+    console.log(&#39;孩子要考试&#39;);
+}
+var son = new Son(&#39;刘德华&#39;, 18, 100);
+console.log(son);// 继承了父亲的money方法
+console.log(Father.prototype);// 父构造函数中没有继承子函数专门的方法 因为他们不是同一个地址
+console.log(Son.prototype.constructor);// 重新指向了自己
+</code></pre>
+<h2 id="函数进阶"><a href="#函数进阶" class="headerlink" title="函数进阶"></a>函数进阶</h2><h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><pre><code class="lang-javascript">//  函数的定义方式
+// 1. 自定义函数(命名函数) 
+function fn() {};
+
+// 2. 函数表达式 (匿名函数)
+var fun = function() {};
+
+// 3. 利用 new Function(&#39;参数1&#39;,&#39;参数2&#39;, &#39;函数体&#39;);
+var f = new Function(&#39;a&#39;, &#39;b&#39;, &#39;console.log(a + b)&#39;);
+f(1, 2);
+
+// 4. 所有函数都是 Function 的实例(对象)
+console.dir(f);
+// 5. 函数也属于对象
+console.log(f instanceof Object);
+</code></pre>
+<h3 id="函数的调用方式"><a href="#函数的调用方式" class="headerlink" title="函数的调用方式"></a>函数的调用方式</h3><pre><code class="lang-javascript">// 函数的调用方式
+// 1. 普通函数
+function fn() {
+console.log(&#39;人生的巅峰&#39;);
+}
+// fn();   fn.call()
+
+// 2. 对象的方法
+var o = {
+    sayHi: function() {
+    console.log(&#39;人生的巅峰&#39;);
+    }
+}
+o.sayHi();
+
+// 3. 构造函数
+function Star() {};
+new Star();
+
+// 4. 绑定事件函数
+btn.onclick = function() {};   // 点击了按钮就可以调用这个函数
+
+// 5. 定时器函数
+setInterval(function() {}, 1000);  这个函数是定时器自动1秒钟调用一次
+
+// 6. 立即执行函数
+(function() {
+    console.log(&#39;人生的巅峰&#39;);
+})();
+// 立即执行函数是自动调用
+</code></pre>
+<h3 id="函数内this的指向"><a href="#函数内this的指向" class="headerlink" title="函数内this的指向"></a>函数内this的指向</h3><p>这些 this 的指向，是当我们调用函数的时候确定的。 调用方式的不同决定了this 的指向不同</p>
+<p>一般指向我们的调用者.</p>
+<p><img src="https://s2.ax1x.com/2020/02/14/1j6eHO.png" alt="1j6eHO.png"></p>
+<h3 id="改变函数内部this指向"><a href="#改变函数内部this指向" class="headerlink" title="改变函数内部this指向"></a>改变函数内部this指向</h3><p>call()：当我们想改变 this 指向，同时想调用这个函数的时候，可以使用 call，比如继承</p>
+<p>apply()：apply 主要跟数组有关系，比如使用 Math.max() 求数组的最大值</p>
+<p>bind()：当我们只是想改变 this 指向，并且不想调用这个函数的时候，可以使用 bind</p>
+<pre><code class="lang-javascript">// call()
+var o = {
+     name: &#39;andy&#39;
+}
+function fn(a, b) {
+    console.log(this);
+    console.log(a + b);
+};
+fn.call(o, 1, 2);
+
+// apply()
+var arr = [1, 66, 3, 99, 4];
+var max = Math.max.apply(Math, arr);
+console.log(max); //99
+
+var btn1 = document.querySelector(&#39;button&#39;);
+btn1.onclick = function() {
+    this.disabled = true; // 这个this 指向的是 btn 这个按钮
+    // var that = this;
+    setTimeout(function() {
+        // that.disabled = false; // 定时器函数里面的this 指向的是window
+         this.disabled = false; // 此时定时器函数里面的this 指向的是btn
+    }.bind(this), 3000); // 这个this 指向的是btn 这个对象
+}
+</code></pre>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>JavaScript 除了提供正常模式外，还提供了严格模式（strict mode）。ES5 的严格模式是采用具有限制性</p>
+<p>JavaScript 变体的一种方式，即在严格的条件下运行 JS 代码。</p>
+<p>严格模式在 IE10 以上版本的浏览器中才会被支持，旧版本浏览器中会被忽略。</p>
+<p>严格模式对正常的 JavaScript 语义做了一些更改：</p>
+<ol>
+<li><p>消除了 Javascript 语法的一些不合理、不严谨之处，减少了一些怪异行为。</p>
+</li>
+<li><p>消除代码运行的一些不安全之处，保证代码运行的安全。</p>
+</li>
+<li><p>提高编译器效率，增加运行速度。</p>
+</li>
+<li><p>禁用了在 ECMAScript 的未来版本中可能会定义的一些语法，为未来新版本的 Javascript 做好铺垫。比 </p>
+</li>
+</ol>
+<p>如一些保留字如：class, enum, export, extends, import, super 不能做变量名</p>
+<p><strong>为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句”use strict”;（或’use strict’）</strong></p>
+<h3 id="严格模式下-this-指向问题"><a href="#严格模式下-this-指向问题" class="headerlink" title="严格模式下 this 指向问题"></a>严格模式下 this 指向问题</h3><ul>
+<li>以前在全局作用域函数中的 this 指向 window 对象。 </li>
+<li>现在严格模式下全局作用域中函数中的 this 是 undefined。 </li>
+<li>以前构造函数时不加 new也可以 调用,当普通函数，this 指向全局对象</li>
+<li>严格模式下,如果 构造函数不加new调用, this 指向的是undefined 如果给他赋值则 会报错</li>
+<li>new 实例化的构造函数指向创建的对象实例。</li>
+<li>定时器 this 还是指向 window </li>
+<li>事件、对象还是指向调用者。</li>
+</ul>
+<h3 id="函数变化"><a href="#函数变化" class="headerlink" title="函数变化"></a>函数变化</h3><ul>
+<li>函数不能有重名的参数。 </li>
+<li>函数必须声明在顶层.新版本的 JavaScript 会引入“块级作用域”（ ES6 中已引入）。为了与新版本接轨，不允许在非函数的代码块内声明函数。</li>
+</ul>
+<p>更多严格模式要求参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode</a></p>
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p><strong>高阶函数</strong>是对其他函数进行操作的函数，它接收函数作为参数或将函数作为返回值输出。</p>
+<pre><code class="lang-javascript">// 典型的回调函数
+function fn(callback){
+ callback&amp;&amp;callback();
+}
+fn(function(){alert(&#39;hi&#39;)}
+
+function fn(){
+ return function() {}
+}
+fn();
+</code></pre>
+<p>此时fn 就是一个高阶函数</p>
+<p>函数也是一种数据类型，同样可以作为参数，传递给另外一个参数使用。 最典型的就是作为回调函数。</p>
+<p>同理函数也可以作为返回值传递回来</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>变量根据作用域的不同分为两种：全局变量和局部变量。当函数执行完毕，本作用域内的局部变量会销毁。</p>
+<h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p>闭包（closure）指有权访问另一个函数作用域中变量的函数。 ——- JavaScript 高级程序设计</p>
+<p>简单理解就是 ，一个作用域可以访问另外一个函数内部的局部变</p>
+<pre><code>for (var i = 0; i &lt; lis.length; i++) {
+    // 利用for循环创建了4个立即执行函数
+    // 立即执行函数也成为小闭包因为立即执行函数里面的任何一个函数都可以使用它的i这变量
+    (function(i) {
+        // console.log(i);
+        lis[i].onclick = function() {
+        console.log(i);
+        }
+    })(i);
+}
+</code></pre><h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><pre><code class="lang-javascript">// 思考题 1：
+var name = &quot;The Window&quot;;
+var object = {
+        name: &quot;My Object&quot;,
+        getNameFunc: function() {
+            return function() {
+                return this.name;
+            };
+           }
+};
+console.log(object.getNameFunc()())// The Window 没有用到闭包
+var f = object.getNameFunc();
+// 类似于
+var f = function() {
+    return this.name;
+}
+f();//相当于function(){this.name}()立即执行函数 所以返回The Window
+
+// 思考题 2：
+var name = &quot;The Window&quot;;　　
+var object = {　　　　
+    name: &quot;My Object&quot;,
+    getNameFunc: function() {
+        var that = this;
+        return function() {
+            return that.name;
+        };
+    }
+};
+console.log(object.getNameFunc()())// 返回My Object 用到了闭包
+</code></pre>
+<h3 id="闭包总结"><a href="#闭包总结" class="headerlink" title="闭包总结"></a>闭包总结</h3><p><strong>1. 闭包是什么？</strong> </p>
+<p>闭包是一个函数 （一个作用域可以访问另外一个函数的局部变量）</p>
+<p><strong>2. 闭包的作用是什么？</strong></p>
+<p>延伸变量的作用范围</p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>利用递归求:根据id返回对应的数据对象</p>
+<pre><code class="lang-javascript">// 我们想要做输入id号,就可以返回的数据对象
+// 1. 利用 forEach 去遍历里面的每一个对象
+function getID(json, id) {
+    var o = {};
+    json.forEach(function(item) {
+        // console.log(item); // 2个数组元素
+        if (item.id == id) {
+            // console.log(item);
+            o = item;
+            // 2. 我们想要得里层的数据 11 12 可以利用递归函数
+            // 里面应该有goods这个数组并且数组的长度不为 0 
+        } else if (item.goods &amp;&amp; item.goods.length &gt; 0) {
+            o = getID(item.goods, id);
+        }
+    });
+    return o;
+}
+console.log(getID(data, 1));
+</code></pre>
+<h3 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h3><p>浅拷贝：第一级被完全复制，如果第一级属性值是个对象，目标对象拷贝得到的是这个对象的引用。所以你如果只改变第一层的值 obj不会随着改变</p>
+<pre><code class="lang-javascript">var obj={
+    id:1,
+    name:&#39;andy&#39;,
+    msg:{
+        age:18,
+    }
+};
+var o={};
+
+// for(var k in obj)
+// {
+//     //k是属性名 obj[k]是属性值
+//     o[k]=obj[k];
+// }
+// console.log(o);
+// o.msg.age=10;
+// console.log(obj);// 浅拷贝 用的是一个内存地址 所以当我们实例对象age改变了 obj对象也改变了
+
+//es6语法
+Object.assign(o, obj); // 浅拷贝
+console.log(obj);
+</code></pre>
+<p>深拷贝：全部都拷贝 改变自己的值不影响被拷贝对象</p>
+<pre><code class="lang-javascript">var obj={
+    id: 1,
+    name: &#39;andy&#39;,
+    msg: {
+        age:18
+    },
+    color: [&#39;pink&#39;,&#39;purple&#39;],
+    length:4
+}
+var o={};
+function deepCopy(newobj,oldobj)
+{
+    for(var k in oldobj)
+    {
+        var item=oldobj[k];
+        //判断这个值是否是数组
+        if(item instanceof Array){
+            newobj[k]=[];
+            deepCopy(newobj[k],item)
+        }else if(item instanceof Object)//判断这个是否是对象
+        {
+            newobj[k]={};
+            deepCopy(newobj[k],item)
+        }else{
+            newobj[k]=item;
+        }
+    }
+}
+deepCopy(o,obj);
+console.log(o);
+o.msg.age=20;
+console.log(obj);
+</code></pre>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>这个比较简单 只要能看懂 就能自己写 就放几个案例吧</p>
+<p>正则表达式案例：</p>
+<pre><code class="lang-javascript">var reg1=/^abc$/; //^开头 $结尾
+console.log(reg1.test(&#39;abc&#39;)); // true
+console.log(reg1.test(&#39;abcd&#39;)); // false
+console.log(reg1.test(&#39;aabcd&#39;)); // false
+console.log(reg1.test(&#39;abcabc&#39;)); //false
+</code></pre>
+<pre><code class="lang-javascript">var rg=/[abc]/; // 只要包含有a 或者包含有b 或者包含有c 都返回true
+console.log(rg.test(&#39;andy&#39;)); //true
+console.log(rg.test(&#39;red&#39;)); //false
+console.log(&#39;------------&#39;);
+
+var rg1=/^[abc]$/; // 三选一 只有是a 或者是b 或者是c 这三个字母才返回 true
+console.log(rg1.test(&#39;aa&#39;));
+console.log(&#39;------------&#39;);
+
+var reg=/^[a-z]$/; // 26个英文字母任何一个字母返回 true - 表示的是a到z的范围
+console.log(reg.test(&#39;a&#39;));
+console.log(reg.test(&#39;A&#39;));
+console.log(&#39;------------&#39;);
+
+// 字符组合
+var reg1=/^[a-zA-Z0-9_-]$/ //任何一个字母返回true
+console.log(reg1.test(&#39;ab&#39;));
+console.log(reg1.test(&#39;B&#39;));
+console.log(&#39;------------&#39;);
+//如果中括号里面有^ 表示取反的意思 千万和我们的边界符 ^ 别混淆
+var reg1=/^[^a-zA-Z0-9_-]$/
+</code></pre>
+<pre><code class="lang-javascript">// 量词符：用于设定某个模式出现的次数
+// 简单理解：就是让下面的a这个字符重复多少次
+
+// * 相当于 &gt;=0 可以出现0次或者很多次
+var reg=/^a*$/;
+console.log(reg.test(&#39;aaa&#39;));
+console.log(&#39;-------------&#39;);
+
+// + 相当于 &gt;=1 可以出现1次或者很多次
+var reg0=/^a+$/;
+console.log(reg0.test(&#39;a&#39;));
+console.log(reg0.test(&#39;&#39;));
+console.log(&#39;-------------&#39;);
+
+// ? 相当于 1 || 0
+var reg1=/^b?$/;
+console.log(reg1.test(&#39;bb&#39;));//false
+console.log(reg1.test(&#39;b&#39;));//true
+console.log(reg1.test(&#39;&#39;));//true
+console.log(&#39;-------------&#39;);
+// {3} 就是重复3次
+// {3,大于等于3} 就是重复3次
+var reg2=/^a{3,}$/;
+// {3,16} 大于等于3 并且小于等于16
+
+
+// 量词是设定莫格模式出现的次数
+var reg3=/^[a-zA-Z0-9_-]{6,16}$/
+//这个模式用户只能输入英文字母 数字 下划线 短横线但是又边界符和[]
+console.log(reg3.test(&#39;a&#39;)); //次数不符合要求
+console.log(reg3.test(&#39;andy-red&#39;));//符合
+console.log(reg3.test(&#39;andy!007&#39;));//格式不符合要求
+</code></pre>
+<p>括号总结：</p>
+<pre><code class="lang-javascript">//中括号 字符集合,匹配括号中的任意字符
+var reg=/^[abc]$/; // a||b||c
+//大括号 量词符,里面表示重复次数
+var reg=/^abc{3}$/; //它只是让c重复三次 abccc
+console.log(reg.test(&#39;abc&#39;));//false
+console.log(reg.test(&#39;abcabcabc&#39;));//false
+console.log(reg.test(&#39;abccc&#39;));//true
+// 小括号表示优先级
+var reg=/^(abc){3}$/; //它是让abc重复三次
+</code></pre>
+<p><img src="https://s2.ax1x.com/2020/02/14/1jX79A.png" alt="1jX79A.png"><br><img src="https://s2.ax1x.com/2020/02/14/1jXohd.png" alt="1jXohd.png"></p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>henucm<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/02/16/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;16&#x2F;JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;16&#x2F;JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3Ni8yMjQ4Nw==">
+    <script id="livere-comment-js">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1589701901303"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>

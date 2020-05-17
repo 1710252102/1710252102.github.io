@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎登录！</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    body {
+        background-color: gainsboro;
+    }
+
+    header {
+        background-color: #2182CC;
+        text-align: center;
+        padding: 10px 0;
+        color: white;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    img {
+        width: 50px;
+        position: absolute;
+        left: 50%;
+        margin-left: -25px;
+    }
+
+    form {
+        margin: 100px auto;
+        padding-top: 90px;
+        width: 95%;
+        height: 300px;
+        /* background-color: #bfa; */
+    }
+
+    form div {
+        margin: 0 auto;
+        padding-left: 5%;
+        width: 80%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        border: 1px solid gray;
+        background-color: white;
+    }
+
+    form div:first-child {
+        border-radius: 5px 5px 0 0;
+        border-bottom: none;
+    }
+
+    form div:nth-child(2) {
+        border-radius: 0 0 5px 5px;
+    }
+
+    form span {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: '';
+    }
+
+    form div input {
+        width: 60%;
+        height: 23px;
+        padding-left: 5%;
+        border: none;
+        font-size: 20px;
+    }
+
+    form input:focus {
+        outline: none;
+    }
+
+    form>#login-btn {
+        cursor: pointer;
+        display: block;
+        height: 40px;
+        width: 85.2%;
+        margin: 20px auto;
+        color: white;
+        font-size: 18px;
+
+        border: none;
+        border-radius: 5px;
+        background-color: #2182CC;
+    }
+</style>
+<script type="text/javascript" src="createHttp.js"></script>
+<script>
+    window.onload = function () {
+        var btn = document.getElementById("login-btn");
+        btn.onclick = function () {
+            var act = document.getElementById("acount").value;
+            var pwd = document.getElementById("pwd").value;
+            myFunction(act, pwd, function (res) {
+                var str = res.data;
+                if (str == '登录成功' && res.code == 1) {
+                    window.localStorage.setItem('username', act);
+                    window.localStorage.setItem('password', pwd);
+                    window.location.href = "DropleService.html";
+                } else {
+                    alert(str);
+                }
+            });
+        }
+    }
+</script>
+
+<body>
+    <header>登录</header>
+    <img src="img/项目用图/head.png" alt="">
+    <form action="">
+        <div>
+            <span>账号 :</span>
+            <input type="text" id="acount">
+        </div>
+        <div>
+            <span>密码 :</span>
+            <input type="password" id="pwd">
+        </div>
+        <input type="button" id="login-btn" value="登录" onclick="myFunction()">
+    </form>
+
+</body>
+
+</html>

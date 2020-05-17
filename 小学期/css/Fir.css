@@ -1,0 +1,78 @@
+body{
+	background-color: rgba(113,22,140,0.4);
+}
+header{
+	height:50px;
+	background-color: rgb(106,71,106);
+}
+header > ul{
+	margin: auto;
+	width:1220px;
+	line-height: 45px;
+	list-style: none;
+}
+header > ul > li{
+	color:rgb(255,255,251);
+	background-color: rgb(213,112,198);
+	width:240px;
+	height:45px;
+	float: left;
+	text-align: center;
+	font-size: 30px;
+	border-top:5px solid rgb(234,203,239);  
+}
+header > ul > li:not(:nth-of-type(1)){
+	border-left:5px solid rgb(234,203,239);
+	background-color: rgb(113,22,140);
+}
+header > ul >li:first-child{
+	width:235px;
+	border-left:5px solid rgb(234,203,239);
+}
+header > ul >li:last-child{
+	width:235px;
+	border-right:5px solid rgb(234,203,239);
+}
+
+section img{
+	display: block;
+	margin: auto;
+	width:1210px;
+	border:5px solid rgb(234,203,239);  
+}
+
+section.two{
+	margin: 30px auto;
+	width: 1210px;
+	/* border: 5px solid rgb(234,203,239); */
+}
+
+section.two div{
+	float: left;
+	color: whitesmoke;
+	font-size: 350px;
+	text-align: center;
+	line-height: 400px;
+}
+
+section.two div:first-child , section.two div:last-child{
+	width: 250px;
+	height: 400px;
+	background-color: rgb(234,203,239);
+}
+
+section.two div:not(:nth-child(1)){
+	/* margin-left: 55px; */
+}
+
+section.two div:nth-child(2){
+	margin: 0 55px;
+	/* float: none; */
+	width: 600px;
+	height: 400px;
+	background-color: #9370DB;
+}
+
+section.three{
+	
+}

@@ -1,0 +1,103 @@
+section.back > img{
+	width: 100%;
+}
+
+div{
+	position: absolute;
+	left: 50%;
+	
+	width: 80px;
+	height: 120px;
+	margin-left: -40px;
+	margin-top: -180px;
+	text-align: center;
+}
+
+div p{
+	margin: 10px 0;
+	font-size: 18px;
+	font-weight: bold;
+}
+div button{
+	background-color: #2182CC;
+	border: none;
+	color: white;
+	font-weight: bold;
+	padding: 4px 5px;
+}
+
+/* .center{
+	margin: 30px auto;
+	width: 90%;
+}
+.center li{
+	margin-bottom: 20px;
+	padding: 0 12px;
+	border: 2px solid #D3D3D3;
+	border-radius: 5px;
+	height: 38px;
+}
+
+.center li img{
+	margin-top: 10px;
+}
+
+.center li img:first-child{
+	float: left;
+	height: 18px;
+}
+
+.center li span{
+	float: left;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 17px;
+	line-height: 18px;
+}
+
+.center li img:last-child{
+	float: right;
+	height: 18px;
+	margin-right: 10px;
+}
+.center a{
+	text-decoration: none;
+	color: black;
+	
+} */
+
+.center{
+	width: 90%;
+	margin: 0 auto;
+}
+
+ul.center li{
+	display: block;
+	border: 1px solid gray;
+	border-radius: 5px;
+	font-size: 20px;
+	margin: 20px auto;
+	padding: 15px;
+	width: 90%;
+	height: 20px;
+	position: relative;
+}
+
+ul.center li a{
+	text-decoration: none;
+	color: gray;
+}
+
+ul.center span{
+	margin-left: 10px;
+}
+
+ul.center .angle-mark{
+	position: absolute;
+	right: 10px;
+	top: 17px;
+}
+
+footer ul li:nth-child(5) a{
+	color: red;
+}

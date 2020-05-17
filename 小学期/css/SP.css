@@ -1,0 +1,11 @@
+section.part_one img{
+	width: 100%;
+}
+section.part_two img{
+	display: block;
+	margin: 20px auto;
+	width: 90%;
+}
+footer ul li:nth-child(3) a{
+	color: red;
+}

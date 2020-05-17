@@ -1,0 +1,34 @@
+section > img{
+	width: 100%;
+}
+section > ul{
+	width: 100%;
+	height: 50px;
+	display: table;
+	background-color: rgb(241,241,241);
+}
+section > ul:first-child{
+	margin-top: -2px;
+}
+section > ul:not(:first-child){
+	margin-top: 25px;
+}
+section > ul > li{
+	display: table-cell;
+	width:33.3%;
+	padding: 24px;
+	font-size: 17px;
+	text-align: center;
+	font-weight: bold;
+}
+section a{
+	color: black;
+	text-decoration: none;
+}
+section span{
+	padding-top: 12px;
+	display: block;
+}
+footer ul li:first-child a{
+	color: red;
+}

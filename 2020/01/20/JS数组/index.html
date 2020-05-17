@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>JS创建数组的三种方法 - henucm</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="因为最近在学JS所以就开始从一些简单得知识点看起吧~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS创建数组的三种方法">
+<meta property="og:url" content="http://yoursite.com/2020/01/20/JS%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="henucm">
+<meta property="og:description" content="因为最近在学JS所以就开始从一些简单得知识点看起吧~">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/03/05/3HYvMF.png">
+<meta property="article:published_time" content="2020-01-20T10:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-06T12:11:06.630Z">
+<meta property="article:author" content="henucm">
+<meta property="article:tag" content="数组">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/03/05/3HYvMF.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1589701901310">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="henucm" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="henucm">
+            <img src="/images/avatar.png" alt="henucm">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>15</div>
+        <div><span>标签</span>10</div>
+        <div><span>分类</span>9</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+                <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+                <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+                <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/1710252102/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/">Javascript</a>
+          <span class="category-list-count">9</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/">css3</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/es5/">es5</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Javascript/es5/es6/">es6</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/css3/html5/">html5</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/jQuery/">jQuery</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/">javascript</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/微信小程序/">微信小程序</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/javascript/面试/">面试</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">基础知识</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" style="font-size: 10px;">异步处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 15px;">数据类型</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E7%A7%BB%E5%8A%A8web/" style="font-size: 10px;">移动web</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">面向对象</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 henucm
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+            <img src="https://i.loli.net/2019/01/13/5c3aec85a4343.jpg">
+        
+        <h1>JS创建数组的三种方法</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1,816 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/Javascript/">Javascript</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a>
+    
+  </div>
+  <article>
+    <p>因为最近在学JS所以就开始从一些简单得知识点看起吧~<br><a id="more"></a></p>
+<h2 id="JS-创建数组的三种方法"><a href="#JS-创建数组的三种方法" class="headerlink" title="JS 创建数组的三种方法"></a>JS 创建数组的三种方法</h2><h3 id="1-隐形创建"><a href="#1-隐形创建" class="headerlink" title="1.隐形创建"></a>1.隐形创建</h3><pre><code class="lang-javascript">var arr = [&#39;Audi&#39;,&#39;Bmw&#39;,&#39;Volvo&#39;];
+</code></pre>
+<h3 id="2-直接实体化"><a href="#2-直接实体化" class="headerlink" title="2.直接实体化"></a>2.直接实体化</h3><pre><code class="lang-javascript">var arr = new Array(&#39;Audi&#39;,&#39;Bmw&#39;,&#39;Volvo&#39;);
+</code></pre>
+<h3 id="3-创建数组并给数组元素赋值"><a href="#3-创建数组并给数组元素赋值" class="headerlink" title="3.创建数组并给数组元素赋值"></a>3.创建数组并给数组元素赋值</h3><pre><code class="lang-javascript">var arr = new Array();
+arr[0]=&#39;Audi&#39;;
+arr[1]=&#39;Bmw&#39;;
+arr[2]=&#39;Volvo&#39;;
+</code></pre>
+<h3 id="4-数组的属性"><a href="#4-数组的属性" class="headerlink" title="4.数组的属性"></a>4.数组的属性</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">push</td>
+<td>向后部插入一个元素</td>
+</tr>
+<tr>
+<td style="text-align:left">unshift</td>
+<td>向头部插入一个元素</td>
+</tr>
+<tr>
+<td style="text-align:left">delete</td>
+<td>将某个数组内的元素赋值为undefined</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.w3school.com.cn/jsref/jsref_constructor_array.asp" target="_blank" rel="noopener">constructor</a></td>
+<td>返回创建对象的数组函数的引用。</td>
+</tr>
+<tr>
+<td style="text-align:left">length</td>
+<td>设置或返回数组中元素的数目。</td>
+</tr>
+<tr>
+<td style="text-align:left">prototype</td>
+<td>使你有能力想对象添加属性和方法。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>delete(arr[1]) : 将数组中第二个值复制为empty | undefined</p>
+<p>arr.includes(5): 返回的是布尔值 true |  false  数组中是否存在5 </p>
+<p>arr.indexOf(5): 返回索引值 不存在返回-1</p>
+<p>关于显示定义和隐性定义的区别“</p>
+<p>1.当在全局时，他们都是定义全局变量，只不过隐式定义相当于是给全局对象绑了一个新的属性，所以它本身就不想显示定义那样会有自己的属性和方法。</p>
+<p>2.当在函数内定义时，显示定义的是<strong>局部变量</strong>，而隐式定义任然是给全局对象绑定一个新的属性，所以它相当于是定义成了没有自己的属性和方法的<strong>全局变量</strong>了。</p>
+<p>3.5</p>
+<p>最近一直被数组 对象 困惑 搞我的心态崩了 今天来总结一下数组在算法中常用的小技巧</p>
+<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><p>算法无非是由for循环构成的（口胡的</p>
+<p>下面我们来看一下JS中如何循环数组或对象呢</p>
+<p><img src="https://s2.ax1x.com/2020/03/05/3HYvMF.png" alt="3HYvMF.png"></p>
+<p>当我看到这个图的时候 我的内心是崩溃的。。。。我更加崩溃了 最后在前辈们的指点下 有点了解</p>
+<p>数组遍历：forEach 或者 map 再讲讲这两者的区别吧</p>
+<p>当你不需要改变数组的用forEach 当你需要改变数组的值得时候用map 并且map返回得是一个数组</p>
+<p>当我们需要条件判断且需要退出循环的时候 只能用for了因为forEach 不会退出循环</p>
+<pre><code class="lang-js">var arr=[1,2,3,4];  
+arr.forEach((value,index)=&gt;{
+    console.log(index);// index 数组序号 value 值 下面同理
+})
+// console.log(arr2);
+arr.map((value)=&gt;value*2)
+console.log(arr);
+/* 2 4 6 8*/
+</code></pre>
+<p>for in 主要用于得就是对象 注意返回得是string类型</p>
+<pre><code class="lang-js">var arr={
+    1:&#39;2&#39;,
+    2:&#39;3&#39;,
+    3:&#39;4&#39;
+}
+for(var i in arr){
+    console.log(i+1,arr[i]+1);
+}
+/*
+11 21
+21 31
+31 41
+*/
+</code></pre>
+<p>for of 用于Map</p>
+<pre><code class="lang-js">var arr=new Map();
+arr.set(1,1);
+arr.set(2,2);
+arr.set(3,3);
+for(var [key,index] of arr){
+    console.log(key,index);
+}
+/*
+1 1
+2 2
+3 3
+*/
+</code></pre>
+<p>JS中Map的用法</p>
+<p>声明 </p>
+<pre><code>var map = new Map();
+</code></pre><p>设值</p>
+<pre><code>map.set(&quot;key&quot;,&quot;value&quot;);
+</code></pre><p>取值</p>
+<pre><code>map.get(&quot;key&quot;);
+</code></pre><p>判断key是否存在</p>
+<pre><code>map.has(&quot;key&quot;);
+</code></pre><p> 删除key</p>
+<pre><code>map.delete(&quot;key&quot;);
+</code></pre><p>想到map 之后 我又在想 js中又没栈和队列呢 ？ 好像是没有的不过没关系Array数组中有很多方法 我们可以实现模拟栈 </p>
+<pre><code class="lang-js">var arr = [1, 2, 3, 4, 5];
+
+arr.push(6); // 存入数据 arr -&gt; [1, 2, 3, 4, 5, 6]
+arr.pop();   // 取出数据 arr -&gt; [1, 2, 3, 4, 5]
+</code></pre>
+<p>是不是一样的舒服 </p>
+<p>队列Queue</p>
+<pre><code class="lang-js">var arr = [1, 2, 3, 4, 5];
+
+// 队尾in
+arr.push(6);    // 存入 arr -&gt; [1, 2, 3, 4, 5, 6]
+// 队头out
+arr.shift();    // 取出 arr -&gt; [2, 3, 4, 5, 6]
+</code></pre>
+<h1 id="ES6引入新的数据类型Map和Set"><a href="#ES6引入新的数据类型Map和Set" class="headerlink" title="ES6引入新的数据类型Map和Set"></a>ES6引入新的数据类型Map和Set</h1><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code class="lang-js">let oneSet = new Set();
+console.log(&quot;创建map和set成功&quot;);
+
+// 举例,如果我们想要知道小明的成绩是多少,我们就需要使用两个Array;一个用于存储姓名,一个用于存储对应的成绩;
+var nameArray = [&#39;li&#39;, &#39;zhou&#39;, &#39;yang&#39;];
+var scroeArray = [90, 98, 87];
+// 如果人越多,Array越长,那么就要耗费更多的时间;但是使用Map,只要一个名称-成绩的对照表,直接根据名字查找,
+// 无论这个表有多慢,查找都很快速.
+
+// 初始化一个Map,需要一个二维数组
+var exampleMap = new Map([
+    [&#39;li&#39;, 90],
+    [&#39;zhou&#39;, 98],
+    [&#39;yang&#39;, 87]
+]);
+console.log(oneMap.get(&#39;yang&#39;)); // 结果是87
+
+//我们也可以直接创建一个空Map,然后调用set方法进行添加元素
+oneMap.set(&#39;li&#39;, 90);
+oneMap.set(&#39;zhou&#39;, 98);
+oneMap.set(&#39;yang&#39;, 87);
+console.log(oneMap.get(&#39;yang&#39;)); // 结果是87
+
+// has方法可以用来检测Map是否包含某个key对应的元素
+var isHasLi = oneMap.has(&#39;li&#39;);
+console.log(isHasLi); // 结果是true
+
+var hasDelete = oneMap.delete(&#39;li&#39;);
+console.log(&quot;删除&quot; + hasDelete); // 结果是 删除true
+
+// 另外,因为一个key只能对应一个value,所以多次对一个key放入value,后面的值会覆盖前面的值
+oneMap.set(&#39;niu&#39;, 89);
+oneMap.set(&#39;niu&#39;, 99);
+console.log(oneMap.get(&#39;niu&#39;)); // 结果是99
+</code></pre>
+<h2 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h2><pre><code class="lang-js">// 下面来看set集合
+// Set和Map类似,也是一组key的结合,但是不存储value,由于key不重复,所以Set中没有重复的plus.key
+// 初始化set需要传入一个一维数组
+var mySet = new Set([1, 2, 3]);
+// 或使用add方法进行添加
+var secondSet = new Set();
+secondSet.add(&#39;li&#39;);
+secondSet.add(&#39;niu&#39;);
+// 注意添加相同的元素会自动去重
+secondSet.add(&#39;li&#39;);
+console.log(secondSet.size) //长度还是2
+// delete(key)可以删除元素
+secondSet.delete(&#39;li&#39;);
+console.log(secondSet.size);
+</code></pre>
+<h2 id="两者的遍历方法"><a href="#两者的遍历方法" class="headerlink" title="两者的遍历方法"></a>两者的遍历方法</h2><pre><code class="lang-js">// 迭代器 iterable,可以用于Map Set和Array
+// 具有iterabl类型的集合,可以通过新的for....of循环遍历,并且遍历得到的是value,而不是key
+for (var x of oneMap) {
+    console.log(x.toString());
+    // zhou,98
+    // yang,87
+    // niu,99
+}
+// 对于map集合,我们可以获取key以及对应的value
+for (var x of oneMap) {
+    console.log(x[0] + &quot; &quot; + x[1]);
+    // zhou 98
+    // yang 87
+    // niu 99
+}
+// 对于set集合
+for (var x of secondSet) {
+    console.log(x); // 结果是niu
+}
+</code></pre>
+<h2 id="for-in-和for-of-的区别"><a href="#for-in-和for-of-的区别" class="headerlink" title="for..in 和for ..of 的区别"></a>for..in 和for ..of 的区别</h2><pre><code class="lang-js">// 下面来看下for..in和for...of的区别
+// for..in实际上遍历的是对象的属性名称,对于数组Array来说,实际上也是对象,她的每个元素的索引都被视为属性
+//;当我们手动给数组对象添加额外的属性时候,使用for..in就会带来意外的效果
+var myArray = [1, 3, 5];
+myArray.name = &#39;heihei&#39;;
+for (var x in myArray) {
+    console.log(x);
+    // 结果是 0 1 2 name,这里把name也给遍历出来了;
+}
+// 但是使用for..of就不会出现这样的问题,他只循环集合本身的元素
+for (var x of myArray) {
+    console.log(x);
+    // 结果是 1 3 5
+}
+</code></pre>
+<pre><code class="lang-js">// forEach方法是iterable内置的方法,接收一个函数,每次迭代就自动回调该函数
+myArray.forEach(function(element, index, array) {
+    // element: 指向当前元素的值
+    // index: 指向当前索引
+    // array: 指向Array对象本身
+    console.log(element + &#39;, index = &#39; + index);
+});
+// 对Map集合来说,第一个参数value,第二个参数是key;
+oneMap.forEach(function(value,key,map){ 
+    console.log(value + &#39;, key = &#39; + key);
+});
+// 对于set集合来说,因为没有索引,所以第一个第二个参数都是value
+secondSet.forEach(function(value,sameValue,set){
+    console.log(value + &#39;, sameValue = &#39; + sameValue);
+});
+// 另外,js函数调用不要求参数一致,所以如果我们只关心value,可以这么写
+myArray.forEach(function(element){
+    console.log(element);
+    //结果是 1 3 5 
+})
+</code></pre>
+<p>大写字母A-Z对应的ASCII码值是65-90</p>
+<p>小写字母a-z对应的ASCII码值是97-122</p>
+<p>将字母转为ascii嘛的方法：</p>
+<pre><code class="lang-javascript">var str = &quot;A&quot;;
+str.charCodeAt();  // 65
+
+var str1 = &#39;a&#39;;
+str1.charCodeAt();  // 97
+
+var num = 97;
+String.fromCharCode(num);  // &#39;a&#39;
+
+var num1 = 100;
+String.fromCharCode(num1);  // &#39;d&#39;
+</code></pre>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>henucm<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2020/01/20/JS%E6%95%B0%E7%BB%84/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;JS%E6%95%B0%E7%BB%84&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;JS%E6%95%B0%E7%BB%84&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3Ni8yMjQ4Nw==">
+    <script id="livere-comment-js">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1589701901317"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>平台风采</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/HeaderFooter.css">
+		<link rel="stylesheet" href="css/PP.css">
+	</head>
+	<script>
+		window.onload = function(){
+			var title = document.getElementById("title");
+			var subTitle = document.getElementById("subTitle");
+			var info = document.getElementById('info');
+			var infomat = new XMLHttpRequest();
+			infomat.open('get','https://mockapi.eolinker.com/2ZhGVxjacb39010e6753bd9c02ee803e6e3bfeab6e8007c/aboutus');
+			infomat.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+            infomat.send();
+			infomat.onreadystatechange = function(){
+				if(infomat.readyState == 4 && infomat.status == 200){
+					var res = JSON.parse(infomat.responseText);
+					title.innerHTML = res.data.title;
+					subTitle.innerHTML = res.data.subTitle;
+					info.innerHTML = res.data.info;
+				}
+			}
+		}
+	</script>
+	<body>
+		<header>平台风采</header>
+		<section>
+			<img src="img/项目用图/banner4.png">
+		</section>
+		
+		<section>
+			<!-- <h1 id="title">公司简介</h1>
+			<hr>
+			<h5 id="subTitle">华杉科技（北京）有限公司</h5>
+			<p id="info">华杉科技(北京)有限公司一直秉承“在高薪和经验的路上，我们只做行业第一”，致力于为整个互联网科技行业输送高级技术人才、做好每一款外包项目。</p>
+			<p>华杉科技(北京)有限公司是一家既专注于培养高级T技术人才，为学员提供定制化IT职业规划方案及意见咨询服务，又是国内领先的智能手机软件外包服务商。公司原东方爱智技术总监，原58同城技术总监共同创立。</p>
+			<p>华杉科技(北京)有限公司拥有业内知名的教研团队和雄厚的课程研发能力，课程的快速迭代时刻紧跟当今较为流行的前沿技术、不同行业的外包项目作为支撑，强有力的保证了学员的核心竞争力。强竞争力的一线技术人员和完善的外包服务流程充分保证了每一-款项目的顺利执行。</p> -->
+			<h1 id="title"></h1>
+			<hr>
+			<h5 id="subTitle"></h5>
+			<p id="info"></p>
+		</section>
+		<footer>
+			<!-- https://icon.qiantucdn.com/20200419/0f2c294d525364591f186c7d6151de902 -->
+			<ul>
+				<li><a href="DropleService.html"><img src="img/项目用图/nav10.png"><span>小滴服务</span></a></li>
+				<li><a href="EnterpriseProject.html"><img src="img/项目用图/nav20.png"><span>企业项目</span></a></li>
+				<li><a href="ServceProcess.html"><img src="img/项目用图/nav30.png"><span>服务流程</span></a></li>
+				<li><a href="PlatformPresence.html"><img src="img/项目用图/nav41.png"><span>平台风采</span></a></li>
+				<li><a href="MyDrops.html"><img src="img/项目用图/nav50.png"><span>我的小滴</span></a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
